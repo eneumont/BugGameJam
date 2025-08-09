@@ -8,4 +8,16 @@ public class TitleScreen : MonoBehaviour {
     void Update() {
         
     }
+
+    public void startClick() {
+    
+    }
+
+    public void optionsClick() {
+    
+    }
+
+    public void quitClick() {
+        Application.Quit();
+    }
 }
