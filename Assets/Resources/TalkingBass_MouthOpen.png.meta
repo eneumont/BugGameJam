@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 271674fe6de42654292b7c9fb9e69dc3
+guid: da2ca32f529557e4ebcbb74eca4fd365
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6753908117678964172
-    second: Sprite-0024_0
+      213: -1738235065803863088
+    second: TalkingBass_MouthOpen_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite-0024_0
+      name: TalkingBass_MouthOpen_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
+        x: 12
+        y: 5
+        width: 274
+        height: 202
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ccdb1e736a3babd50800000000000000
-      internalID: 6753908117678964172
+      spriteID: 0db02aeca6c80e7e0800000000000000
+      internalID: -1738235065803863088
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Sprite-0024_0: 6753908117678964172
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
