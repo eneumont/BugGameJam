@@ -12,9 +12,14 @@ public class HintSystem : MonoBehaviour {
 	[SerializeField] AudioClip[] talkClips;
 
     AudioSource audioSource;
-	int hintCount = 0;
+	int hintCount;
 
     void Start() {
+		//hintTxt.gameObject.SetActive(false);
+		//hintTxtImg.gameObject.SetActive(false);
+		hintTxt.enabled = false;
+		hintTxtImg.enabled = false;
+		hintCount = 0;
         audioSource = GetComponent<AudioSource>();    
     }
 
@@ -34,9 +39,12 @@ public class HintSystem : MonoBehaviour {
     void newDialogue(bool h, int pos, float time) {
         StopAllCoroutines();
 
-        hintTxtImg.enabled = true;
+        //hintTxtImg.gameObject.SetActive(true);
+        //hintTxt.gameObject.SetActive(true);
+		hintTxt.enabled = true;
+		hintTxtImg.enabled = true;
 
-        if (h) {
+		if (h) {
             hintTxt.text = hints[pos];
             audioSource.clip = hintClips[pos];
             audioSource.Play();
@@ -51,6 +59,9 @@ public class HintSystem : MonoBehaviour {
 
 	IEnumerator TextAppearanceTimer(float time) {
 		yield return new WaitForSeconds(time);
-        hintTxtImg.enabled = false;
+		//hintTxt.gameObject.SetActive(false);
+		//hintTxtImg.gameObject.SetActive(false);
+		hintTxt.enabled = false;
+		hintTxtImg.enabled = false;
 	}
 }
