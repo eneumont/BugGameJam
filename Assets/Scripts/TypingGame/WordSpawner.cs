@@ -7,7 +7,6 @@ public class WordSpawner : MonoBehaviour
     public GameObject wordBubblePrefab;
     public RectTransform spawnArea;
     public string[] wordList;
-    public int startCount = 5;
 
     private List<WordBubble> spawnedBubbles = new List<WordBubble>();
     private WordBubble targetBubble;
@@ -20,9 +19,10 @@ public class WordSpawner : MonoBehaviour
 
     void SpawnAllWords()
     {
-        for (int i = 0; i < startCount; i++)
+        // Spawn each word from the list exactly once
+        for (int i = 0; i < wordList.Length; i++)
         {
-            SpawnWord(wordList[Random.Range(0, wordList.Length)]);
+            SpawnWord(wordList[i]);
         }
     }
 
@@ -56,5 +56,20 @@ public class WordSpawner : MonoBehaviour
     public string GetTargetWord()
     {
         return targetBubble != null ? targetBubble.wordText.text : "";
+    }
+    
+    public void RemoveTargetBubble()
+    {
+        if (targetBubble != null)
+        {
+            spawnedBubbles.Remove(targetBubble);
+            Destroy(targetBubble.gameObject);
+            targetBubble = null;
+        }
+    }
+    
+    public bool HasWordsRemaining()
+    {
+        return spawnedBubbles.Count > 0;
     }
 }

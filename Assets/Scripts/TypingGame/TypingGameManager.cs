@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class TypingGameManager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class TypingGameManager : MonoBehaviour
     public TextMeshProUGUI typedTextDisplay;
     public TextMeshProUGUI timerDisplay;
     public TextMeshProUGUI warningsDisplay;
+    public TextMeshProUGUI finalTypedSentence;
 
     public float wordTime = 30f;
 
@@ -16,21 +18,91 @@ public class TypingGameManager : MonoBehaviour
     private string typedWord = "";
     private float timer;
     private int warnings = 0;
+    private string builtSentence = "";
+    
+    // Bug system variables
+    private bool isLagging = false;
+    private float lagEndTime = 0f;
+    private bool isKeyboardRemapped = false;
+    private float remapEndTime = 0f;
+    private float nextLagTime = 0f;
+    private float nextRemapTime = 0f;
+    
+    // Keyboard mapping for alphabetical bug (QWERTY to alphabetical)
+    private Dictionary<char, char> qwertyToAlpha = new Dictionary<char, char>()
+    {
+        {'q', 'a'}, {'w', 'b'}, {'e', 'c'}, {'r', 'd'}, {'t', 'e'}, {'y', 'f'}, {'u', 'g'}, {'i', 'h'}, {'o', 'i'}, {'p', 'j'},
+        {'a', 'k'}, {'s', 'l'}, {'d', 'm'}, {'f', 'n'}, {'g', 'o'}, {'h', 'p'}, {'j', 'q'}, {'k', 'r'}, {'l', 's'},
+        {'z', 't'}, {'x', 'u'}, {'c', 'v'}, {'v', 'w'}, {'b', 'x'}, {'n', 'y'}, {'m', 'z'},
+        // Uppercase versions
+        {'Q', 'A'}, {'W', 'B'}, {'E', 'C'}, {'R', 'D'}, {'T', 'E'}, {'Y', 'F'}, {'U', 'G'}, {'I', 'H'}, {'O', 'I'}, {'P', 'J'},
+        {'A', 'K'}, {'S', 'L'}, {'D', 'M'}, {'F', 'N'}, {'G', 'O'}, {'H', 'P'}, {'J', 'Q'}, {'K', 'R'}, {'L', 'S'},
+        {'Z', 'T'}, {'X', 'U'}, {'C', 'V'}, {'V', 'W'}, {'B', 'X'}, {'N', 'Y'}, {'M', 'Z'}
+    };
 
     void Start()
     {
         timer = wordTime;
         targetWord = wordSpawner.GetTargetWord();
+        
+        // Initialize bug timers
+        nextLagTime = Time.time + Random.Range(10f, 20f);
+        nextRemapTime = Time.time + Random.Range(15f, 25f);
     }
 
     void Update()
     {
+        UpdateBugSystem();
         HandleTyping();
         UpdateTimer();
     }
 
+    void UpdateBugSystem()
+    {
+        float currentTime = Time.time;
+        
+        // Handle lag bug
+        if (isLagging)
+        {
+            if (currentTime >= lagEndTime)
+            {
+                isLagging = false;
+                Debug.Log("Lag ended!");
+                // Schedule next lag
+                nextLagTime = currentTime + Random.Range(10f, 30f);
+            }
+        }
+        else if (currentTime >= nextLagTime)
+        {
+            isLagging = true;
+            lagEndTime = currentTime + Random.Range(0.5f, 2f);
+            Debug.Log("Lag started for " + (lagEndTime - currentTime) + " seconds!");
+        }
+        
+        // Handle keyboard remap bug
+        if (isKeyboardRemapped)
+        {
+            if (currentTime >= remapEndTime)
+            {
+                isKeyboardRemapped = false;
+                Debug.Log("Keyboard mapping returned to normal!");
+                // Schedule next remap
+                nextRemapTime = currentTime + Random.Range(15f, 45f);
+            }
+        }
+        else if (currentTime >= nextRemapTime)
+        {
+            isKeyboardRemapped = true;
+            remapEndTime = currentTime + Random.Range(10f, 15f);
+            Debug.Log("Keyboard remapped to alphabetical for " + (remapEndTime - currentTime) + " seconds!");
+        }
+    }
+
     void HandleTyping()
     {
+        // Skip input processing if lagging
+        if (isLagging) return;
+        
         foreach (char raw in Input.inputString)
         {
             if (raw == '\b') // backspace
@@ -45,19 +117,28 @@ public class TypingGameManager : MonoBehaviour
 
             if (raw == '\n' || raw == '\r') continue;
 
-            char c = char.ToLower(raw);
-            if (!char.IsLetter(c)) continue;
+            // Allow letters, numbers, and common punctuation
+            if (!char.IsLetterOrDigit(raw) && !"!@#$%^&*()-_=+[]{}|;:'\",.<>?/`~".Contains(raw)) continue;
 
-            typedWord += c;
+            char processedChar = raw;
+            
+            // Apply keyboard remapping bug if active
+            if (isKeyboardRemapped && qwertyToAlpha.ContainsKey(raw))
+            {
+                processedChar = qwertyToAlpha[raw];
+            }
+
+            typedWord += processedChar; // Keep original case for display
             typedTextDisplay.text = typedWord;
 
-            if (typedWord == targetWord)
+            // Compare case-insensitively
+            if (string.Equals(typedWord, targetWord, System.StringComparison.OrdinalIgnoreCase))
             {
                 OnSuccess();
                 return;
             }
 
-            if (typedWord.Length >= targetWord.Length && typedWord != targetWord)
+            if (typedWord.Length >= targetWord.Length && !string.Equals(typedWord, targetWord, System.StringComparison.OrdinalIgnoreCase))
             {
                 ClearTypedWithError();
                 return;
@@ -78,12 +159,31 @@ public class TypingGameManager : MonoBehaviour
 
     void OnSuccess()
     {
+        // Add the completed word to the final sentence
+        if (!string.IsNullOrEmpty(builtSentence))
+            builtSentence += " ";
+        builtSentence += targetWord;
+        finalTypedSentence.text = builtSentence;
+        
+        // Remove the current target bubble
+        wordSpawner.RemoveTargetBubble();
+        
         typedWord = "";
         typedTextDisplay.text = "";
         timer = wordTime;
 
-        wordSpawner.PickTargetBubble();
-        targetWord = wordSpawner.GetTargetWord();
+        // Check if there are more words to type
+        if (wordSpawner.HasWordsRemaining())
+        {
+            wordSpawner.PickTargetBubble();
+            targetWord = wordSpawner.GetTargetWord();
+        }
+        else
+        {
+            // All words completed!
+            Debug.Log("Report completed: " + builtSentence);
+            // You can add completion logic here (scene transition, victory screen, etc.)
+        }
     }
 
     void OnFail()
