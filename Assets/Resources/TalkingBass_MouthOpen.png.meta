@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      TalkingBass_MouthOpen_0: -1738235065803863088
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

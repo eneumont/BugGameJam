@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MazeCharacter : MonoBehaviour {
@@ -52,16 +54,22 @@ public class MazeCharacter : MonoBehaviour {
     public void livesChange(int newlives) {
         Lives += newlives;
 
-        for (int i = heartImgs.Length - 1; i >= 0; i--) {
-            if (true) {
-
+        for (int i = heartImgs.Length; i > 0; i--) {
+            if (Lives >= i) {
+                heartImgs[i - 1].color = Color.red;
             } else {
-                
+                heartImgs[i - 1].color = Color.black;
             }
         }
 
         if (newlives <= 0) {
-        
+            StartCoroutine(Death());
         }
+    }
+
+    IEnumerator Death() {
+        
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("ReverseMazeScene");
     }
 }
