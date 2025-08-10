@@ -5,7 +5,8 @@ public class FishSpriteLogic : ClickableSprite
 {
     [SerializeField] private GameObject staplerPrefab;
     [SerializeField] private ProgressMarker progressMarker;
-    [SerializeField] private Sprite yourTestSprite; // assign in inspector for testing
+    [SerializeField] private Sprite yourTestSprite;
+    [SerializeField] private TalkingController talkingController;
 
     private SpriteRenderer spriteRenderer;
     private void Awake()
@@ -30,6 +31,8 @@ public class FishSpriteLogic : ClickableSprite
         }
 
         ChangeSprite(yourTestSprite);
+
+        talkingController.StartText();
     }
     public void ChangeSprite(Sprite newSprite)
     {
