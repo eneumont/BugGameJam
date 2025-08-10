@@ -6,14 +6,17 @@ public class MazeObstacle : MonoBehaviour {
     [SerializeField] bool person;
     [SerializeField] Vector3 startPos;
     [SerializeField] Vector3 endPos;
+	[SerializeField] bool supervisor = false;
 
     [SerializeField] float speed = 5;
+	[SerializeField] string talking;
     
     Vector3 targetPos;
     bool heal;
 
     void Start() {
         targetPos = endPos;
+		setUp();
     }
 
     void Update() {
@@ -28,6 +31,11 @@ public class MazeObstacle : MonoBehaviour {
 
 	private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.GetComponent<MazeCharacter>()) {
+			if (supervisor) {
+
+				return;
+			}
+
             int healing = 0;
 			healing = heal ?  1 : -1;
             collision.gameObject.GetComponent<MazeCharacter>().livesChange(healing);

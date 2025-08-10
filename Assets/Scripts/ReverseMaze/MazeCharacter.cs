@@ -56,13 +56,14 @@ public class MazeCharacter : MonoBehaviour {
 
         for (int i = heartImgs.Length; i > 0; i--) {
             if (Lives >= i) {
-                heartImgs[i - 1].color = Color.red;
+                heartImgs[i - 1].color = Color.white;
+                if (Lives > 3) Lives = 3; 
             } else {
                 heartImgs[i - 1].color = Color.black;
             }
         }
 
-        if (newlives <= 0) {
+        if (Lives <= 0) {
             StartCoroutine(Death());
         }
     }
