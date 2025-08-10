@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 306acd873a91e4d4c94082f6154875b3
+guid: 60fa9f30698777d4b80e72317dd50c8c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -578372849037922568
-    second: LettuceLucy_0
+      213: -7149551760361722873
+    second: Cafeteria Background_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LettuceLucy_0
+      name: Cafeteria Background_0
       rect:
         serializedVersion: 2
-        x: 28
-        y: 2
-        width: 474
-        height: 465
+        x: 0
+        y: 0
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8fe2d5945f439f7f0800000000000000
-      internalID: -578372849037922568
+      spriteID: 70cee5ccd80b7cc90800000000000000
+      internalID: -7149551760361722873
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      LettuceLucy_0: -578372849037922568
+      Cafeteria Background_0: -7149551760361722873
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

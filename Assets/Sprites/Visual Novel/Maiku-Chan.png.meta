@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4d8cff263c5e6af40aff997f93fa4e1a
+guid: ee3db1074d7662b4595cfe1b2bd42d83
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 181656586610456116
-    second: TrashCanBro_0
+      213: -2469522993071713850
+    second: Maiku-Chan_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TrashCanBro_0
+      name: Maiku-Chan_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 22
-        width: 1000
-        height: 974
+        x: 0
+        y: 34
+        width: 499
+        height: 449
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 436b60cf3bf558200800000000000000
-      internalID: 181656586610456116
+      spriteID: 6c11d410ced7abdd0800000000000000
+      internalID: -2469522993071713850
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      TrashCanBro_0: 181656586610456116
+      Maiku-Chan_0: -2469522993071713850
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
