@@ -7,11 +7,12 @@ using UnityEngine.UI;
 public class MazeCharacter : MonoBehaviour {
     [SerializeField] float speed = 5f;
     [SerializeField] SpriteRenderer[] heartImgs;
+    Vector3 spawnPos;
     
     Rigidbody2D rb;
     Vector2 input;
     Control c;
-    bool done = false;
+    public bool done = false;
 
     int Lives = 0;
 
@@ -20,11 +21,16 @@ public class MazeCharacter : MonoBehaviour {
     }
 
     void Start() {
-        c = (Control)Random.Range(0, 4);
+        newControls();
         rb = GetComponent<Rigidbody2D>();
+        spawnPos = transform.position;
 
         livesChange(3);
     }
+
+    public void newControls() {
+		c = (Control)Random.Range(0, 4);
+	}
 
     void Update() {
         switch (c) {
@@ -74,9 +80,14 @@ public class MazeCharacter : MonoBehaviour {
         done = true;
     }
 
+    public void checkPoint(Vector3 newPos) {
+        spawnPos = newPos;
+    }
+
     IEnumerator Death() {
-        
         yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene("ReverseMazeScene");
+        livesChange(3);
+        transform.position = spawnPos;
+        //SceneManager.LoadScene("ReverseMazeScene");
     }
 }

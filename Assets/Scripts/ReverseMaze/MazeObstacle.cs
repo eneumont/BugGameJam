@@ -22,6 +22,7 @@ public class MazeObstacle : MonoBehaviour {
         targetPos = endPos;
 		setUp();
 		audioSource = GetComponent<AudioSource>();
+		talkText.transform.parent.gameObject.SetActive(false);
     }
 
     void Update() {
@@ -38,6 +39,7 @@ public class MazeObstacle : MonoBehaviour {
         if (collision.gameObject.GetComponent<MazeCharacter>()) {
 			audioSource.Play();
 			talkText.text = talking;
+			talkText.transform.parent.gameObject.SetActive(true);
 			StartCoroutine(interaction(talkTime));
 
 			if (supervisor) {
@@ -57,6 +59,6 @@ public class MazeObstacle : MonoBehaviour {
 
 	IEnumerator interaction(float time) {
 		yield return new WaitForSeconds(time);
-
+		talkText.transform.parent.gameObject.SetActive(true);
 	}
 }

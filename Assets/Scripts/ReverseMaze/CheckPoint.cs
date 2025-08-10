@@ -1,16 +1,28 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class CheckPoint : MonoBehaviour
-{
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
+public class CheckPoint : MonoBehaviour {
+    [SerializeField] bool exit = false;
+
+    void Start() {
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         
     }
+
+	private void OnTriggerEnter2D(Collider2D collision) {
+        if (!exit) {
+            if (collision.GetComponent<MazeCharacter>()) {
+                collision.GetComponent<MazeCharacter>().checkPoint(transform.position);
+            }
+        } else {
+            if (collision.GetComponent<MazeCharacter>().done) {
+                SceneManager.LoadScene("");
+            } else {
+                
+            }
+        }
+	}
 }
