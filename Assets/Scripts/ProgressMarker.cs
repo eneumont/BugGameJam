@@ -4,7 +4,7 @@ public class ProgressMarker : MonoBehaviour
 {
     public void MarkProgress()
     {
-        GameProgress.hasProgressed = true;
+        GameProgress.hasProgressed += 1;
         Debug.Log("Progress marked!");
     }
 }
