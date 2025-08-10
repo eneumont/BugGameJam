@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 73d7515866382f548b2641de2e7c159c
+guid: e9d27ac7ae14c12499da4b1f40f5ded7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7988486733090646751
-    second: Stapler_0
-  - first:
-      213: 1086420999363189517
-    second: Stapler_1
-  - first:
-      213: 9148541081628929876
-    second: Stapler_2
+      213: -3444018987740138558
+    second: ComputerBackground_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -102,17 +96,43 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Stapler_0
+      name: ComputerBackground_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 35
-        width: 28
-        height: 24
+        x: 0
+        y: 0
+        width: 800
+        height: 775
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,52 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fdae9c2eb5eccde60800000000000000
-      internalID: 7988486733090646751
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stapler_1
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 35
-        width: 28
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d0b519f842eb31f00800000000000000
-      internalID: 1086420999363189517
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stapler_2
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 3
-        width: 28
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 45f6f8784a526fe70800000000000000
-      internalID: 9148541081628929876
+      spriteID: 2c37c045af26430d0800000000000000
+      internalID: -3444018987740138558
       vertices: []
       indices: 
       edges: []
@@ -175,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 601ff18e15f01a3488f33ce53fa055ca
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -184,10 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Stapler_0: 7988486733090646751
-      Stapler_1: 1086420999363189517
-      Stapler_2: 9148541081628929876
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

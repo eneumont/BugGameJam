@@ -4,11 +4,16 @@ public static class GameProgress
 {
     private const string ProgressKey = "HasProgressed";
 
-    public static bool hasProgressed
+    public static int hasProgressed
     {
-        get => PlayerPrefs.GetInt(ProgressKey, 0) == 1;
-        set => PlayerPrefs.SetInt(ProgressKey, value ? 1 : 0);
+        get => PlayerPrefs.GetInt(ProgressKey, 0);
+        set
+        {
+            PlayerPrefs.SetInt(ProgressKey, value);
+            PlayerPrefs.Save();
+        }
     }
+
     public static void ResetProgress()
     {
         PlayerPrefs.DeleteKey(ProgressKey);

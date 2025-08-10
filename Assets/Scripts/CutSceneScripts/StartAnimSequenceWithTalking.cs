@@ -20,7 +20,7 @@ public class StartAnimSequenceWithTalking : MonoBehaviour
 	{
 		if (talk.started)
 		{
-			playerInput.ChangePlayerInput(PlayerCanMove);
+			//playerInput.ChangePlayerInput(PlayerCanMove);
 			this.enabled = false;
 		}
 	}
