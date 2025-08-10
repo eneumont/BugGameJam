@@ -6,6 +6,8 @@ public class FishSpriteLogic : ClickableSprite
     [SerializeField] private TalkingController talkingController;
     [SerializeField] private SpriteSwitcher spriteSwitcher;
 
+    private bool hasInteracted = false; // Local check to prevent re-triggering
+
     private void OnEnable()
     {
         if (talkingController != null)
@@ -20,8 +22,15 @@ public class FishSpriteLogic : ClickableSprite
 
     protected override void OnClick()
     {
+        // Prevent running if already interacted
+        if (hasInteracted)
+            return;
+
+        hasInteracted = true;
+
         GameProgress.ResetProgress();
         progressMarker.MarkProgress();
+        Debug.Log(GameProgress.hasProgressed);
 
         if (spriteSwitcher != null)
             spriteSwitcher.StartSwitching();
