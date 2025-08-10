@@ -20,8 +20,11 @@ public class SetUpChoices : MonoBehaviour
 	[SerializeField]
 	string[] ButtonTexts;
 
+	[Header("Results")]
 	[SerializeField]
-	int correctButton = 0; // Base 0
+	StartNewTalking[] Paths;
+	[SerializeField]
+	int[] correctButtons; // Base 0
 
 	public void SetUpTheChoices()
 	{
@@ -32,15 +35,12 @@ public class SetUpChoices : MonoBehaviour
 			Buttons[i].interactable = true;
 			Buttons[i].gameObject.GetComponentInChildren<TextMeshProUGUI>().text = ButtonTexts[i];
 			Buttons[i].onClick.RemoveAllListeners();
-			if (i == correctButton)
-			{
-				Buttons[i].onClick.AddListener(CorrectChoice);
-			}
-			else
-			{
-				Buttons[i].onClick.AddListener(WrongChoice);
-			}
+
 		}
+		Buttons[0].onClick.AddListener(ChoiceZero);
+		Buttons[1].onClick.AddListener(ChoiceOne);
+		Buttons[2].onClick.AddListener(ChoiceTwo);
+		Buttons[3].onClick.AddListener(ChoiceThree);
 
 		ChoicesGroup.SetActive(true);
 		if (PersonPic)
@@ -59,15 +59,34 @@ public class SetUpChoices : MonoBehaviour
 		}
 	}
 
-	public void CorrectChoice()
+	public void ChoiceZero()
 	{
-		Debug.Log("Correct Choice Made!");
-		ChoicesGroup.SetActive(false);
+		Paths[0].startNewTalking();
+		EndChoice();
 	}
 
-	public void WrongChoice()
+	public void ChoiceOne()
 	{
-		Debug.Log("Wrong Choice Made!");
-		//ChoicesGroup.SetActive(false);
+		Paths[1].startNewTalking();
+		EndChoice();
 	}
+
+	public void ChoiceTwo()
+	{
+		Paths[2].startNewTalking();
+		EndChoice();
+	}
+
+	public void ChoiceThree()
+	{
+		Paths[3].startNewTalking();
+		EndChoice();
+	}
+
+	private void EndChoice()
+	{
+		ChoicesGroup.SetActive(false);
+		this.gameObject.SetActive(false);
+	}
+
 }

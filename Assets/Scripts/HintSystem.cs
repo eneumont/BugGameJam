@@ -15,10 +15,8 @@ public class HintSystem : MonoBehaviour {
 	int hintCount;
 
     void Start() {
-		//hintTxt.gameObject.SetActive(false);
-		//hintTxtImg.gameObject.SetActive(false);
-		hintTxt.enabled = false;
-		hintTxtImg.enabled = false;
+		hintTxt.gameObject.SetActive(false);
+		hintTxtImg.gameObject.SetActive(false);
 		hintCount = 0;
         audioSource = GetComponent<AudioSource>();    
     }
@@ -39,10 +37,8 @@ public class HintSystem : MonoBehaviour {
     void newDialogue(bool h, int pos, float time) {
         StopAllCoroutines();
 
-        //hintTxtImg.gameObject.SetActive(true);
-        //hintTxt.gameObject.SetActive(true);
-		hintTxt.enabled = true;
-		hintTxtImg.enabled = true;
+		hintTxt.gameObject.SetActive(true);
+		hintTxtImg.gameObject.SetActive(true);
 
 		if (h) {
             hintTxt.text = hints[pos];
@@ -59,9 +55,7 @@ public class HintSystem : MonoBehaviour {
 
 	IEnumerator TextAppearanceTimer(float time) {
 		yield return new WaitForSeconds(time);
-		//hintTxt.gameObject.SetActive(false);
-		//hintTxtImg.gameObject.SetActive(false);
-		hintTxt.enabled = false;
-		hintTxtImg.enabled = false;
+		hintTxt.gameObject.SetActive(false);
+		hintTxtImg.gameObject.SetActive(false);
 	}
 }
