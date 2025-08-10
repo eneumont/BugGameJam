@@ -1,4 +1,6 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SetUpChoices : MonoBehaviour
 {
@@ -12,7 +14,7 @@ public class SetUpChoices : MonoBehaviour
 
 	[Header("Buttons")]
 	[SerializeField]
-	GameObject[] Buttons;
+	Button[] Buttons;
 
 	[Header("Button Text")]
 	[SerializeField]
@@ -27,15 +29,16 @@ public class SetUpChoices : MonoBehaviour
 
 		for (int i = 0; i < Buttons.Length; i++)
 		{
-			Buttons[i].GetComponentInChildren<TMPro.TextMeshProUGUI>().text = ButtonTexts[i];
-			Buttons[i].GetComponent<UnityEngine.UI.Button>().onClick.RemoveAllListeners();
+			Buttons[i].interactable = true;
+			Buttons[i].gameObject.GetComponentInChildren<TextMeshProUGUI>().text = ButtonTexts[i];
+			Buttons[i].onClick.RemoveAllListeners();
 			if (i == correctButton)
 			{
-				Buttons[i].GetComponent<UnityEngine.UI.Button>().onClick.AddListener(CorrectChoice);
+				Buttons[i].onClick.AddListener(CorrectChoice);
 			}
 			else
 			{
-				Buttons[i].GetComponent<UnityEngine.UI.Button>().onClick.AddListener(WrongChoice);
+				Buttons[i].onClick.AddListener(WrongChoice);
 			}
 		}
 
@@ -50,19 +53,21 @@ public class SetUpChoices : MonoBehaviour
 			TalkingCanvas.blocksRaycasts = false;
 		}
 
-		foreach (GameObject button in Buttons)
+		foreach (Button button in Buttons)
 		{
-			button.SetActive(true);
+			button.gameObject.SetActive(true);
 		}
 	}
 
 	public void CorrectChoice()
 	{
 		Debug.Log("Correct Choice Made!");
+		ChoicesGroup.SetActive(false);
 	}
 
 	public void WrongChoice()
 	{
 		Debug.Log("Wrong Choice Made!");
+		//ChoicesGroup.SetActive(false);
 	}
 }
