@@ -109,10 +109,10 @@ TextureImporter:
       name: Stapler_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 34
-        width: 29
-        height: 22
+        x: 4
+        y: 35
+        width: 28
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,10 +131,10 @@ TextureImporter:
       name: Stapler_1
       rect:
         serializedVersion: 2
-        x: 35
-        y: 34
-        width: 29
-        height: 25
+        x: 36
+        y: 35
+        width: 28
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,10 +153,10 @@ TextureImporter:
       name: Stapler_2
       rect:
         serializedVersion: 2
-        x: 3
-        y: 2
-        width: 30
-        height: 26
+        x: 4
+        y: 3
+        width: 28
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 601ff18e15f01a3488f33ce53fa055ca
     internalID: 0
     vertices: []
     indices: 
