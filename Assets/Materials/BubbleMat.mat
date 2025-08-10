@@ -41,10 +41,21 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _ChromaticAberration: 0.02
+    - _DistortionVariation: 1
     - _EnableExternalAlpha: 0
-    - _ShimmerIntensity: 0.2
-    - _ShimmerSpeed: 5
-    - _WaveAmount: 0.05
+    - _GlitchIntensity: 0.2
+    - _InstanceSeed: 0
+    - _NoiseScale: 20
+    - _PulseAmount: 0.3
+    - _PulseSpeed: 1
+    - _RainbowIntensity: 1.5
+    - _RainbowSpeed: 0.75
+    - _ShimmerIntensity: 0.4
+    - _ShimmerSpeed: 2.5
+    - _SpiralAmount: 0.15
+    - _SpiralSpeed: 0.6
+    - _WaveAmount: 0.2
     - _WaveSpeed: 1
     - _ZWrite: 0
     m_Colors:

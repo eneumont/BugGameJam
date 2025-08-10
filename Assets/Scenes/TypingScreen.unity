@@ -386,8 +386,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 706300487}
-  - {fileID: 265908744}
   - {fileID: 1714221747}
+  - {fileID: 265908744}
+  - {fileID: 507936762}
   - {fileID: 1899764663}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -475,6 +476,81 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &507936761
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 507936762}
+  - component: {fileID: 507936764}
+  - component: {fileID: 507936763}
+  m_Layer: 5
+  m_Name: BackgroundOutline
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &507936762
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507936761}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 426301798}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0.000030517578}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &507936763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507936761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 2259356544807375389, guid: e5dec6b086ae11b45b16a83093c55317, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &507936764
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507936761}
+  m_CullTransparentMesh: 1
 --- !u!1 &570587523
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,8 +677,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -245, y: 160}
-  m_SizeDelta: {x: -510, y: -370}
+  m_AnchoredPosition: {x: -220, y: 160}
+  m_SizeDelta: {x: -460, y: -370}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &574087738
 MonoBehaviour:
@@ -812,7 +888,8 @@ MonoBehaviour:
   timerDisplay: {fileID: 2104827107}
   warningsDisplay: {fileID: 574087738}
   finalTypedSentence: {fileID: 2134688516}
-  wordTime: 30
+  wordTime: 60
+  introMessage: Begin Typing Whenever
 --- !u!4 &899667150
 Transform:
   m_ObjectHideFlags: 0
@@ -993,10 +1070,29 @@ MonoBehaviour:
   wordBubblePrefab: {fileID: 1643661062336107197, guid: e533b7db5499c5542b9eccda7f57085f, type: 3}
   spawnArea: {fileID: 265908744}
   wordList:
-  - Test
-  - words
-  - are
-  - working!
+  - The
+  - office
+  - inventory
+  - was
+  - checked,
+  - and
+  - all
+  - staplers
+  - were
+  - accounted
+  - for.
+  - With
+  - no
+  - discrepancies
+  - found.
+  - Although
+  - requests
+  - for
+  - stapler
+  - aquisition
+  - have
+  - been
+  - noted.
 --- !u!1 &2104827105
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,7 +1150,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 30
+  m_text: 60
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3a4255259f3114444b75b95441f8a410, type: 2}
   m_sharedMaterial: {fileID: -7165134870521103620, guid: 3a4255259f3114444b75b95441f8a410, type: 2}
@@ -1190,8 +1286,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Completed Words will go here so I need to see what a completely full coumn
-    looks like you know?????
+  m_text: _____ _____ _____ _____ _____ _____ _____ _____ _____ _____ _____ _____
+    _____ _____ _____ _____ _____ _____ _____ _____ _____ _____ _____
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1200,8 +1296,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4290230199
-  m_fontColor: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1218,8 +1314,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
