@@ -4,8 +4,6 @@ using UnityEngine.Playables;
 [RequireComponent(typeof(PlayableDirector))]
 public class StartAnim : MonoBehaviour
 {
-	[SerializeField]
-	private ControlPlayerInput playerInput;
 
 	[SerializeField]
 	private bool PlayerCanMove;
@@ -21,6 +19,6 @@ public class StartAnim : MonoBehaviour
 
 	private void AnimStarted(PlayableDirector director)
 	{
-		playerInput.ChangePlayerInput(PlayerCanMove);
+		//playerInput.ChangePlayerInput(PlayerCanMove);
 	}
 }

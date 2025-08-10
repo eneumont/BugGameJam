@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Office_Man_Pencil_Bullet_Single_0: 8931242299142313619
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
