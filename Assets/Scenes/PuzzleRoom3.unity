@@ -146,6 +146,36 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3093839059411757277, guid: d7bed93c5a86f1a498f45705d91bbb3d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2667700254704644782, guid: 536de4443355bc14589f971a457d7f6e, type: 3}
+    - target: {fileID: 3195736365029130993, guid: d7bed93c5a86f1a498f45705d91bbb3d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049823544184844431, guid: d7bed93c5a86f1a498f45705d91bbb3d, type: 3}
+      propertyPath: m_text
+      value: 'Bethany Bass
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049823544184844431, guid: d7bed93c5a86f1a498f45705d91bbb3d, type: 3}
+      propertyPath: m_margin.z
+      value: -752.63635
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049823544184844431, guid: d7bed93c5a86f1a498f45705d91bbb3d, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 3a4255259f3114444b75b95441f8a410, type: 2}
+    - target: {fileID: 5049823544184844431, guid: d7bed93c5a86f1a498f45705d91bbb3d, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -7165134870521103620, guid: 3a4255259f3114444b75b95441f8a410, type: 2}
+    - target: {fileID: 5049823544184844431, guid: d7bed93c5a86f1a498f45705d91bbb3d, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5530535852787568931, guid: d7bed93c5a86f1a498f45705d91bbb3d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -226,6 +256,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6909911142504307241, guid: d7bed93c5a86f1a498f45705d91bbb3d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7748113803887271189, guid: d7bed93c5a86f1a498f45705d91bbb3d, type: 3}
       propertyPath: m_Name
       value: TalkingUI
@@ -262,6 +296,7 @@ GameObject:
   - component: {fileID: 165373452}
   - component: {fileID: 165373451}
   - component: {fileID: 165373450}
+  - component: {fileID: 165373453}
   m_Layer: 0
   m_Name: SceneController
   m_TagString: Untagged
@@ -312,19 +347,20 @@ MonoBehaviour:
   group: {fileID: 1475312582}
   TalkingText: {fileID: 20143617}
   messages:
-  - "Oh. My. Gosh. Like, seriously, your teeth?! They\u2019re, like, the most amazing
-    things I\u2019ve ever seen in my entire life! I can\u2019t even. How do you even
-    keep them so shiny and perfect? I swear, if I had teeth like that, I\u2019d totally
-    rule the ocean."
+  - "Oh. My. Gosh. Your teeth?! They\u2019re the most amazing things I\u2019ve ever
+    seen! How do you even keep them so shiny? If I had teeth like that, I\u2019d
+    totally rule the ocean."
   - "Oh my gosh, like, I know I\u2019m just a decoration on the wall. I\u2019m totally
-    fake, okay? But don\u2019t you dare underestimate me! Just because I\u2019m made
-    of plastic and paint doesn\u2019t mean I don\u2019t deserve those teeth!"
+    fake, okay? Just because I\u2019m made of plastic and paint doesn\u2019t mean
+    I don\u2019t deserve those teeth!"
   - "A stapler? OMG, are you, like, for real right now? What kind of boring fish
     talk is that? I mean, I\u2019m swimming around dreaming of dazzling teeth, and
     you wanna know about staplers? Ugh, the struggle is real."
-  - "fine. If you really need to know\u2026 I might have seen something that looks
-    like a stapler. It was shiny, but nowhere near as shiny as your smile, obviously."
-  - He was like suuuper mad you forgot to feed him, I saw him fly above you earlier
+  - "Oh my gosh, fine. If you really need to know\u2026 I might have seen something
+    that looks like a stapler. It was shiny, but nowhere near as shiny as your smile,
+    obvs."
+  - "He was suuuper mad, like, oh my gosh, because you forgot to feed him\u2014I
+    saw him fly above you earlier."
   fonts:
   - {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   FontIndexForMessages: 00000000
@@ -514,6 +550,24 @@ MonoBehaviour:
   m_DefaultActionMap: UI
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &165373453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165373446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33e9b41f2b81fbe4fbe2e5cd3e372e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 1429059856}
+  uiImage: {fileID: 1254303892}
+  spritesToCycle:
+  - {fileID: -2667700254704644782, guid: 536de4443355bc14589f971a457d7f6e, type: 3}
+  - {fileID: -1738235065803863088, guid: da2ca32f529557e4ebcbb74eca4fd365, type: 3}
+  switchDelay: 0.5
 --- !u!114 &241427282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1479,6 +1533,17 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &1254303892 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3093839059411757277, guid: d7bed93c5a86f1a498f45705d91bbb3d, type: 3}
+  m_PrefabInstance: {fileID: 45688010}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1415884476
 GameObject:
   m_ObjectHideFlags: 0
@@ -2938,6 +3003,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!212 &1429059856 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 9015477861784792965, guid: 173d713e9cccab14eacc7dac9a2f679f, type: 3}
+  m_PrefabInstance: {fileID: 647195457692855511}
+  m_PrefabAsset: {fileID: 0}
 --- !u!225 &1475312582 stripped
 CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 5466158248081603749, guid: d7bed93c5a86f1a498f45705d91bbb3d, type: 3}
@@ -3028,11 +3098,15 @@ PrefabInstance:
     - target: {fileID: 919403455215803912, guid: 173d713e9cccab14eacc7dac9a2f679f, type: 3}
       propertyPath: staplerPrefab
       value: 
-      objectReference: {fileID: 5784452662857355986, guid: 9af79409e10f743469eeaf5f21a84e94, type: 3}
+      objectReference: {fileID: 9137940534623702296, guid: 9af79409e10f743469eeaf5f21a84e94, type: 3}
     - target: {fileID: 919403455215803912, guid: 173d713e9cccab14eacc7dac9a2f679f, type: 3}
       propertyPath: progressMarker
       value: 
       objectReference: {fileID: 165373449}
+    - target: {fileID: 919403455215803912, guid: 173d713e9cccab14eacc7dac9a2f679f, type: 3}
+      propertyPath: spriteSwitcher
+      value: 
+      objectReference: {fileID: 165373453}
     - target: {fileID: 919403455215803912, guid: 173d713e9cccab14eacc7dac9a2f679f, type: 3}
       propertyPath: yourTestSprite
       value: 
@@ -3094,6 +3168,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 173d713e9cccab14eacc7dac9a2f679f, type: 3}
+--- !u!1001 &4319906658978800137
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 79258404598921689, guid: 35471a245d0284d4e94ddb5b03fd5cda, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 79258404598921689, guid: 35471a245d0284d4e94ddb5b03fd5cda, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 79258404598921689, guid: 35471a245d0284d4e94ddb5b03fd5cda, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 79258404598921689, guid: 35471a245d0284d4e94ddb5b03fd5cda, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 79258404598921689, guid: 35471a245d0284d4e94ddb5b03fd5cda, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 79258404598921689, guid: 35471a245d0284d4e94ddb5b03fd5cda, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 79258404598921689, guid: 35471a245d0284d4e94ddb5b03fd5cda, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 79258404598921689, guid: 35471a245d0284d4e94ddb5b03fd5cda, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 79258404598921689, guid: 35471a245d0284d4e94ddb5b03fd5cda, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 79258404598921689, guid: 35471a245d0284d4e94ddb5b03fd5cda, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958958141674328015, guid: 35471a245d0284d4e94ddb5b03fd5cda, type: 3}
+      propertyPath: m_Name
+      value: PlayerPrefab
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 35471a245d0284d4e94ddb5b03fd5cda, type: 3}
 --- !u!1001 &4489147308103860772
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3142,6 +3273,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8201549088590835824, guid: 47ec7b6fcc14d6b40a97716b78227df3, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201549088590835824, guid: 47ec7b6fcc14d6b40a97716b78227df3, type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8589649430844658775, guid: 47ec7b6fcc14d6b40a97716b78227df3, type: 3}
       propertyPath: m_Name
       value: TravelBox
@@ -3164,3 +3303,4 @@ SceneRoots:
   - {fileID: 733113740}
   - {fileID: 165373448}
   - {fileID: 4489147308103860772}
+  - {fileID: 4319906658978800137}
