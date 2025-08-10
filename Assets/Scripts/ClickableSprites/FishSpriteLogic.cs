@@ -1,55 +1,37 @@
-using System.Collections;
 using UnityEngine;
 
 public class FishSpriteLogic : ClickableSprite
 {
-    [SerializeField] private GameObject staplerPrefab;
     [SerializeField] private ProgressMarker progressMarker;
-    [SerializeField] private Sprite yourTestSprite; // assign in inspector for testing
+    [SerializeField] private TalkingController talkingController;
+    [SerializeField] private SpriteSwitcher spriteSwitcher;
 
-    private SpriteRenderer spriteRenderer;
-    private void Awake()
+    private void OnEnable()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        if (spriteRenderer == null)
-        {
-            Debug.LogError("FishSpriteLogic requires a SpriteRenderer component!");
-        }
+        if (talkingController != null)
+            talkingController.OnTextEnded += OnDialogEnd;
+    }
+
+    private void OnDisable()
+    {
+        if (talkingController != null)
+            talkingController.OnTextEnded -= OnDialogEnd;
     }
 
     protected override void OnClick()
     {
-        if (staplerPrefab != null)
-        {
-            GameProgress.ResetProgress();
-            progressMarker.MarkProgress();
-        }
-        else
-        {
-            Debug.LogWarning("SpawnController or StaplerPrefab is not assigned!");
-        }
+        GameProgress.ResetProgress();
+        progressMarker.MarkProgress();
 
-        ChangeSprite(yourTestSprite);
+        if (spriteSwitcher != null)
+            spriteSwitcher.StartSwitching();
+
+        talkingController.StartText();
     }
-    public void ChangeSprite(Sprite newSprite)
+
+    private void OnDialogEnd()
     {
-        if (spriteRenderer != null && newSprite != null)
-        {
-            spriteRenderer.sprite = newSprite;
-        }
-        else
-        {
-            Debug.LogWarning("Cannot change sprite: SpriteRenderer or newSprite is null.");
-        }
-
-        // Change sprite after the current click event finishes
-        StartCoroutine(ChangeSpriteNextFrame(yourTestSprite));
+        if (spriteSwitcher != null)
+            spriteSwitcher.StopSwitching();
     }
-
-    private IEnumerator ChangeSpriteNextFrame(Sprite newSprite)
-    {
-        yield return null; // wait for next frame
-        ChangeSprite(newSprite);
-    }
-
 }
