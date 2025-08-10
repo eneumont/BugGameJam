@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -10,6 +11,7 @@ public class MazeCharacter : MonoBehaviour {
     Rigidbody2D rb;
     Vector2 input;
     Control c;
+    bool done = false;
 
     int Lives = 0;
 
@@ -66,6 +68,10 @@ public class MazeCharacter : MonoBehaviour {
         if (Lives <= 0) {
             StartCoroutine(Death());
         }
+    }
+
+    public void readyToExit() {
+        done = true;
     }
 
     IEnumerator Death() {
