@@ -42,8 +42,10 @@ Material:
     m_Ints: []
     m_Floats:
     - _ChromaticAberration: 0.02
+    - _DistortionVariation: 1
     - _EnableExternalAlpha: 0
-    - _GlitchIntensity: 0.1
+    - _GlitchIntensity: 0.2
+    - _InstanceSeed: 0
     - _NoiseScale: 20
     - _PulseAmount: 0.3
     - _PulseSpeed: 1
@@ -53,8 +55,8 @@ Material:
     - _ShimmerSpeed: 2.5
     - _SpiralAmount: 0.15
     - _SpiralSpeed: 0.6
-    - _WaveAmount: 0.1
-    - _WaveSpeed: 0.5
+    - _WaveAmount: 0.2
+    - _WaveSpeed: 1
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
