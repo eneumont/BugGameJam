@@ -53,8 +53,7 @@ public class TalkingController : MonoBehaviour
 	private AudioSource talkSource;
 	private float soundLoopTimer;
 
-	// Start is called once before the first execution of Update after the MonoBehaviour is created
-	void Start()
+	void Awake()
 	{
 		group.alpha = 0;
 		UIInput = gameObject.GetComponent<PlayerInput>();
@@ -71,7 +70,7 @@ public class TalkingController : MonoBehaviour
 		}
 
 		talkSource = gameObject.GetComponent<AudioSource>();
-		talkSource.clip = talkingSound;
+		if(talkingSound) talkSource.clip = talkingSound;
 		soundLoopTimer = 0;
 	}
 
@@ -81,9 +80,9 @@ public class TalkingController : MonoBehaviour
   		started = true;
 		UIInput.enabled = true;
 		group.alpha = 1f;
-		if (PlayerRB != null) PlayerRB.linearVelocity = Vector2.zero;
+		if(PlayerRB) PlayerRB.linearVelocity = Vector2.zero;
 
-		if (!loopAudio)
+		if (!loopAudio && talkingSound)
 		{
 			talkSource.Play();
 		}
@@ -115,7 +114,7 @@ public class TalkingController : MonoBehaviour
 			TalkingText.text = currentMessage;
 
 			soundLoopTimer -= Time.deltaTime;
-			if (soundLoopTimer <= 0 && loopAudio)
+			if (soundLoopTimer <= 0 && loopAudio && talkingSound)
 			{
 				soundLoopTimer = soundLoopTime;
 				talkSource.Play();
@@ -146,7 +145,7 @@ public class TalkingController : MonoBehaviour
 			else
 			{
 				StartCoroutine(UpdateMessage(++MessageIndex));
-				if (!loopAudio)
+				if (!loopAudio && talkingSound)
 				{
 					talkSource.Play();
 				}
