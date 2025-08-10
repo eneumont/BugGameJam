@@ -46,6 +46,10 @@ public class TypingGameManager : MonoBehaviour
     private float cursorBlinkTime = 0f;
     private const float CURSOR_BLINK_RATE = 0.5f;
 
+    public string introMessage = "Begin Typing Whenever";
+    private bool introActive = true;
+
+
     // Keyboard mapping for alphabetical bug (QWERTY to alphabetical)
     private Dictionary<char, char> qwertyToAlpha = new Dictionary<char, char>()
     {
@@ -61,6 +65,8 @@ public class TypingGameManager : MonoBehaviour
     void Start()
     {
         timer = wordTime;
+        typedTextDisplay.text = introMessage;
+
         // Wait for WordSpawner to be ready before getting target word
         StartCoroutine(InitializeGame());
 
@@ -108,6 +114,10 @@ public class TypingGameManager : MonoBehaviour
 
     void UpdateTypedDisplay()
     {
+        // While intro is active, keep the intro message visible and don't overwrite it
+        if (introActive)
+            return;
+
         string displayText = typedWord;
         if (showCursor && gameActive && !isLagging)
         {
@@ -120,46 +130,58 @@ public class TypingGameManager : MonoBehaviour
     {
         float currentTime = Time.time;
 
-        // Handle bad word bug (highest priority - blocks other bugs)
+        // --- Bad word bug (highest priority - blocks other bugs) ---
         if (isBadWordActive)
         {
+            // If the bad-word period ended naturally, restore everything and clear typed input once
             if (currentTime >= badWordEndTime)
             {
                 isBadWordActive = false;
 
-                //clear the current typed word
-                typedTextDisplay.text = "";
+                // FULL clear (internal + UI)
+                typedWord = "";
+                UpdateTypedDisplay();
 
-                // Restore original target word
+                // Restore original target word and UI state
                 targetWord = originalTargetWord;
                 wordSpawner.RestoreTargetWord(originalTargetWord);
                 Debug.Log("Bad word ended! Restored to: " + targetWord);
-                // Schedule next bad word
-                nextBadWordTime = currentTime + Random.Range(20f, 60f);
-            }
-            return; // Skip other bugs while bad word is active
-        }
-        else if (currentTime >= nextBadWordTime)
-        {
-            isBadWordActive = true;
-            if (isLagging || isKeyboardRemapped)
-            {
-                // If other bugs are active, disable those bugs before activating bad word
-                isLagging = false;
-                isKeyboardRemapped = false;
-            }
-            //clear the current typed word
-            typedTextDisplay.text = "";
 
-            badWordEndTime = currentTime + Random.Range(10f, 22f);
-            originalTargetWord = targetWord; // Store the real target word
-            targetWord = badWords[Random.Range(0, badWords.Length)];
-            wordSpawner.SetBadWord(targetWord);
-            Debug.Log("Bad word activated: " + targetWord + " for " + (badWordEndTime - currentTime) + " seconds!");
+                // Schedule next bad word
+                nextBadWordTime = currentTime + Random.Range(20f, 40f);
+            }
+
+            // While a bad word is active, skip other bugs.
             return;
         }
 
-        // Handle lag bug
+        // Time to activate a bad word
+        if (currentTime >= nextBadWordTime)
+        {
+            isBadWordActive = true;
+
+            // Cancel other bugs before bad word starts
+            if (isLagging || isKeyboardRemapped)
+            {
+                isLagging = false;
+                isKeyboardRemapped = false;
+            }
+
+            // FULL clear once, when the bad word *appears*
+            typedWord = "";
+            UpdateTypedDisplay();
+
+            badWordEndTime = currentTime + Random.Range(10f, 22f);
+            originalTargetWord = targetWord; // store the real word
+            targetWord = badWords[Random.Range(0, badWords.Length)];
+            wordSpawner.SetBadWord(targetWord);
+            Debug.Log($"Bad word activated: {targetWord} for {badWordEndTime - currentTime} seconds!");
+
+            // skip other bug handling this frame
+            return;
+        }
+
+        // --- Lag bug ---
         if (isLagging)
         {
             if (currentTime >= lagEndTime)
@@ -167,7 +189,7 @@ public class TypingGameManager : MonoBehaviour
                 isLagging = false;
                 Debug.Log("Lag ended!");
                 // Schedule next lag
-                nextLagTime = currentTime + Random.Range(10f, 30f);
+                nextLagTime = currentTime + Random.Range(10f, 20f);
             }
         }
         else if (currentTime >= nextLagTime)
@@ -177,7 +199,7 @@ public class TypingGameManager : MonoBehaviour
             Debug.Log("Lag started for " + (lagEndTime - currentTime) + " seconds!");
         }
 
-        // Handle keyboard remap bug
+        // --- Keyboard remap bug ---
         if (isKeyboardRemapped)
         {
             if (currentTime >= remapEndTime)
@@ -185,7 +207,7 @@ public class TypingGameManager : MonoBehaviour
                 isKeyboardRemapped = false;
                 Debug.Log("Keyboard mapping returned to normal!");
                 // Schedule next remap
-                nextRemapTime = currentTime + Random.Range(15f, 45f);
+                nextRemapTime = currentTime + Random.Range(25f, 35f);
             }
         }
         else if (currentTime >= nextRemapTime)
@@ -196,10 +218,34 @@ public class TypingGameManager : MonoBehaviour
         }
     }
 
+
     void HandleTyping()
     {
         // Skip input processing if lagging or not active
         if (isLagging || !gameActive) return;
+
+        // If intro is showing, only dismiss it when there's a printable keypress.
+        // (This ignores pure backspace/enter presses so the intro isn't removed by accident.)
+        if (introActive && Input.inputString.Length > 0)
+        {
+            bool hasPrintable = false;
+            foreach (char cCheck in Input.inputString)
+            {
+                if (cCheck != '\b' && cCheck != '\n' && cCheck != '\r')
+                {
+                    hasPrintable = true;
+                    break;
+                }
+            }
+
+            if (hasPrintable)
+            {
+                introActive = false;
+                typedWord = ""; // ensure no leftovers
+                UpdateTypedDisplay(); // now will render typedWord + cursor
+                                      // continue — the upcoming foreach will process the characters
+            }
+        }
 
         foreach (char raw in Input.inputString)
         {
@@ -252,6 +298,7 @@ public class TypingGameManager : MonoBehaviour
             }
         }
     }
+
 
     void UpdateTimer()
     {
