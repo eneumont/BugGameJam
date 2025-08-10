@@ -993,10 +993,21 @@ MonoBehaviour:
   wordBubblePrefab: {fileID: 1643661062336107197, guid: e533b7db5499c5542b9eccda7f57085f, type: 3}
   spawnArea: {fileID: 265908744}
   wordList:
-  - Test
-  - words
-  - are
-  - working!
+  - The
+  - office
+  - inventory
+  - was
+  - checked,
+  - and
+  - all
+  - staplers
+  - were
+  - accounted
+  - for.
+  - With
+  - no
+  - discrepancies
+  - found.
 --- !u!1 &2104827105
 GameObject:
   m_ObjectHideFlags: 0
