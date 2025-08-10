@@ -59,6 +59,7 @@ public class MazeObstacle : MonoBehaviour {
 
 	IEnumerator interaction(float time) {
 		yield return new WaitForSeconds(time);
-		talkText.transform.parent.gameObject.SetActive(true);
+		talkText.transform.parent.gameObject.SetActive(false);
+		if (!person) Destroy(gameObject);
 	}
 }
