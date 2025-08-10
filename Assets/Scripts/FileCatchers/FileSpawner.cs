@@ -3,8 +3,11 @@ using UnityEngine;
 public class FileSpawner : MonoBehaviour
 {
     [Header("File Prefabs")]
-    public GameObject goodFilePrefab;
-    public GameObject badFilePrefab;
+    public GameObject filePrefab; // Use one prefab for both, set sprite via FileData
+
+    [Header("Sprites")]
+    public Sprite goodFileSprite;
+    public Sprite badFileSprite;
 
     [Header("Spawn Settings")]
     public float spawnInterval = 1f;
@@ -28,13 +31,26 @@ public class FileSpawner : MonoBehaviour
     {
         // Decide if this file is good or bad
         bool isGoodFile = Random.value < goodFileChance;
-        GameObject prefabToSpawn = isGoodFile ? goodFilePrefab : badFilePrefab;
 
         // Pick a random spawn position
         Vector3 spawnPos = new Vector3(Random.Range(minX, maxX), spawnY, 0f);
 
         // Create the file
-        GameObject file = Instantiate(prefabToSpawn, spawnPos, Quaternion.identity);
+        GameObject file = Instantiate(filePrefab, spawnPos, Quaternion.identity);
+
+        // Assign FileData properties
+        FileData fileData = file.GetComponent<FileData>();
+        if (fileData != null)
+        {
+            fileData.isGoodFile = isGoodFile;
+
+            // Change sprite based on type
+            SpriteRenderer sr = file.GetComponent<SpriteRenderer>();
+            if (sr != null)
+            {
+                sr.sprite = isGoodFile ? goodFileSprite : badFileSprite;
+            }
+        }
 
         // Assign a random fall speed
         float speed = Random.Range(minFallSpeed, maxFallSpeed);
@@ -47,15 +63,10 @@ public class FileSpawner : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        // Set gizmo color
         Gizmos.color = Color.yellow;
-
-        // Draw the spawn line in the scene view
         Vector3 leftPoint = new Vector3(minX, spawnY, 0f);
         Vector3 rightPoint = new Vector3(maxX, spawnY, 0f);
         Gizmos.DrawLine(leftPoint, rightPoint);
-
-        // Draw small markers at the ends
         Gizmos.DrawSphere(leftPoint, 0.1f);
         Gizmos.DrawSphere(rightPoint, 0.1f);
     }

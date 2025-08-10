@@ -11,6 +11,9 @@ public class Character2DMovement : MonoBehaviour
     private Animator animator;
     private float moveInput;
 
+    // Reverse control flag
+    private bool reverseControls = false;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -25,6 +28,10 @@ public class Character2DMovement : MonoBehaviour
     {
         // Get input
         moveInput = Input.GetAxisRaw("Horizontal"); // -1, 0, 1
+
+        // Reverse if enabled
+        if (reverseControls)
+            moveInput *= -1;
 
         // Update animator
         animator.SetFloat("Speed", Mathf.Abs(moveInput)); // Use Speed in Animator
@@ -43,5 +50,15 @@ public class Character2DMovement : MonoBehaviour
             scale.x = Mathf.Sign(moveInput) * Mathf.Abs(scale.x);
             transform.localScale = scale;
         }
+    }
+
+    // Public method to toggle reverse controls
+    public void SetReverseControls(bool state)
+    {
+        reverseControls = state;
+    }
+    public void IncreaseSpeed(int incrementor) 
+    {
+        moveSpeed += incrementor;
     }
 }

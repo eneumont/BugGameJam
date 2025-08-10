@@ -1,19 +1,22 @@
 using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider2D))]
 public class BottomFileCatcher : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D other)
+    [SerializeField] private WarningUIManager warningUI; // Drag your LifeSystem object in the Inspector
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.CompareTag("BadFile"))
+        FileData fileData = collision.GetComponent<FileData>(); // Assume FileData has info if it's good or bad
+
+        if (fileData != null)
         {
-            Debug.Log("Bad file destroyed at bottom.");
-            Destroy(other.gameObject);
-        }
-        else if (other.CompareTag("GoodFile"))
-        {
-            Debug.Log("You lose a life! Missed a good file.");
-            Destroy(other.gameObject);
+            if (fileData.isGoodFile)
+            {
+                Debug.Log("Warning");
+                warningUI.AddWarning();
+            }
+
+            Destroy(collision.gameObject); // Destroy the file in all cases
         }
     }
 }
