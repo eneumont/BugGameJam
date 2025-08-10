@@ -888,7 +888,7 @@ MonoBehaviour:
   timerDisplay: {fileID: 2104827107}
   warningsDisplay: {fileID: 574087738}
   finalTypedSentence: {fileID: 2134688516}
-  wordTime: 60
+  wordTime: 30
   introMessage: Begin Typing Whenever
 --- !u!4 &899667150
 Transform:
