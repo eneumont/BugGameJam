@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class CollectStapler : MonoBehaviour
@@ -21,36 +22,11 @@ public class CollectStapler : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            playerInRange = true;
-            playerInput = other.GetComponent<PlayerInput>();
-            if (playerInput != null)
+            // Replace this with your actual check for paper game completion
+            if (GameProgress.hasCompletedPaperGame)
             {
-                playerInput.actions["Interact"].performed += OnInteractPerformed;
+                SceneManager.LoadScene("SampleScene");
             }
-            Debug.Log("Press Interact to collect stapler.");
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            playerInRange = false;
-            if (playerInput != null)
-            {
-                playerInput.actions["Interact"].performed -= OnInteractPerformed;
-                playerInput = null;
-            }
-        }
-    }
-
-    private void OnInteractPerformed(UnityEngine.InputSystem.InputAction.CallbackContext context)
-    {
-        if (playerInRange)
-        {
-            GameProgress.hasProgressed += 1;
-            Debug.Log("Stapler collected! Progress increased to: " + GameProgress.hasProgressed);
-            Destroy(gameObject);  // Optional: remove this object after collecting
         }
     }
 }
