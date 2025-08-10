@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -38,7 +39,9 @@ public class TalkingController : MonoBehaviour
 
 	public float letterDelay = 0.05f;
 
-	private Dictionary<string, TMP_FontAsset> MessagesAndFonts = new Dictionary<string, TMP_FontAsset>();
+    public event Action OnTextEnded;
+
+    private Dictionary<string, TMP_FontAsset> MessagesAndFonts = new Dictionary<string, TMP_FontAsset>();
 
 	private int MessageIndex = 0;
 
@@ -96,9 +99,11 @@ public class TalkingController : MonoBehaviour
 		group.alpha = 0f;
 		done = true;
 		MessageIndex = 0;
-	}
 
-	private IEnumerator UpdateMessage(int index)
+        OnTextEnded?.Invoke();
+    }
+
+    private IEnumerator UpdateMessage(int index)
 	{
 		if (index >= messages.Length)
 		{
@@ -114,7 +119,7 @@ public class TalkingController : MonoBehaviour
 			TalkingText.text = currentMessage;
 
 			soundLoopTimer -= Time.deltaTime;
-			if (soundLoopTimer <= 0 && loopAudio && talkingSound)
+			if (soundLoopTimer <= 0 && loopAudio && talkingSound) 
 			{
 				soundLoopTimer = soundLoopTime;
 				talkSource.Play();
