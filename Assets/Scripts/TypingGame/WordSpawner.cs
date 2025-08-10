@@ -116,4 +116,23 @@ public class WordSpawner : MonoBehaviour
     {
         return spawnedBubbles.Count > 0;
     }
+
+    // Methods for bad word system
+    public void SetBadWord(string badWord)
+    {
+        if (targetBubble != null)
+        {
+            targetBubble.SetWord(badWord);
+            targetBubble.wordText.color = Color.red; // Make it obviously different
+        }
+    }
+
+    public void RestoreTargetWord(string originalWord)
+    {
+        if (targetBubble != null)
+        {
+            targetBubble.SetWord(originalWord);
+            targetBubble.wordText.color = Color.yellow; // Restore target color
+        }
+    }
 }

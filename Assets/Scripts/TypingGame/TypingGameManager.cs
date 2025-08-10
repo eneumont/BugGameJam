@@ -34,6 +34,13 @@ public class TypingGameManager : MonoBehaviour
     private float nextLagTime = 0f;
     private float nextRemapTime = 0f;
 
+    // Bad word system
+    private bool isBadWordActive = false;
+    private float badWordEndTime = 0f;
+    private float nextBadWordTime = 0f;
+    private string originalTargetWord = "";
+    private string[] badWords = { "poopyhead", "BHE", "quiter!", "BigMeanie", "buttsniffer", "UGLY", "mmDrugs", "fThisJob" };
+
     // Cursor blinking
     private bool showCursor = true;
     private float cursorBlinkTime = 0f;
@@ -60,6 +67,7 @@ public class TypingGameManager : MonoBehaviour
         // Initialize bug timers
         nextLagTime = Time.time + Random.Range(10f, 20f);
         nextRemapTime = Time.time + Random.Range(15f, 25f);
+        nextBadWordTime = Time.time + Random.Range(20f, 40f);
     }
 
     IEnumerator InitializeGame()
@@ -112,6 +120,45 @@ public class TypingGameManager : MonoBehaviour
     {
         float currentTime = Time.time;
 
+        // Handle bad word bug (highest priority - blocks other bugs)
+        if (isBadWordActive)
+        {
+            if (currentTime >= badWordEndTime)
+            {
+                isBadWordActive = false;
+
+                //clear the current typed word
+                typedTextDisplay.text = "";
+
+                // Restore original target word
+                targetWord = originalTargetWord;
+                wordSpawner.RestoreTargetWord(originalTargetWord);
+                Debug.Log("Bad word ended! Restored to: " + targetWord);
+                // Schedule next bad word
+                nextBadWordTime = currentTime + Random.Range(20f, 60f);
+            }
+            return; // Skip other bugs while bad word is active
+        }
+        else if (currentTime >= nextBadWordTime)
+        {
+            isBadWordActive = true;
+            if (isLagging || isKeyboardRemapped)
+            {
+                // If other bugs are active, disable those bugs before activating bad word
+                isLagging = false;
+                isKeyboardRemapped = false;
+            }
+            //clear the current typed word
+            typedTextDisplay.text = "";
+
+            badWordEndTime = currentTime + Random.Range(10f, 22f);
+            originalTargetWord = targetWord; // Store the real target word
+            targetWord = badWords[Random.Range(0, badWords.Length)];
+            wordSpawner.SetBadWord(targetWord);
+            Debug.Log("Bad word activated: " + targetWord + " for " + (badWordEndTime - currentTime) + " seconds!");
+            return;
+        }
+
         // Handle lag bug
         if (isLagging)
         {
@@ -126,7 +173,7 @@ public class TypingGameManager : MonoBehaviour
         else if (currentTime >= nextLagTime)
         {
             isLagging = true;
-            lagEndTime = currentTime + Random.Range(0.5f, 2f);
+            lagEndTime = currentTime + Random.Range(2f, 5f);
             Debug.Log("Lag started for " + (lagEndTime - currentTime) + " seconds!");
         }
 
@@ -144,7 +191,7 @@ public class TypingGameManager : MonoBehaviour
         else if (currentTime >= nextRemapTime)
         {
             isKeyboardRemapped = true;
-            remapEndTime = currentTime + Random.Range(10f, 15f);
+            remapEndTime = currentTime + Random.Range(12f, 18f);
             Debug.Log("Keyboard remapped to alphabetical for " + (remapEndTime - currentTime) + " seconds!");
         }
     }
@@ -185,8 +232,17 @@ public class TypingGameManager : MonoBehaviour
             // Compare case-insensitively
             if (string.Equals(typedWord, targetWord, System.StringComparison.OrdinalIgnoreCase))
             {
-                OnSuccess();
-                return;
+                // Check if this was a bad word
+                if (isBadWordActive)
+                {
+                    OnBadWordTyped();
+                    return;
+                }
+                else
+                {
+                    OnSuccess();
+                    return;
+                }
             }
 
             if (typedWord.Length >= targetWord.Length && !string.Equals(typedWord, targetWord, System.StringComparison.OrdinalIgnoreCase))
@@ -262,6 +318,30 @@ public class TypingGameManager : MonoBehaviour
             }
         }
         finalTypedSentence.text = displaySentence;
+    }
+
+    void OnBadWordTyped()
+    {
+        warnings++;
+        warningsDisplay.text = "Warnings: " + warnings;
+        Debug.Log("Player typed bad word! Warning given. Total warnings: " + warnings);
+
+        // Clear typed text and reset
+        typedWord = "";
+        UpdateTypedDisplay();
+
+        // End the bad word period immediately
+        isBadWordActive = false;
+        targetWord = originalTargetWord;
+        wordSpawner.RestoreTargetWord(originalTargetWord);
+
+        // Schedule next bad word for later
+        nextBadWordTime = Time.time + Random.Range(20f, 60f);
+
+        if (warnings >= 3)
+        {
+            StartCoroutine(TalkToBoss());
+        }
     }
 
     void OnFail()
