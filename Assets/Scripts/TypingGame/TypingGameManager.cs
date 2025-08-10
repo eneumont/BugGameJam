@@ -136,6 +136,9 @@ public class TypingGameManager : MonoBehaviour
             // If the bad-word period ended naturally, restore everything and clear typed input once
             if (currentTime >= badWordEndTime)
             {
+                // Reset timers when bad word ends naturally
+                ResetLagAndRemapTimers();
+
                 isBadWordActive = false;
 
                 // FULL clear (internal + UI)
@@ -148,7 +151,7 @@ public class TypingGameManager : MonoBehaviour
                 Debug.Log("Bad word ended! Restored to: " + targetWord);
 
                 // Schedule next bad word
-                nextBadWordTime = currentTime + Random.Range(20f, 40f);
+                nextBadWordTime = currentTime + Random.Range(20f, 30f);
             }
 
             // While a bad word is active, skip other bugs.
@@ -189,13 +192,13 @@ public class TypingGameManager : MonoBehaviour
                 isLagging = false;
                 Debug.Log("Lag ended!");
                 // Schedule next lag
-                nextLagTime = currentTime + Random.Range(10f, 20f);
+                nextLagTime = currentTime + Random.Range(7.126f, 11.479f);
             }
         }
         else if (currentTime >= nextLagTime)
         {
             isLagging = true;
-            lagEndTime = currentTime + Random.Range(2f, 5f);
+            lagEndTime = currentTime + Random.Range(3f, 5f);
             Debug.Log("Lag started for " + (lagEndTime - currentTime) + " seconds!");
         }
 
@@ -207,7 +210,7 @@ public class TypingGameManager : MonoBehaviour
                 isKeyboardRemapped = false;
                 Debug.Log("Keyboard mapping returned to normal!");
                 // Schedule next remap
-                nextRemapTime = currentTime + Random.Range(25f, 35f);
+                nextRemapTime = currentTime + Random.Range(30f, 40f);
             }
         }
         else if (currentTime >= nextRemapTime)
@@ -218,6 +221,16 @@ public class TypingGameManager : MonoBehaviour
         }
     }
 
+    // Add this helper method somewhere in TypingGameManager
+    private void ResetLagAndRemapTimers()
+    {
+        isLagging = false;
+        isKeyboardRemapped = false;
+        lagEndTime = 0f;
+        remapEndTime = 0f;
+        nextLagTime = Time.time + Random.Range(4.126f, 7.479f);
+        nextRemapTime = Time.time + Random.Range(20f, 30f);
+    }
 
     void HandleTyping()
     {
@@ -377,6 +390,10 @@ public class TypingGameManager : MonoBehaviour
         typedWord = "";
         UpdateTypedDisplay();
 
+        // Reset timers when bad word ends by typing
+        ResetLagAndRemapTimers();
+
+
         // End the bad word period immediately
         isBadWordActive = false;
         targetWord = originalTargetWord;
@@ -393,23 +410,56 @@ public class TypingGameManager : MonoBehaviour
 
     void OnFail()
     {
+        // Handle bad words first
+        if (isBadWordActive)
+        {
+            // Restore original target word before completion
+            targetWord = originalTargetWord;
+            isBadWordActive = false;
+
+            // Reset lag/remap timers
+            ResetLagAndRemapTimers();
+
+            // Also clear typed word
+            typedWord = "";
+            UpdateTypedDisplay();
+        }
+
+        // Now complete the current (restored if needed) word
+        int originalIndex = wordSpawner.GetTargetWordIndex();
+        completedWords[originalIndex] = targetWord;
+        BuildSentenceDisplay();
+        wordSpawner.RemoveTargetBubble();
+
+        // Reset timer
+        timer = wordTime;
+
+        // Give warning
         warnings++;
         warningsDisplay.text = "Warnings: " + warnings;
-        typedWord = "";
-        UpdateTypedDisplay();
-        timer = wordTime;
 
         if (warnings >= 3)
         {
             StartCoroutine(TalkToBoss());
+            return;
         }
-        else
+
+        // Move to next word if any left
+        if (wordSpawner.HasWordsRemaining())
         {
-            // Stay on a random word - they need to complete one
             wordSpawner.PickTargetBubble();
             targetWord = wordSpawner.GetTargetWord();
         }
+        else
+        {
+            string finalSentence = string.Join(" ", completedWords);
+            Debug.Log("Report completed: " + finalSentence);
+            gameActive = false;
+            typedTextDisplay.text = "REPORT COMPLETE!";
+        }
     }
+
+
 
     IEnumerator TalkToBoss()
     {

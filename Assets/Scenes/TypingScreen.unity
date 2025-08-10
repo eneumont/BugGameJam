@@ -888,7 +888,7 @@ MonoBehaviour:
   timerDisplay: {fileID: 2104827107}
   warningsDisplay: {fileID: 574087738}
   finalTypedSentence: {fileID: 2134688516}
-  wordTime: 60
+  wordTime: 30
   introMessage: Begin Typing Whenever
 --- !u!4 &899667150
 Transform:
@@ -1075,23 +1075,24 @@ MonoBehaviour:
   - inventory
   - was
   - checked,
-  - and
+  - moreover
   - all
   - staplers
   - were
   - accounted
   - for.
-  - With
-  - no
-  - discrepancies
-  - found.
-  - Although
+  - Completed
+  - with
+  - minimal
+  - discrepancies,
+  - although
   - requests
   - for
   - stapler
   - aquisition
   - have
   - been
+  - expressly
   - noted.
 --- !u!1 &2104827105
 GameObject:
@@ -1287,7 +1288,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: _____ _____ _____ _____ _____ _____ _____ _____ _____ _____ _____ _____
-    _____ _____ _____ _____ _____ _____ _____ _____ _____ _____ _____
+    _____ _____ _____ _____ _____ _____ _____ _____ _____ _____ _____ _____
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -1,0 +1,4511 @@
+fileFormatVersion: 2
+guid: 95e2c00ecdf4e4b4bb0fd6cf74aefa56
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5312291401442870638
+    second: Modern_Office_16x16_0
+  - first:
+      213: 1662309241352751330
+    second: Modern_Office_16x16_1
+  - first:
+      213: 2879724205075969011
+    second: Modern_Office_16x16_2
+  - first:
+      213: -768876441694183520
+    second: Modern_Office_16x16_3
+  - first:
+      213: 3206424189011737725
+    second: Modern_Office_16x16_4
+  - first:
+      213: 1087152777847543617
+    second: Modern_Office_16x16_5
+  - first:
+      213: -4006890951732422609
+    second: Modern_Office_16x16_6
+  - first:
+      213: 6825127606343594312
+    second: Modern_Office_16x16_7
+  - first:
+      213: -6044461259981809856
+    second: Modern_Office_16x16_8
+  - first:
+      213: -7068835369886288473
+    second: Modern_Office_16x16_9
+  - first:
+      213: -151579987870605222
+    second: Modern_Office_16x16_10
+  - first:
+      213: 1258224528962501732
+    second: Modern_Office_16x16_11
+  - first:
+      213: -2748095492142105243
+    second: Modern_Office_16x16_12
+  - first:
+      213: -5610556331587274885
+    second: Modern_Office_16x16_13
+  - first:
+      213: -4186789095805155933
+    second: Modern_Office_16x16_14
+  - first:
+      213: -9045483982914915205
+    second: Modern_Office_16x16_15
+  - first:
+      213: -3324155207918398644
+    second: Modern_Office_16x16_16
+  - first:
+      213: 8934925735478491085
+    second: Modern_Office_16x16_17
+  - first:
+      213: -6596983468864208852
+    second: Modern_Office_16x16_18
+  - first:
+      213: 7624477886999723865
+    second: Modern_Office_16x16_19
+  - first:
+      213: 1440378010997882261
+    second: Modern_Office_16x16_20
+  - first:
+      213: -3406716764872460258
+    second: Modern_Office_16x16_21
+  - first:
+      213: 1342619781676615545
+    second: Modern_Office_16x16_22
+  - first:
+      213: 1761250843782299158
+    second: Modern_Office_16x16_23
+  - first:
+      213: -1836081701551452021
+    second: Modern_Office_16x16_24
+  - first:
+      213: -299783110847308477
+    second: Modern_Office_16x16_25
+  - first:
+      213: 7670349760312568710
+    second: Modern_Office_16x16_26
+  - first:
+      213: -2485762333337451330
+    second: Modern_Office_16x16_27
+  - first:
+      213: -1412860834183482108
+    second: Modern_Office_16x16_28
+  - first:
+      213: -5397640548427345943
+    second: Modern_Office_16x16_29
+  - first:
+      213: 42332435757707535
+    second: Modern_Office_16x16_30
+  - first:
+      213: -1599218935186487129
+    second: Modern_Office_16x16_31
+  - first:
+      213: 1672236004195534118
+    second: Modern_Office_16x16_32
+  - first:
+      213: -3121269602887902144
+    second: Modern_Office_16x16_33
+  - first:
+      213: 15107383601667147
+    second: Modern_Office_16x16_34
+  - first:
+      213: 40373973979575940
+    second: Modern_Office_16x16_35
+  - first:
+      213: -5104087924208274451
+    second: Modern_Office_16x16_36
+  - first:
+      213: 114787582781047552
+    second: Modern_Office_16x16_37
+  - first:
+      213: -1744495139458323768
+    second: Modern_Office_16x16_38
+  - first:
+      213: -130891901427496186
+    second: Modern_Office_16x16_39
+  - first:
+      213: -3418392065152947969
+    second: Modern_Office_16x16_40
+  - first:
+      213: -8985053945317986810
+    second: Modern_Office_16x16_41
+  - first:
+      213: 1856519857124910674
+    second: Modern_Office_16x16_42
+  - first:
+      213: -5161376266868592492
+    second: Modern_Office_16x16_43
+  - first:
+      213: -2865119966496823199
+    second: Modern_Office_16x16_44
+  - first:
+      213: 1116538305069304550
+    second: Modern_Office_16x16_45
+  - first:
+      213: 3657281767485218758
+    second: Modern_Office_16x16_46
+  - first:
+      213: -2785955178193841958
+    second: Modern_Office_16x16_47
+  - first:
+      213: -6009658854784692739
+    second: Modern_Office_16x16_48
+  - first:
+      213: 3560337800506604543
+    second: Modern_Office_16x16_49
+  - first:
+      213: 5463255490487077135
+    second: Modern_Office_16x16_50
+  - first:
+      213: -536093114500835134
+    second: Modern_Office_16x16_51
+  - first:
+      213: 6484735436050710717
+    second: Modern_Office_16x16_52
+  - first:
+      213: 8566834786941717733
+    second: Modern_Office_16x16_53
+  - first:
+      213: -5966377871212652515
+    second: Modern_Office_16x16_54
+  - first:
+      213: 5467173516515407675
+    second: Modern_Office_16x16_55
+  - first:
+      213: -8230957157018645836
+    second: Modern_Office_16x16_56
+  - first:
+      213: 6458108573921926950
+    second: Modern_Office_16x16_57
+  - first:
+      213: 7350274363428357394
+    second: Modern_Office_16x16_58
+  - first:
+      213: 2607567566891143039
+    second: Modern_Office_16x16_59
+  - first:
+      213: -4649721870615595664
+    second: Modern_Office_16x16_60
+  - first:
+      213: -1474082918933904704
+    second: Modern_Office_16x16_61
+  - first:
+      213: -8351840054800940953
+    second: Modern_Office_16x16_62
+  - first:
+      213: 6344047029236614299
+    second: Modern_Office_16x16_63
+  - first:
+      213: 4389201757382351622
+    second: Modern_Office_16x16_64
+  - first:
+      213: 1720636992036120447
+    second: Modern_Office_16x16_65
+  - first:
+      213: 7634236705602316445
+    second: Modern_Office_16x16_66
+  - first:
+      213: 4172522323896742288
+    second: Modern_Office_16x16_67
+  - first:
+      213: 2749615355649495488
+    second: Modern_Office_16x16_68
+  - first:
+      213: 7333084454808700774
+    second: Modern_Office_16x16_69
+  - first:
+      213: 2905030628716274665
+    second: Modern_Office_16x16_70
+  - first:
+      213: 4717272866570270231
+    second: Modern_Office_16x16_71
+  - first:
+      213: 490115201501378404
+    second: Modern_Office_16x16_72
+  - first:
+      213: 5028828076711822518
+    second: Modern_Office_16x16_73
+  - first:
+      213: -8905721099043990268
+    second: Modern_Office_16x16_74
+  - first:
+      213: 3951529703654842670
+    second: Modern_Office_16x16_75
+  - first:
+      213: 1365169044670377058
+    second: Modern_Office_16x16_76
+  - first:
+      213: -5892143416383357273
+    second: Modern_Office_16x16_77
+  - first:
+      213: 7012607585679992812
+    second: Modern_Office_16x16_78
+  - first:
+      213: 163586772080302147
+    second: Modern_Office_16x16_79
+  - first:
+      213: 1580471987933864068
+    second: Modern_Office_16x16_80
+  - first:
+      213: 4833009201297137981
+    second: Modern_Office_16x16_81
+  - first:
+      213: 1142126614223803086
+    second: Modern_Office_16x16_82
+  - first:
+      213: 3875200029749984761
+    second: Modern_Office_16x16_83
+  - first:
+      213: -8783820812340231122
+    second: Modern_Office_16x16_84
+  - first:
+      213: 782622029512542415
+    second: Modern_Office_16x16_85
+  - first:
+      213: 8814872234969615676
+    second: Modern_Office_16x16_86
+  - first:
+      213: -8394555596144760358
+    second: Modern_Office_16x16_87
+  - first:
+      213: 5537055772328247407
+    second: Modern_Office_16x16_88
+  - first:
+      213: -1622642665724083754
+    second: Modern_Office_16x16_89
+  - first:
+      213: -4986326150833038241
+    second: Modern_Office_16x16_90
+  - first:
+      213: -4110900970544958665
+    second: Modern_Office_16x16_91
+  - first:
+      213: 582705030675806640
+    second: Modern_Office_16x16_92
+  - first:
+      213: 1878008392512497444
+    second: Modern_Office_16x16_93
+  - first:
+      213: 8337582988844533424
+    second: Modern_Office_16x16_94
+  - first:
+      213: 7381461156712521695
+    second: Modern_Office_16x16_95
+  - first:
+      213: 5552767062233453411
+    second: Modern_Office_16x16_96
+  - first:
+      213: -6221016186733944963
+    second: Modern_Office_16x16_97
+  - first:
+      213: -3224501890537568135
+    second: Modern_Office_16x16_98
+  - first:
+      213: 4736684770004721362
+    second: Modern_Office_16x16_99
+  - first:
+      213: -3133553508982843222
+    second: Modern_Office_16x16_100
+  - first:
+      213: -1418374197216680707
+    second: Modern_Office_16x16_101
+  - first:
+      213: 2377478597039385599
+    second: Modern_Office_16x16_102
+  - first:
+      213: -928493737954075757
+    second: Modern_Office_16x16_103
+  - first:
+      213: -8898504710708794204
+    second: Modern_Office_16x16_104
+  - first:
+      213: 2625473585784220389
+    second: Modern_Office_16x16_105
+  - first:
+      213: 4786909010666215813
+    second: Modern_Office_16x16_106
+  - first:
+      213: -1183215473706744497
+    second: Modern_Office_16x16_107
+  - first:
+      213: 7150920276888535982
+    second: Modern_Office_16x16_108
+  - first:
+      213: -7307498639400117310
+    second: Modern_Office_16x16_109
+  - first:
+      213: 4153365674708612060
+    second: Modern_Office_16x16_110
+  - first:
+      213: -2432148923969604836
+    second: Modern_Office_16x16_111
+  - first:
+      213: 845876272683793769
+    second: Modern_Office_16x16_112
+  - first:
+      213: -2392863407083007530
+    second: Modern_Office_16x16_113
+  - first:
+      213: -1240902085976148402
+    second: Modern_Office_16x16_114
+  - first:
+      213: -4748361082020942407
+    second: Modern_Office_16x16_115
+  - first:
+      213: -7850944354774080770
+    second: Modern_Office_16x16_116
+  - first:
+      213: -3418884643408515463
+    second: Modern_Office_16x16_117
+  - first:
+      213: 2593222474909590430
+    second: Modern_Office_16x16_118
+  - first:
+      213: 2239146643001696300
+    second: Modern_Office_16x16_119
+  - first:
+      213: -8503519254200933458
+    second: Modern_Office_16x16_120
+  - first:
+      213: 4313759079575485657
+    second: Modern_Office_16x16_121
+  - first:
+      213: -5684317257725263955
+    second: Modern_Office_16x16_122
+  - first:
+      213: 1658921258370721719
+    second: Modern_Office_16x16_123
+  - first:
+      213: 5960081371481649357
+    second: Modern_Office_16x16_124
+  - first:
+      213: -3940331230020359120
+    second: Modern_Office_16x16_125
+  - first:
+      213: -357070272285573104
+    second: Modern_Office_16x16_126
+  - first:
+      213: -5009450553545117541
+    second: Modern_Office_16x16_127
+  - first:
+      213: 2372568668539716490
+    second: Modern_Office_16x16_128
+  - first:
+      213: -4798543492862997408
+    second: Modern_Office_16x16_129
+  - first:
+      213: -6471179859246249437
+    second: Modern_Office_16x16_130
+  - first:
+      213: -4834720380087829404
+    second: Modern_Office_16x16_131
+  - first:
+      213: 4050802289338164568
+    second: Modern_Office_16x16_132
+  - first:
+      213: 2222948016301195800
+    second: Modern_Office_16x16_133
+  - first:
+      213: -2569653440936728519
+    second: Modern_Office_16x16_134
+  - first:
+      213: -6281348753537234467
+    second: Modern_Office_16x16_135
+  - first:
+      213: 3571546448427206322
+    second: Modern_Office_16x16_136
+  - first:
+      213: 4430535731908223867
+    second: Modern_Office_16x16_137
+  - first:
+      213: 4113174190927424793
+    second: Modern_Office_16x16_138
+  - first:
+      213: 7674532924659098706
+    second: Modern_Office_16x16_139
+  - first:
+      213: 1016180427562947673
+    second: Modern_Office_16x16_140
+  - first:
+      213: -6466971336530046762
+    second: Modern_Office_16x16_141
+  - first:
+      213: -6435171847018164731
+    second: Modern_Office_16x16_142
+  - first:
+      213: -1688821333814623394
+    second: Modern_Office_16x16_143
+  - first:
+      213: 40681801820890354
+    second: Modern_Office_16x16_144
+  - first:
+      213: -6064300061412278297
+    second: Modern_Office_16x16_145
+  - first:
+      213: -750284799188780138
+    second: Modern_Office_16x16_146
+  - first:
+      213: 5060007450789720818
+    second: Modern_Office_16x16_147
+  - first:
+      213: 7566044406514165297
+    second: Modern_Office_16x16_148
+  - first:
+      213: -7046002572338002618
+    second: Modern_Office_16x16_149
+  - first:
+      213: -768637813955779627
+    second: Modern_Office_16x16_150
+  - first:
+      213: 3204975323843620145
+    second: Modern_Office_16x16_151
+  - first:
+      213: -3478509560690919215
+    second: Modern_Office_16x16_152
+  - first:
+      213: 3401651207784302787
+    second: Modern_Office_16x16_153
+  - first:
+      213: 2615301199889285167
+    second: Modern_Office_16x16_154
+  - first:
+      213: -2021076737227572608
+    second: Modern_Office_16x16_155
+  - first:
+      213: 3243846067630054859
+    second: Modern_Office_16x16_156
+  - first:
+      213: -4125841783090540424
+    second: Modern_Office_16x16_157
+  - first:
+      213: -1720142417029264185
+    second: Modern_Office_16x16_158
+  - first:
+      213: -1094386652193186721
+    second: Modern_Office_16x16_159
+  - first:
+      213: 7284095919067317570
+    second: Modern_Office_16x16_160
+  - first:
+      213: 3066193194571767794
+    second: Modern_Office_16x16_161
+  - first:
+      213: -8367336154108305754
+    second: Modern_Office_16x16_162
+  - first:
+      213: 3724460541531552215
+    second: Modern_Office_16x16_163
+  - first:
+      213: 7683881692061350356
+    second: Modern_Office_16x16_164
+  - first:
+      213: 3732632770630457441
+    second: Modern_Office_16x16_165
+  - first:
+      213: 5917580921410556131
+    second: Modern_Office_16x16_166
+  - first:
+      213: -3676167717362314135
+    second: Modern_Office_16x16_167
+  - first:
+      213: 4356227883919238472
+    second: Modern_Office_16x16_168
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Modern_Office_16x16_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 788
+        width: 16
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96f6cb6ce4fac03479fde8e092308db7
+      internalID: -827401215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_1
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 800
+        width: 46
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e60352dc68d1424c915448dee283885
+      internalID: 1382741535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 788
+        width: 32
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b6a94a223e74e245a7b20b7c2f88b7b
+      internalID: -222080934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_3
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 800
+        width: 46
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c79ac722c7f2d874aad195d22fd193c2
+      internalID: -157801760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_4
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 788
+        width: 32
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b556bfaf13343048b10e0494cf5f966
+      internalID: -456774561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_5
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 800
+        width: 46
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be42da4e447231f47b99db703fa3181e
+      internalID: -1284963381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_6
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 788
+        width: 16
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80eb7b7898c62294d820a298bde3eaad
+      internalID: -2033939909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_7
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 823
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a358a0aeb4beca84a807884b2fa89b4a
+      internalID: 1193202129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_8
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 791
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 163c31fa12c722b48a54d7f59cc6f88d
+      internalID: 963912237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 724
+        width: 16
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae868e39143d8fb46ba812379ef55c6d
+      internalID: 1640360404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_10
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 736
+        width: 46
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46c1d8d8a9ce33143aa3933e300f26b4
+      internalID: -1224158190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_11
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 724
+        width: 32
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9d2cdd761552314baf1aa8f83baef0d
+      internalID: 600962000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_12
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 736
+        width: 46
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a294c3f70bcde4384fde9bd88f092e
+      internalID: -681924778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_13
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 720
+        width: 102
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2825b6edc6090244ca894b42fe18d2f9
+      internalID: 75083845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_14
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 698
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c69821ca9f1b9474da271233e46c2b8c
+      internalID: 183683250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_15
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 717
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6f374db719593a448ae6b40ef6f9ae9
+      internalID: 628915727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_16
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 717
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 411a631c3dc261a4bb70a44f48cea130
+      internalID: 1844774932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_17
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 704
+        width: 26
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de08fce9bb5377b429132bfdfa1b9d21
+      internalID: 1492519575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 690
+        width: 64
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3ad79bd16dd7ab4d86261e69cee7f02
+      internalID: -395311162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_19
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 692
+        width: 12
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b222aaa6b117554a97cbf0b28c4f68d
+      internalID: 984373682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_20
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 692
+        width: 12
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6c547dc3ba0eeb4c81db5da0468d429
+      internalID: 330536393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_21
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 694
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47be220c1387ac8468094d2576e9f607
+      internalID: -273959156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_22
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 695
+        width: 25
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2c49c20e3dea8a49beca55085005d1a
+      internalID: -555925428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_23
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 706
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e56c327a0cc61014b9b8100a15707d58
+      internalID: -1699594752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_24
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 688
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 665235507b74b354a9ca7b45995508c4
+      internalID: 1199373130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_25
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 699
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcaf1bb2e24ae544eafe96282654eba6
+      internalID: -129026087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_26
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 688
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87bbc18911f753a46aac6f5ed6a7bb55
+      internalID: -930879526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_27
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 688
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 102f56031635b484ebf2e40cfd86d97d
+      internalID: -1924136827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 658
+        width: 64
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4c1b65b067db5e48a34f14b32555821
+      internalID: -1198576567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_29
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 660
+        width: 12
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 958b463b52e1f3e46a249f1a1e726aa0
+      internalID: -988865617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_30
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 660
+        width: 12
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f4ff63ccec1cc942b99557eaf87cb7d
+      internalID: 516998248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_31
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 666
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5b837ee46a97d24b8c6452a07d28697
+      internalID: 567804026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_32
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 662
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33e5a69a46554a44a882201502c50d42
+      internalID: 1077949593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_33
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 662
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48a95639f5c821f47b44fca16ff8bc83
+      internalID: -1124157682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_34
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 658
+        width: 30
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbfa83362373d21409f83a474681efac
+      internalID: 1157106647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_35
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 674
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2219c0a84ceada541a52ec7606046640
+      internalID: 1478503419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_36
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 672
+        width: 26
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23dd404caf2c9854484cb6a6ca613cbd
+      internalID: 671803144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_37
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 659
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4133b82e82db33d47921f93a1c46b3e7
+      internalID: 27538158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_38
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 665
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26f384c67be23b242816182932a05e36
+      internalID: -568572852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_39
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 656
+        width: 26
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35f88105d570a2c47bee8f5ea844acb3
+      internalID: 88782683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_40
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 640
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86f6f386d80dd814986e5b1b74bd2ffd
+      internalID: 1489541167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_41
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 629
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5a79c787cd0e5b42bbc4dd7f5c76f7e
+      internalID: -1447563930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_42
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 636
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b558d5ee6cfc9747a4f32a43a1d4350
+      internalID: 91718504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_43
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 640
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56b61998c05ed794e932b7fcf45bd112
+      internalID: -1263079644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_44
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 640
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2cce4761d3019d419fae97b95ca7f37
+      internalID: -832714618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_45
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 640
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 809086ea1c09d0449bb9d66eb1b2d2c7
+      internalID: -320271961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_46
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 618
+        width: 12
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2e47a772a6edea47961b84387780b69
+      internalID: 1858419887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_47
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 618
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37ccb5aaaf115f9499a1183d5159221d
+      internalID: -1652124027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_48
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 626
+        width: 30
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddb20db3b046c8544afead917146bb2e
+      internalID: -62404671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_49
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 608
+        width: 27
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f64eaefc95b4b0b4fa0ee0e4679c1d91
+      internalID: -154737137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_50
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 640
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9983b1310f97a3f4c9001b10b36aba06
+      internalID: -661635086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_51
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 640
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 347390cd107f3bf4fb611a6ffbd7ab7a
+      internalID: -1416098590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_52
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 624
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b8778b61d335bf418dff01fd2bad1b4
+      internalID: -714198246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_53
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 624
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70cac572babb14c408a29671fff2e261
+      internalID: 1198598543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_54
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 624
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cb56410c1195c0448d8190b26bbec7f
+      internalID: 1051018592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_55
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 618
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13ef3789ed163934081dbfa0c1ef3f0f
+      internalID: 1308074375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_56
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 624
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a108b789b13fa284498f234c7f82d515
+      internalID: 706832730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_57
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 624
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81e8d633fc79a3d488ac80d0fdc9ba31
+      internalID: 167294200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_58
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 624
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b124b72c7975e0643815b100842afb87
+      internalID: 102801127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_59
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 608
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 226ecc0029fcb144cb4b21b7680c405a
+      internalID: 36007586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_60
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 594
+        width: 30
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f748cf425dc4164b83a85f77077b12f
+      internalID: -1593862137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_61
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 616
+        width: 11
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5706b5b071496f7448df699640fb2a06
+      internalID: -701736282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_62
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 616
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bc46e8581a796049ba9b4d7f30818eb
+      internalID: -55655934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_63
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 584
+        width: 112
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97b9525bc645f5d429d25cc174f9ada7
+      internalID: -554392772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_64
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 570
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb0eff71d1e5dde439157fc9068913fd
+      internalID: -613886180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_65
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 574
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f26277dfb80ad0048a2aca4f340bec4f
+      internalID: -1355389917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_66
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 590
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a65ffe8d696567b42a470dd26dd8cd3b
+      internalID: 1618004440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_67
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 570
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c64056bc112289a46aedf408485cf4c3
+      internalID: -1325131033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_68
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 584
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf41c6335ac06cb4eaad1d8e46c54a9a
+      internalID: -1908720421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_69
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 584
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52e2393de983a1a48b811060f84fda5e
+      internalID: 1309131840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_70
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 584
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7a59769bf6f950499f67dae36e44199
+      internalID: -257826301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_71
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 548
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aeaa887bc35e3849999fd3b768c0d07
+      internalID: -679583438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_72
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 534
+        width: 41
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa76bfb6981c62143b41c15101fb0e0f
+      internalID: 1102592397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_73
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 539
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd3eabe5643a5a5418292c7d6f054623
+      internalID: -425895002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_74
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 539
+        width: 25
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cc343109f37d524bbeb6798685b35bd
+      internalID: 1651610133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_75
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 558
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cef7b1c5a368173438d03c893ebc39f0
+      internalID: -591192758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_76
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 552
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90529e23d2b21df4da42aa40549d17f6
+      internalID: 1866902420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_77
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 552
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67c26056652fa2a4dade3fba9159e533
+      internalID: -732619912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_78
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 552
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44da60bbce29a2a4ba9eb62a536bd663
+      internalID: -1520393918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_79
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 516
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df9f3565fc750544096ec2677a3ba4a7
+      internalID: -2025270767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_80
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 530
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3205da048fc1daf4eab010ed6ad7ae8c
+      internalID: 562957791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_81
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 526
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfc17581ff4e5884188591d899cca979
+      internalID: 1414664788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_82
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 528
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 720057d8daa6810468a3027f7a12203f
+      internalID: -157196577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_83
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 528
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94ef02361824c354ea46c3f9481aa5da
+      internalID: 717132678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_84
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 484
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 444c4e947a0a18c468c58d3acce716b3
+      internalID: 869310641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_85
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 486
+        width: 41
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4ee5464e18685e44b41670f3c25bc1a
+      internalID: -1176627088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_86
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 507
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 301ef3179940b344e88e9bd5f539e5a1
+      internalID: -147162409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_87
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 507
+        width: 25
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48c63d5753b61c047b28a919d5aa2b83
+      internalID: 283403055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_88
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 498
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c7d1b592e06acf43957a9f89a40a4f3
+      internalID: -5761277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_89
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 494
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dca990f05dfda304386a9b2e2b226296
+      internalID: -199815567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_90
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 501
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a22d6b65ccfad3e46ba24f2e5dffdb06
+      internalID: -764934923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_91
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 500
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a33d82562d08ce4fb7f6030ea7fb589
+      internalID: -182242594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_92
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 475
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 583e57e27d214fd47b2b1684edc250dd
+      internalID: -548270005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_93
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 475
+        width: 25
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba2f880029cf4104da6226364eef5852
+      internalID: 757666752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_94
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 477
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0adb978fb608e0a428245585fc33c917
+      internalID: -990542042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_95
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 478
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 236db73155e2b904bb21bce9756bbd82
+      internalID: 1856814879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_96
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 476
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee689cf7bb4666f4f8112fecd23d56fd
+      internalID: 128120355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_97
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 462
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5678a636f5950e34887acaa220809cad
+      internalID: -475379052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_98
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 453
+        width: 22
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c5f97cc368c40545900f3ff2f88f299
+      internalID: 684441183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_99
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 468
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfce56fc6630de84bbb959f7d2524280
+      internalID: -1047737112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_100
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 441
+        width: 23
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c032dbe0d848c764ba00c4f34b8968be
+      internalID: 1509108938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_101
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 441
+        width: 23
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0f461e44e69a6b46b78b6e11099430f
+      internalID: 1494033111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_102
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 441
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 677e9dcffc421294a89d0043e28edbd2
+      internalID: -1237691995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_103
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 445
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bee4d10a8bdcdd743a9e6ca9fe75a037
+      internalID: -954110777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_104
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 446
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75f046aa9d90d394981998415073a93f
+      internalID: 1352976290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_105
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 444
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df8506b87ea10e049900c602956f0e42
+      internalID: -1808429078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_106
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 384
+        width: 99
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1aab96f0dd6c5d448f581fbf4b1ca13
+      internalID: -1361733943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_107
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 410
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9e37a23225c45245a6e6bf07e6ba42c
+      internalID: -420887147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_108
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 405
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44ce0a9f99446a749abf95ed9380d739
+      internalID: -2059541351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_109
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 407
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c24d220c3bdf3e49bb990a35d22b9f2
+      internalID: 847606948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_110
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 407
+        width: 26
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0749e7ed9d012f747adedf3521c1ac7b
+      internalID: -742164776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_111
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 411
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06fbbb764ecee374ab4df6e7ab403bff
+      internalID: 1953254796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_112
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 406
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dc8199cd5ec0ac4084c942a530f82b9
+      internalID: -1611127090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_113
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 368
+        width: 41
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32b5e2c9662bbe4488eafbc8a82e8621
+      internalID: -1508942485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_114
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 368
+        width: 41
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25a05159e4055b649a409948721516a1
+      internalID: -1705222082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_115
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 376
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3c72ab9ac357d244bead3eba55afaf1
+      internalID: 373626011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_116
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 375
+        width: 30
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87418932aa0c1bf42ab1886854ddc53b
+      internalID: -912937779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_117
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 336
+        width: 41
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e5925358906a7d4d8a3340b44725b7b
+      internalID: 241569561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_118
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 336
+        width: 41
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc755b239dfdb5c40a4a2a22e55cf28b
+      internalID: 1872556979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_119
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 336
+        width: 41
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16ab8ef7fc0a87542a5ef8800cfbee22
+      internalID: -297359752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_120
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 344
+        width: 37
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e87117dfd3c1dd42ab1490e6a6e157e
+      internalID: 1445990196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_121
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 352
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30c79d902a7234043be739835a33fcde
+      internalID: 632332143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_122
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 352
+        width: 28
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb42a91127ea57444a32e382e8004f9b
+      internalID: 1359750823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_123
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 336
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aad3973e2d4ac94db2f290d4b511460
+      internalID: 1435775725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_124
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 336
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 800dc65c208705040ad778c0b4e22b21
+      internalID: -932379759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_125
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 336
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7959b0688999e847bc8bdb90911a559
+      internalID: 1947826168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_126
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 312
+        width: 37
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 538e2f5ca093aaa42bb6a7ce10c37a3c
+      internalID: -207892760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_127
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 320
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4de9a95b585294f4dbbdba38755f00b8
+      internalID: 1695244519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_128
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 320
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86e430f64a449de4f82973bf11448549
+      internalID: -641846202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_129
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 320
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20da464e88314a443b09bc90922496a9
+      internalID: -1103006804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_130
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 143
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea0e5b198fbc58f40a0f219b21cf64cb
+      internalID: 1408074348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_131
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 276
+        width: 12
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0db15a9fc7cc4c743a8409043634eb37
+      internalID: 959543856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_132
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 279
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40c24de04c03075418f711eab4c5c965
+      internalID: -1197964490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_133
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 289
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 319549a01d6c849449df35c643b2e410
+      internalID: 2049433734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_134
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 252
+        width: 32
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7a879d78700bb541ba1f6a24c22c6e7
+      internalID: 279048674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_135
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 272
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d1e65bd6b4cb4249bf8c4b314c72cbf
+      internalID: -1069079073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_136
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 279
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a82f2017f226be478231fb68e25c7b1
+      internalID: 1428775735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_137
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 276
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 139ec1a4533a7a94e96f9d35890fee2f
+      internalID: 1217345958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_138
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 274
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 947d4bcddd9bd3a4c9d6162cd99ef8d2
+      internalID: 1844693721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_139
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 258
+        width: 5
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f874e95aa5c6ad419bae2ac869ea32d
+      internalID: -793692350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_140
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 256
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20fe901d7d3ec754d9dbf4f1f4a71460
+      internalID: 1623105707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_141
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 247
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83cd3c05cdb7a324cb3c52e6c8688068
+      internalID: 751901796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_142
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 246
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec10f38723507d04cab2dcf3f59fd98a
+      internalID: 1885046439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_143
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 201
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12b6b1109042e104e938f45b3db30eff
+      internalID: -849020143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_144
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 201
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 860abb6301904c54a8457bcf4dd2b238
+      internalID: -314693986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_145
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 201
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc124586702d69040b514632422cc260
+      internalID: 2092340807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_146
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 208
+        width: 26
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f75f86dc71c2e7468de88e86a74bf05
+      internalID: 2104147329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_147
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 160
+        width: 26
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa072aeb6a887fe4eb3ceda9c70d4a85
+      internalID: 156714191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_148
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 160
+        width: 26
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2f73cafc637e8849982eec0a37e0600
+      internalID: -689949784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_149
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 160
+        width: 26
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58ee322852250694ab32c1738ae43ec7
+      internalID: -1227230850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_150
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 176
+        width: 26
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84aa3fd60f20f5d4db3393222c729a01
+      internalID: 2117642819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_151
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 133
+        width: 12
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 779ac3c4cd091c445a1d6d760625b5e0
+      internalID: 1397972118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_152
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 133
+        width: 12
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e205cb7ad8b263428e09c106f17cd70
+      internalID: 2030782668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_153
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 144
+        width: 26
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eeb6ba8772dcd04b949bc0894dd67eb
+      internalID: -1722942264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_154
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 128
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2afeb6679ab58b842a293c604e561ac0
+      internalID: -394763211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_155
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 108
+        width: 32
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8845e599b67dca419fefe554d942c52
+      internalID: 319326052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_156
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 114
+        width: 5
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e6afdf5c6eb5c046b57e4fe32c153ea
+      internalID: 229030620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_157
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 103
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b73675d3f233a69418070d60e7519964
+      internalID: -1953064861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_158
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 102
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffb72d1da4cfbc947ae13901238a6333
+      internalID: 741260520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_159
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 104
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed4bbbb510872be4b8a66d6920991b54
+      internalID: 864394834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_160
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 71
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4130a051a500b28489c6ab2f4261919c
+      internalID: 1721663202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_161
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 71
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3603ebb5bf3f53a43a7a47ae88a793f5
+      internalID: 1189001515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_162
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 71
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 416c00923f7e1e040ab7b4766646397e
+      internalID: 269950793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_163
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 70
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc9edf2b01f28fe4093a0c90c9fdc757
+      internalID: -1950495577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_164
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 64
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 087d441b5828dd248a22f8ab20e0ffc6
+      internalID: -522182441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_165
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 39
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c9389a16f242a64d92023a9c3b8c8a6
+      internalID: -344591237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_166
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 39
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bca29669e8663349856cb2ce314602a
+      internalID: 523949064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_167
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 39
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb4d909cc2cf04742bcc8450bf4b79a8
+      internalID: 1571764922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Modern_Office_16x16_168
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 32
+        width: 31
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7a2a5e830320a948a72eea453ad8c66
+      internalID: -657895539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 360d00ee10ed7af46912533c825eedc5
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Modern_Office_16x16_0: -827401215
+      Modern_Office_16x16_1: 1382741535
+      Modern_Office_16x16_10: -1224158190
+      Modern_Office_16x16_100: 1509108938
+      Modern_Office_16x16_101: 1494033111
+      Modern_Office_16x16_102: -1237691995
+      Modern_Office_16x16_103: -954110777
+      Modern_Office_16x16_104: 1352976290
+      Modern_Office_16x16_105: -1808429078
+      Modern_Office_16x16_106: -1361733943
+      Modern_Office_16x16_107: -420887147
+      Modern_Office_16x16_108: -2059541351
+      Modern_Office_16x16_109: 847606948
+      Modern_Office_16x16_11: 600962000
+      Modern_Office_16x16_110: -742164776
+      Modern_Office_16x16_111: 1953254796
+      Modern_Office_16x16_112: -1611127090
+      Modern_Office_16x16_113: -1508942485
+      Modern_Office_16x16_114: -1705222082
+      Modern_Office_16x16_115: 373626011
+      Modern_Office_16x16_116: -912937779
+      Modern_Office_16x16_117: 241569561
+      Modern_Office_16x16_118: 1872556979
+      Modern_Office_16x16_119: -297359752
+      Modern_Office_16x16_12: -681924778
+      Modern_Office_16x16_120: 1445990196
+      Modern_Office_16x16_121: 632332143
+      Modern_Office_16x16_122: 1359750823
+      Modern_Office_16x16_123: 1435775725
+      Modern_Office_16x16_124: -932379759
+      Modern_Office_16x16_125: 1947826168
+      Modern_Office_16x16_126: -207892760
+      Modern_Office_16x16_127: 1695244519
+      Modern_Office_16x16_128: -641846202
+      Modern_Office_16x16_129: -1103006804
+      Modern_Office_16x16_13: 75083845
+      Modern_Office_16x16_130: 1408074348
+      Modern_Office_16x16_131: 959543856
+      Modern_Office_16x16_132: -1197964490
+      Modern_Office_16x16_133: 2049433734
+      Modern_Office_16x16_134: 279048674
+      Modern_Office_16x16_135: -1069079073
+      Modern_Office_16x16_136: 1428775735
+      Modern_Office_16x16_137: 1217345958
+      Modern_Office_16x16_138: 1844693721
+      Modern_Office_16x16_139: -793692350
+      Modern_Office_16x16_14: 183683250
+      Modern_Office_16x16_140: 1623105707
+      Modern_Office_16x16_141: 751901796
+      Modern_Office_16x16_142: 1885046439
+      Modern_Office_16x16_143: -849020143
+      Modern_Office_16x16_144: -314693986
+      Modern_Office_16x16_145: 2092340807
+      Modern_Office_16x16_146: 2104147329
+      Modern_Office_16x16_147: 156714191
+      Modern_Office_16x16_148: -689949784
+      Modern_Office_16x16_149: -1227230850
+      Modern_Office_16x16_15: 628915727
+      Modern_Office_16x16_150: 2117642819
+      Modern_Office_16x16_151: 1397972118
+      Modern_Office_16x16_152: 2030782668
+      Modern_Office_16x16_153: -1722942264
+      Modern_Office_16x16_154: -394763211
+      Modern_Office_16x16_155: 319326052
+      Modern_Office_16x16_156: 229030620
+      Modern_Office_16x16_157: -1953064861
+      Modern_Office_16x16_158: 741260520
+      Modern_Office_16x16_159: 864394834
+      Modern_Office_16x16_16: 1844774932
+      Modern_Office_16x16_160: 1721663202
+      Modern_Office_16x16_161: 1189001515
+      Modern_Office_16x16_162: 269950793
+      Modern_Office_16x16_163: -1950495577
+      Modern_Office_16x16_164: -522182441
+      Modern_Office_16x16_165: -344591237
+      Modern_Office_16x16_166: 523949064
+      Modern_Office_16x16_167: 1571764922
+      Modern_Office_16x16_168: -657895539
+      Modern_Office_16x16_17: 1492519575
+      Modern_Office_16x16_18: -395311162
+      Modern_Office_16x16_19: 984373682
+      Modern_Office_16x16_2: -222080934
+      Modern_Office_16x16_20: 330536393
+      Modern_Office_16x16_21: -273959156
+      Modern_Office_16x16_22: -555925428
+      Modern_Office_16x16_23: -1699594752
+      Modern_Office_16x16_24: 1199373130
+      Modern_Office_16x16_25: -129026087
+      Modern_Office_16x16_26: -930879526
+      Modern_Office_16x16_27: -1924136827
+      Modern_Office_16x16_28: -1198576567
+      Modern_Office_16x16_29: -988865617
+      Modern_Office_16x16_3: -157801760
+      Modern_Office_16x16_30: 516998248
+      Modern_Office_16x16_31: 567804026
+      Modern_Office_16x16_32: 1077949593
+      Modern_Office_16x16_33: -1124157682
+      Modern_Office_16x16_34: 1157106647
+      Modern_Office_16x16_35: 1478503419
+      Modern_Office_16x16_36: 671803144
+      Modern_Office_16x16_37: 27538158
+      Modern_Office_16x16_38: -568572852
+      Modern_Office_16x16_39: 88782683
+      Modern_Office_16x16_4: -456774561
+      Modern_Office_16x16_40: 1489541167
+      Modern_Office_16x16_41: -1447563930
+      Modern_Office_16x16_42: 91718504
+      Modern_Office_16x16_43: -1263079644
+      Modern_Office_16x16_44: -832714618
+      Modern_Office_16x16_45: -320271961
+      Modern_Office_16x16_46: 1858419887
+      Modern_Office_16x16_47: -1652124027
+      Modern_Office_16x16_48: -62404671
+      Modern_Office_16x16_49: -154737137
+      Modern_Office_16x16_5: -1284963381
+      Modern_Office_16x16_50: -661635086
+      Modern_Office_16x16_51: -1416098590
+      Modern_Office_16x16_52: -714198246
+      Modern_Office_16x16_53: 1198598543
+      Modern_Office_16x16_54: 1051018592
+      Modern_Office_16x16_55: 1308074375
+      Modern_Office_16x16_56: 706832730
+      Modern_Office_16x16_57: 167294200
+      Modern_Office_16x16_58: 102801127
+      Modern_Office_16x16_59: 36007586
+      Modern_Office_16x16_6: -2033939909
+      Modern_Office_16x16_60: -1593862137
+      Modern_Office_16x16_61: -701736282
+      Modern_Office_16x16_62: -55655934
+      Modern_Office_16x16_63: -554392772
+      Modern_Office_16x16_64: -613886180
+      Modern_Office_16x16_65: -1355389917
+      Modern_Office_16x16_66: 1618004440
+      Modern_Office_16x16_67: -1325131033
+      Modern_Office_16x16_68: -1908720421
+      Modern_Office_16x16_69: 1309131840
+      Modern_Office_16x16_7: 1193202129
+      Modern_Office_16x16_70: -257826301
+      Modern_Office_16x16_71: -679583438
+      Modern_Office_16x16_72: 1102592397
+      Modern_Office_16x16_73: -425895002
+      Modern_Office_16x16_74: 1651610133
+      Modern_Office_16x16_75: -591192758
+      Modern_Office_16x16_76: 1866902420
+      Modern_Office_16x16_77: -732619912
+      Modern_Office_16x16_78: -1520393918
+      Modern_Office_16x16_79: -2025270767
+      Modern_Office_16x16_8: 963912237
+      Modern_Office_16x16_80: 562957791
+      Modern_Office_16x16_81: 1414664788
+      Modern_Office_16x16_82: -157196577
+      Modern_Office_16x16_83: 717132678
+      Modern_Office_16x16_84: 869310641
+      Modern_Office_16x16_85: -1176627088
+      Modern_Office_16x16_86: -147162409
+      Modern_Office_16x16_87: 283403055
+      Modern_Office_16x16_88: -5761277
+      Modern_Office_16x16_89: -199815567
+      Modern_Office_16x16_9: 1640360404
+      Modern_Office_16x16_90: -764934923
+      Modern_Office_16x16_91: -182242594
+      Modern_Office_16x16_92: -548270005
+      Modern_Office_16x16_93: 757666752
+      Modern_Office_16x16_94: -990542042
+      Modern_Office_16x16_95: 1856814879
+      Modern_Office_16x16_96: 128120355
+      Modern_Office_16x16_97: -475379052
+      Modern_Office_16x16_98: 684441183
+      Modern_Office_16x16_99: -1047737112
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
