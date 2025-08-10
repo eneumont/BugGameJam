@@ -21,6 +21,7 @@ public class FishSpriteLogic : ClickableSprite
     {
         if (staplerPrefab != null)
         {
+            GameProgress.ResetProgress();
             progressMarker.MarkProgress();
         }
         else
