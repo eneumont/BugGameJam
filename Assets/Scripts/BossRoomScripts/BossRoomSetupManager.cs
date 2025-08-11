@@ -300,10 +300,11 @@ namespace BossRoom
             // Optional: Reset stuck systems
             if (inputSystem != null && Input.GetKeyDown(KeyCode.F1) && enableDebugOutput)
             {
-                inputSystem.ClearAllDesyncs();
+                inputSystem.ClearDesync(); // Fixed method name
                 DebugLog("Debug: Cleared all input desyncs");
             }
         }
+
 
         IEnumerator HandleBossDefeat()
         {
@@ -348,7 +349,7 @@ namespace BossRoom
                 collisionSystem.ResetCollision();
 
             if (inputSystem != null)
-                inputSystem.ClearAllDesyncs();
+                inputSystem.ClearDesync(); // Fixed method name
 
             if (gaslightingSystem != null)
                 gaslightingSystem.ClearGaslighting();

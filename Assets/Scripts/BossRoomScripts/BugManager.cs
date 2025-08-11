@@ -56,6 +56,7 @@ namespace BossRoom
                 collisionSystem = FindObjectOfType<CollisionParadoxSystem>();
 
             inputSystem = FindObjectOfType<InputDesyncSystem>();
+
             gaslightingSystem = GetComponent<GoalGaslightingSystem>();
             if (gaslightingSystem == null)
                 gaslightingSystem = FindObjectOfType<GoalGaslightingSystem>();
@@ -67,7 +68,6 @@ namespace BossRoom
         {
             currentIntensity = intensity;
 
-            // Adjust individual system intensities
             if (collisionSystem != null)
                 collisionSystem.SetIntensity(intensity);
             if (inputSystem != null)
@@ -82,7 +82,6 @@ namespace BossRoom
         {
             List<System.Action> availableBugs = new List<System.Action>();
 
-            // Always available bugs
             if (Random.Range(0f, 1f) < collisionBugChance)
                 availableBugs.Add(() => collisionSystem?.TriggerCollisionParadox());
 
@@ -92,14 +91,12 @@ namespace BossRoom
             if (Random.Range(0f, 1f) < gaslightBugChance)
                 availableBugs.Add(() => gaslightingSystem?.TriggerGaslighting());
 
-            // Phase 2 only bugs
             if (currentIntensity == BugIntensity.Aggressive)
             {
                 if (Random.Range(0f, 1f) < uiBugChance)
                     availableBugs.Add(() => uiSystem?.TriggerRandomUIBug());
             }
 
-            // Execute random bug
             if (availableBugs.Count > 0)
             {
                 int randomIndex = Random.Range(0, availableBugs.Count);
@@ -112,9 +109,8 @@ namespace BossRoom
             bugsActive = false;
             currentIntensity = BugIntensity.Paused;
 
-            // Reset all active bugs
             collisionSystem?.ResetCollision();
-            inputSystem?.ClearAllDesyncs();
+            inputSystem?.ClearDesync();          // FIXED HERE
             gaslightingSystem?.ClearGaslighting();
             uiSystem?.ResetAllUI();
         }
@@ -136,7 +132,7 @@ namespace BossRoom
         public void TriggerInputBug(float desyncAmount, float duration = 3f)
         {
             if (inputSystem != null)
-                inputSystem.TriggerInputDesync(desyncAmount, duration);
+                inputSystem.TriggerInputDesync(duration); // Pass only duration, matching InputDesyncSystem's signature
         }
 
         public void TriggerGaslightBug(float duration = 4f)

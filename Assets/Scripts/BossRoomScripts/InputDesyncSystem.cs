@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -7,351 +6,218 @@ namespace BossRoom
 {
     public class InputDesyncSystem : MonoBehaviour
     {
-        [Header("Desync Settings")]
-        public float maxDesyncDelay = 2f;
-        public float minDesyncDelay = 0.3f;
-
-        [Header("UI Elements")]
+        [Header("UI")]
         public GameObject networkTimeoutIcon;
-        public Canvas uiCanvas;
-
-        // Input queuing system
-        private Queue<DelayedInput> inputQueue = new Queue<DelayedInput>();
-        private Dictionary<KeyCode, bool> desyncedKeys = new Dictionary<KeyCode, bool>();
-        private Dictionary<string, KeyCode> controlSchemeMap = new Dictionary<string, KeyCode>();
-        private Dictionary<string, KeyCode> originalControlScheme = new Dictionary<string, KeyCode>();
-        private bool isControlSchemeSwapped = false;
-
-        private BugManager.BugIntensity currentIntensity = BugManager.BugIntensity.Mild;
-
-        // Network timeout icon management
-        private Coroutine timeoutIconCoroutine;
 
         private BossRoomPlayerController playerController;
 
+        private bool isDesyncActive = false;
+        private float desyncEndTime = 0f;
 
-        [System.Serializable]
-        public class DelayedInput
+        // Key -> timestamp after which input is processed (delay per key)
+        private Dictionary<KeyCode, float> inputDelays = new Dictionary<KeyCode, float>();
+
+        private SpriteRenderer spriteRenderer;
+        private BugManager.BugIntensity currentIntensity = BugManager.BugIntensity.Mild;
+
+        // Triple-tap detection state
+        private float lastLeftTap = -1f;
+        private float lastRightTap = -1f;
+        private int leftTapCount = 0;
+        private int rightTapCount = 0;
+        private readonly float tapWindow = 0.3f;
+
+        // Phase 2 control swap flag (placeholder)
+        private bool isSwapped = false;
+
+        void Awake()
         {
-            public KeyCode key;
-            public bool isKeyDown;
-            public float executeTime;
-            public string inputType; // "movement", "action", "jump", etc.
-
-            public DelayedInput(KeyCode k, bool down, float time, string type = "generic")
-            {
-                key = k;
-                isKeyDown = down;
-                executeTime = time;
-                inputType = type;
-            }
+            spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
         void Start()
         {
-            InitializeControlScheme();
-            FindPlayerController();
+            playerController = FindObjectOfType<BossRoomPlayerController>();
 
             if (networkTimeoutIcon != null)
                 networkTimeoutIcon.SetActive(false);
         }
 
-        public void SetPlayer(BossRoomPlayerController playerController)
-        {
-            this.playerController = playerController;
-        }
-
-
-        void InitializeControlScheme()
-        {
-            // Store original control scheme
-            originalControlScheme["moveLeft"] = KeyCode.A;
-            originalControlScheme["moveRight"] = KeyCode.D;
-            originalControlScheme["moveUp"] = KeyCode.W;
-            originalControlScheme["moveDown"] = KeyCode.S;
-            originalControlScheme["jump"] = KeyCode.Space;
-            originalControlScheme["attack"] = KeyCode.Mouse0;
-            originalControlScheme["interact"] = KeyCode.E;
-
-            // Initialize current scheme as original
-            controlSchemeMap = new Dictionary<string, KeyCode>(originalControlScheme);
-        }
-
-        void FindPlayerController()
-        {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            if (player != null)
-            {
-                // Try to find common player controller components
-                playerController = player.GetComponent<BossRoomPlayerController>();
-            }
-        }
-
         void Update()
         {
-            ProcessDelayedInputs();
+            if (!isDesyncActive)
+            {
+                if (networkTimeoutIcon != null && networkTimeoutIcon.activeSelf)
+                    networkTimeoutIcon.SetActive(false);
+                return;
+            }
+
+            if (Time.time > desyncEndTime)
+            {
+                ClearDesync();
+                return;
+            }
+
+            if (networkTimeoutIcon != null && !networkTimeoutIcon.activeSelf)
+                networkTimeoutIcon.SetActive(true);
         }
 
-        void ProcessDelayedInputs()
+        public void SetPlayer(BossRoomPlayerController player)
         {
-            while (inputQueue.Count > 0 && inputQueue.Peek().executeTime <= Time.time)
+            playerController = player;
+        }
+
+        /// <summary>
+        /// Returns true if the given input key should be processed immediately (not delayed by desync)
+        /// </summary>
+        public bool ShouldProcessInputImmediately(KeyCode key)
+        {
+            if (!isDesyncActive)
+                return true;
+
+            if (!inputDelays.TryGetValue(key, out float readyTime))
+                return true;
+
+            return Time.time >= readyTime;
+        }
+
+        /// <summary>
+        /// Starts input desync with random delays for specific keys lasting for the given duration
+        /// </summary>
+        public void TriggerInputDesync(float duration)
+        {
+            if (isDesyncActive)
+                return;
+
+            isDesyncActive = true;
+            desyncEndTime = Time.time + duration;
+
+            inputDelays.Clear();
+
+            // Keys to delay; assign consistent random delay per key for desync duration
+            KeyCode[] delayedKeys = { KeyCode.Mouse0, KeyCode.X, KeyCode.A, KeyCode.D, KeyCode.LeftArrow, KeyCode.RightArrow };
+            foreach (var key in delayedKeys)
             {
-                DelayedInput delayedInput = inputQueue.Dequeue();
-                ExecuteDelayedInput(delayedInput);
+                inputDelays[key] = Time.time + Random.Range(0.3f, 1.0f);
+            }
+
+            StartCoroutine(DesyncRoutine());
+        }
+
+        private IEnumerator DesyncRoutine()
+        {
+            while (Time.time < desyncEndTime)
+                yield return null;
+
+            ClearDesync();
+        }
+
+        /// <summary>
+        /// Clears the input desync state immediately
+        /// </summary>
+        public void ClearDesync()
+        {
+            isDesyncActive = false;
+            inputDelays.Clear();
+
+            if (networkTimeoutIcon != null && networkTimeoutIcon.activeSelf)
+                networkTimeoutIcon.SetActive(false);
+        }
+
+        /// <summary>
+        /// Must be called externally on KeyDown events of left/right keys to detect triple taps.
+        /// Triggers forced turning of player on triple tap.
+        /// </summary>
+        public void HandleDirectionalTap(bool isRight)
+        {
+            float currentTime = Time.time;
+
+            if (isRight)
+            {
+                if (currentTime - lastRightTap > tapWindow)
+                    rightTapCount = 0;
+
+                rightTapCount++;
+                lastRightTap = currentTime;
+
+                if (rightTapCount >= 3)
+                {
+                    ForceTurnRight();
+                    rightTapCount = 0;
+                }
+            }
+            else
+            {
+                if (currentTime - lastLeftTap > tapWindow)
+                    leftTapCount = 0;
+
+                leftTapCount++;
+                lastLeftTap = currentTime;
+
+                if (leftTapCount >= 3)
+                {
+                    ForceTurnLeft();
+                    leftTapCount = 0;
+                }
             }
         }
 
-        void ExecuteDelayedInput(DelayedInput input)
+        public void ForceTurnRight()
         {
-            // This would integrate with your actual input system
-            // For now, we'll simulate the delayed execution
-            Debug.Log($"Executing delayed input: {input.key} ({input.inputType}) - {(input.isKeyDown ? "Down" : "Up")}");
+            if (playerController != null && !playerController.IsFacingRight())
+            {
+                playerController.SetForcedFacing(true);
+                Debug.Log("InputDesyncSystem: Forced turn right due to triple tap");
+            }
+        }
 
-            // You would call your actual player controller methods here
-            // Example: playerController.HandleInput(input.key, input.isKeyDown);
+        public void ForceTurnLeft()
+        {
+            if (playerController != null && playerController.IsFacingRight())
+            {
+                playerController.SetForcedFacing(false);
+                Debug.Log("InputDesyncSystem: Forced turn left due to triple tap");
+            }
+        }
+
+        /// <summary>
+        /// Placeholder for swapping control schemes in phase 2
+        /// </summary>
+        public void SwapControlScheme()
+        {
+            isSwapped = true;
+            Debug.Log("InputDesyncSystem: Control scheme swapped");
+            // TODO: Implement actual swap logic if needed
+        }
+
+        /// <summary>
+        /// Restore controls back to default
+        /// </summary>
+        public void RestoreControlScheme()
+        {
+            isSwapped = false;
+            Debug.Log("InputDesyncSystem: Control scheme restored");
+        }
+
+        private void SetVisuals(Color color)
+        {
+            if (spriteRenderer != null)
+                spriteRenderer.color = color;
         }
 
         public void SetIntensity(BugManager.BugIntensity intensity)
         {
             currentIntensity = intensity;
-        }
 
-        public void TriggerInputDesync(float desyncAmount, float duration = -1f)
-        {
-            if (duration > 0)
+            switch (intensity)
             {
-                StartCoroutine(InputDesyncTimed(desyncAmount, duration));
-            }
-            else
-            {
-                ApplyInputDesync(desyncAmount);
-            }
-
-            ShowNetworkTimeoutIcon();
-        }
-
-        IEnumerator InputDesyncTimed(float desyncAmount, float duration)
-        {
-            ApplyInputDesync(desyncAmount);
-            yield return new WaitForSeconds(duration);
-            ClearSpecificDesync();
-        }
-
-        void ApplyInputDesync(float desyncAmount)
-        {
-            // Randomly select which input types to desync
-            List<string> inputTypes = new List<string> { "movement", "action", "jump" };
-            int typesToDesync = currentIntensity == BugManager.BugIntensity.Mild ? 1 : Random.Range(1, inputTypes.Count + 1);
-
-            for (int i = 0; i < typesToDesync; i++)
-            {
-                if (inputTypes.Count > 0)
-                {
-                    int randomIndex = Random.Range(0, inputTypes.Count);
-                    string inputType = inputTypes[randomIndex];
-                    inputTypes.RemoveAt(randomIndex);
-
-                    ApplyDesyncToInputType(inputType, desyncAmount);
-                }
-            }
-        }
-
-        void ApplyDesyncToInputType(string inputType, float desyncAmount)
-        {
-            List<KeyCode> keysToDesync = new List<KeyCode>();
-
-            switch (inputType)
-            {
-                case "movement":
-                    keysToDesync.AddRange(new KeyCode[] {
-                        controlSchemeMap["moveLeft"],
-                        controlSchemeMap["moveRight"],
-                        controlSchemeMap["moveUp"],
-                        controlSchemeMap["moveDown"]
-                    });
+                case BugManager.BugIntensity.Mild:
+                    SetVisuals(Color.white);
                     break;
-                case "action":
-                    keysToDesync.Add(controlSchemeMap["attack"]);
-                    keysToDesync.Add(controlSchemeMap["interact"]);
-                    break;
-                case "jump":
-                    keysToDesync.Add(controlSchemeMap["jump"]);
+                case BugManager.BugIntensity.Aggressive:
+                    SetVisuals(Color.red);
                     break;
             }
-
-            foreach (KeyCode key in keysToDesync)
-            {
-                desyncedKeys[key] = true;
-            }
-
-            StartCoroutine(ProcessDesyncedInputs(desyncAmount));
-        }
-
-        IEnumerator ProcessDesyncedInputs(float desyncAmount)
-        {
-            float endTime = Time.time + desyncAmount + 2f; // Extra buffer time
-
-            while (Time.time < endTime)
-            {
-                foreach (KeyCode key in desyncedKeys.Keys)
-                {
-                    if (desyncedKeys[key] && Input.GetKeyDown(key))
-                    {
-                        // Queue the input with delay
-                        float delay = Random.Range(minDesyncDelay, Mathf.Min(maxDesyncDelay, desyncAmount));
-                        string inputType = GetInputTypeForKey(key);
-
-                        DelayedInput delayedInput = new DelayedInput(key, true, Time.time + delay, inputType);
-                        inputQueue.Enqueue(delayedInput);
-                    }
-
-                    if (desyncedKeys[key] && Input.GetKeyUp(key))
-                    {
-                        float delay = Random.Range(minDesyncDelay, Mathf.Min(maxDesyncDelay, desyncAmount));
-                        string inputType = GetInputTypeForKey(key);
-
-                        DelayedInput delayedInput = new DelayedInput(key, false, Time.time + delay, inputType);
-                        inputQueue.Enqueue(delayedInput);
-                    }
-                }
-
-                yield return null;
-            }
-        }
-
-        string GetInputTypeForKey(KeyCode key)
-        {
-            if (key == controlSchemeMap["moveLeft"] || key == controlSchemeMap["moveRight"] ||
-                key == controlSchemeMap["moveUp"] || key == controlSchemeMap["moveDown"])
-                return "movement";
-            else if (key == controlSchemeMap["jump"])
-                return "jump";
-            else if (key == controlSchemeMap["attack"] || key == controlSchemeMap["interact"])
-                return "action";
-
-            return "generic";
-        }
-
-        void ShowNetworkTimeoutIcon()
-        {
-            if (timeoutIconCoroutine != null)
-                StopCoroutine(timeoutIconCoroutine);
-
-            timeoutIconCoroutine = StartCoroutine(NetworkTimeoutIconSequence());
-        }
-
-        IEnumerator NetworkTimeoutIconSequence()
-        {
-            if (networkTimeoutIcon != null)
-            {
-                networkTimeoutIcon.SetActive(true);
-
-                // Flash the icon
-                float flashDuration = 0.2f;
-                int flashCount = 3;
-
-                for (int i = 0; i < flashCount; i++)
-                {
-                    yield return new WaitForSeconds(flashDuration);
-                    networkTimeoutIcon.SetActive(false);
-                    yield return new WaitForSeconds(flashDuration);
-                    networkTimeoutIcon.SetActive(true);
-                }
-
-                yield return new WaitForSeconds(1f);
-                networkTimeoutIcon.SetActive(false);
-            }
-        }
-
-        // Control scheme swapping for Phase 2
-        public void SwapControlScheme()
-        {
-            if (isControlSchemeSwapped) return;
-
-            isControlSchemeSwapped = true;
-
-            // Common control scheme swaps that are confusing but not game-breaking
-            var swapOptions = new List<System.Action>
-            {
-                () => {
-                    // WASD to Arrow Keys
-                    controlSchemeMap["moveLeft"] = KeyCode.LeftArrow;
-                    controlSchemeMap["moveRight"] = KeyCode.RightArrow;
-                    controlSchemeMap["moveUp"] = KeyCode.UpArrow;
-                    controlSchemeMap["moveDown"] = KeyCode.DownArrow;
-                },
-                () => {
-                    // Jump and crouch swap
-                    controlSchemeMap["jump"] = KeyCode.S;
-                    controlSchemeMap["moveDown"] = KeyCode.Space;
-                },
-                () => {
-                    // Attack and interact swap
-                    var temp = controlSchemeMap["attack"];
-                    controlSchemeMap["attack"] = controlSchemeMap["interact"];
-                    controlSchemeMap["interact"] = temp;
-                }
-            };
-
-            int randomSwap = Random.Range(0, swapOptions.Count);
-            swapOptions[randomSwap].Invoke();
-
-            // Clear any existing desyncs to avoid confusion
-            ClearAllDesyncs();
-        }
-
-        public void RestoreControlScheme()
-        {
-            if (!isControlSchemeSwapped) return;
-
-            isControlSchemeSwapped = false;
-            controlSchemeMap = new Dictionary<string, KeyCode>(originalControlScheme);
-        }
-
-        public void ClearSpecificDesync()
-        {
-            // Clear current desynced keys but keep control scheme if swapped
-            desyncedKeys.Clear();
-        }
-
-        public void ClearAllDesyncs()
-        {
-            desyncedKeys.Clear();
-            inputQueue.Clear();
-
-            if (timeoutIconCoroutine != null)
-            {
-                StopCoroutine(timeoutIconCoroutine);
-                timeoutIconCoroutine = null;
-            }
-
-            if (networkTimeoutIcon != null)
-                networkTimeoutIcon.SetActive(false);
-        }
-
-        // Public methods for player controller integration
-        public bool IsKeyCurrentlyDesynced(KeyCode key)
-        {
-            return desyncedKeys.ContainsKey(key) && desyncedKeys[key];
-        }
-
-        public KeyCode GetMappedKey(string inputName)
-        {
-            if (controlSchemeMap.ContainsKey(inputName))
-                return controlSchemeMap[inputName];
-
-            return KeyCode.None;
-        }
-
-        public bool IsControlSchemeSwapped()
-        {
-            return isControlSchemeSwapped;
-        }
-
-        // Method to be called by player controller to check if input should be processed immediately
-        public bool ShouldProcessInputImmediately(KeyCode key)
-        {
-            return !IsKeyCurrentlyDesynced(key);
         }
     }
 }
