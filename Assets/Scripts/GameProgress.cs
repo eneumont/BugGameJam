@@ -13,7 +13,14 @@ public static class GameProgress
             PlayerPrefs.Save();
         }
     }
+    public static bool hasCompletedPaperGame
+    {
+        get => _completedPaperGame;
+        set => _completedPaperGame = value;
+    }
 
+    // Backing field for the property
+    private static bool _completedPaperGame = false;
     public static void ResetProgress()
     {
         PlayerPrefs.DeleteKey(ProgressKey);
