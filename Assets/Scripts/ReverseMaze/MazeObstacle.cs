@@ -12,6 +12,7 @@ public class MazeObstacle : MonoBehaviour {
 
     [SerializeField] float speed = 5;
 	[SerializeField] float talkTime = 1;
+	[SerializeField] int talkInt = 0;
 	[SerializeField] string talking;
     
     Vector3 targetPos;
@@ -37,7 +38,7 @@ public class MazeObstacle : MonoBehaviour {
 
 	private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.GetComponent<MazeCharacter>()) {
-			audioSource.Play();
+			if (!person) audioSource.Play();
 			talkText.text = talking;
 			talkText.transform.parent.gameObject.SetActive(true);
 			StartCoroutine(interaction(talkTime));
@@ -58,7 +59,9 @@ public class MazeObstacle : MonoBehaviour {
 	}
 
 	IEnumerator interaction(float time) {
+		FindFirstObjectByType<HintSystem>().talk(talkInt, talkTime);
 		yield return new WaitForSeconds(time);
-		talkText.transform.parent.gameObject.SetActive(true);
+		talkText.transform.parent.gameObject.SetActive(false);
+		if (!person) Destroy(gameObject);
 	}
 }
