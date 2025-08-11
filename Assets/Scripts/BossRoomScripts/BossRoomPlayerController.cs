@@ -44,6 +44,8 @@ public class BossRoomPlayerController : MonoBehaviour
     private InputDesyncSystem inputDesync;
     private GoalGaslightingSystem gaslighting;
 
+    public bool beatBoss = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();

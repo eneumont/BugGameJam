@@ -72,13 +72,38 @@ namespace BossRoom
             }
         }
 
+        // Self-initialize if scene objects exist but Initialize() was not called
+        void Start()
+        {
+            if (bossController == null)
+            {
+                bossController = FindObjectOfType<BossController>();
+            }
+
+            if (playerTransform == null)
+            {
+                var playerGo = GameObject.FindGameObjectWithTag("Player");
+                if (playerGo != null)
+                {
+                    SetPlayer(playerGo.transform);
+                }
+            }
+
+            // Ensure paradox objects are prepared
+            InitializeParadoxObjects();
+        }
+
         // This method now accepts optional duration for compatibility
         public void TriggerCollisionParadox(float duration = 0f)
         {
             if (bossController == null)
             {
-                Debug.LogError("BossController not assigned to CollisionParadoxSystem!");
-                return;
+                // Attempt auto-resolve instead of aborting
+                bossController = FindObjectOfType<BossController>();
+                if (bossController == null)
+                {
+                    Debug.LogWarning("CollisionParadoxSystem: BossController not found in scene; proceeding without direct boss reference.");
+                }
             }
 
             if (paradoxComponents.Count == 0)

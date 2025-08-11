@@ -9,6 +9,7 @@ TagManager:
   - BadFile
   - Boss
   - IsGround
+  - Wall
   layers:
   - Default
   - TransparentFX

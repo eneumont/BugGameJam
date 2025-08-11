@@ -26,6 +26,17 @@ namespace BossRoom
         public float escalationInterval = 30f; // every 30s escalate
         public float GetHealthPercentage() => realHealth / maxRealHealth;
 
+        [Header("Projectile Patterns")]
+        public Vector2 phase1ProjectileInterval = new Vector2(2.2f, 3.2f);
+        public Vector2 phase2ProjectileInterval = new Vector2(1.0f, 1.6f);
+        public int phase1BurstCount = 1;
+        public int phase2BurstCount = 3;
+        public float phase1ProjectileSpeed = 6f;
+        public float phase2ProjectileSpeed = 9f;
+
+        [Header("Debug / Control")]
+        public bool autoStartFight = false;
+
         public enum BossPhase
         {
             Phase1,
@@ -77,6 +88,8 @@ namespace BossRoom
         private float maxAttackInterval;
         private float moveSpeed;
         private Coroutine victoryCoroutine;
+        private Coroutine playerGlitchRoutine;
+        private Coroutine projectileLoopRoutine;
 
         // attack weights (phase-aware)
         private List<WeightedAttack> phase1Pool;
@@ -92,6 +105,8 @@ namespace BossRoom
             if (inputSystem == null) inputSystem = FindObjectOfType<InputDesyncSystem>();
             if (gaslightingSystem == null) gaslightingSystem = GetComponent<GoalGaslightingSystem>();
             if (uiBetrayalSystem == null) uiBetrayalSystem = FindObjectOfType<UIBetrayalSystem>();
+
+            EnsureProjectilePrefab();
         }
 
         void Start()
@@ -109,6 +124,11 @@ namespace BossRoom
 
             // initial target
             targetPosition = transform.position;
+
+            if (autoStartFight)
+            {
+                StartBossFight();
+            }
         }
 
         void Update()
@@ -170,12 +190,32 @@ namespace BossRoom
             bugManager?.SetBugIntensity(BugManager.BugIntensity.Mild);
             bossAnimator?.SetTrigger("StartFight");
             StartCoroutine(BackgroundTyping());
+
+            // Start projectile pacing loop (easy pace in Phase 1)
+            if (projectileLoopRoutine != null) StopCoroutine(projectileLoopRoutine);
+            projectileLoopRoutine = StartCoroutine(ProjectileLoop());
+        }
+
+        [ContextMenu("Start Boss Fight (Debug)")]
+        void ContextStartFight()
+        {
+            StartBossFight();
         }
 
         public void StopBossFight()
         {
             isFightActive = false;
             StopAllCoroutines();
+            if (playerGlitchRoutine != null)
+            {
+                StopCoroutine(playerGlitchRoutine);
+                playerGlitchRoutine = null;
+            }
+            if (projectileLoopRoutine != null)
+            {
+                StopCoroutine(projectileLoopRoutine);
+                projectileLoopRoutine = null;
+            }
         }
         #endregion
 
@@ -295,9 +335,10 @@ namespace BossRoom
                     break;
             }
 
-            // 70% chance to pair the chosen bug/attack with a projectile or area damage for pressure
+            // Slightly reduce pair chance in Phase 1 to keep things fair
             float pairRoll = Random.value;
-            if (pairRoll < 0.7f)
+            float pairChance = isPhase2 ? 0.7f : 0.4f;
+            if (pairRoll < pairChance)
             {
                 if (Random.value < 0.6f) FireSingleProjectileAtPlayer();
                 else StartCoroutine(ExecuteAreaBurst());
@@ -398,14 +439,36 @@ namespace BossRoom
         #region Projectiles / Attacks
         void FireSingleProjectileAtPlayer()
         {
-            if (player == null || projectilePrefab == null) return;
+            if (player == null) return;
+            EnsureProjectilePrefab();
 
             Vector2 dir = ((Vector2)player.position - (Vector2)transform.position).normalized;
             GameObject proj = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-            Rigidbody2D rb = proj.GetComponent<Rigidbody2D>();
-            if (rb) rb.linearVelocity = dir * projectileSpeed;
-            var projScript = proj.GetComponent<BossProjectile>();
-            if (projScript == null) projScript = proj.AddComponent<BossProjectile>();
+            proj.SetActive(true);
+            var rb = proj.GetComponent<Rigidbody2D>() ?? proj.AddComponent<Rigidbody2D>();
+            rb.bodyType = RigidbodyType2D.Dynamic;
+            rb.simulated = true;
+            rb.gravityScale = 0f;
+            rb.linearVelocity = dir * projectileSpeed;
+            var projScript = proj.GetComponent<BossProjectile>() ?? proj.AddComponent<BossProjectile>();
+            projScript.damage = Mathf.CeilToInt(attackDamage);
+            Destroy(proj, 5f);
+        }
+
+        void FireSingleProjectileAtPlayer(float customSpeed)
+        {
+            if (player == null) return;
+            EnsureProjectilePrefab();
+
+            Vector2 dir = ((Vector2)player.position - (Vector2)transform.position).normalized;
+            GameObject proj = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            proj.SetActive(true);
+            var rb = proj.GetComponent<Rigidbody2D>() ?? proj.AddComponent<Rigidbody2D>();
+            rb.bodyType = RigidbodyType2D.Dynamic;
+            rb.simulated = true;
+            rb.gravityScale = 0f;
+            rb.linearVelocity = dir * customSpeed;
+            var projScript = proj.GetComponent<BossProjectile>() ?? proj.AddComponent<BossProjectile>();
             projScript.damage = Mathf.CeilToInt(attackDamage);
             Destroy(proj, 5f);
         }
@@ -415,11 +478,25 @@ namespace BossRoom
             StartCoroutine(ProjectileBurstCoroutine(count, spreadInterval));
         }
 
+        void FireProjectileBurst(int count, float spreadInterval, float customSpeed)
+        {
+            StartCoroutine(ProjectileBurstCoroutine(count, spreadInterval, customSpeed));
+        }
+
         IEnumerator ProjectileBurstCoroutine(int count, float delay)
         {
             for (int i = 0; i < count; i++)
             {
                 FireSingleProjectileAtPlayer();
+                yield return new WaitForSeconds(delay);
+            }
+        }
+
+        IEnumerator ProjectileBurstCoroutine(int count, float delay, float customSpeed)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                FireSingleProjectileAtPlayer(customSpeed);
                 yield return new WaitForSeconds(delay);
             }
         }
@@ -435,6 +512,66 @@ namespace BossRoom
                     pc?.TakeDamage(Mathf.CeilToInt(attackDamage));
                 }
             }
+        }
+
+        IEnumerator ProjectileLoop()
+        {
+            while (isFightActive && !isDefeated)
+            {
+                if (player == null)
+                {
+                    FindPlayer();
+                }
+
+                if (!isPhase2)
+                {
+                    float wait = Random.Range(phase1ProjectileInterval.x, phase1ProjectileInterval.y);
+                    yield return new WaitForSeconds(wait);
+                    if (!isFightActive || isDefeated) break;
+                    if (phase1BurstCount <= 1)
+                        FireSingleProjectileAtPlayer(phase1ProjectileSpeed);
+                    else
+                        FireProjectileBurst(phase1BurstCount, 0.2f, phase1ProjectileSpeed);
+                }
+                else
+                {
+                    float wait = Random.Range(phase2ProjectileInterval.x, phase2ProjectileInterval.y);
+                    yield return new WaitForSeconds(wait);
+                    if (!isFightActive || isDefeated) break;
+                    FireProjectileBurst(phase2BurstCount, 0.15f, phase2ProjectileSpeed);
+                }
+            }
+        }
+
+        void EnsureProjectilePrefab()
+        {
+            if (projectilePrefab != null) return;
+
+            // Create a basic projectile template on the fly (hidden, used only for cloning)
+            var go = new GameObject("BossProjectile_Default");
+            go.SetActive(false);
+            go.hideFlags = HideFlags.HideAndDontSave;
+            var sr = go.AddComponent<SpriteRenderer>();
+            // simple white circle texture
+            Texture2D tex = new Texture2D(16, 16, TextureFormat.ARGB32, false);
+            for (int x = 0; x < 16; x++)
+            {
+                for (int y = 0; y < 16; y++)
+                {
+                    float dx = x - 8; float dy = y - 8;
+                    float d = Mathf.Sqrt(dx * dx + dy * dy);
+                    tex.SetPixel(x, y, d <= 7 ? Color.white : new Color(1,1,1,0));
+                }
+            }
+            tex.Apply();
+            sr.sprite = Sprite.Create(tex, new Rect(0, 0, 16, 16), new Vector2(0.5f, 0.5f), 16f);
+            sr.sortingOrder = 50;
+            var col = go.AddComponent<CircleCollider2D>();
+            col.isTrigger = true;
+            var rb = go.AddComponent<Rigidbody2D>();
+            rb.gravityScale = 0f;
+            go.AddComponent<BossProjectile>();
+            projectilePrefab = go;
         }
         #endregion
 
@@ -538,6 +675,13 @@ namespace BossRoom
             uiBetrayalSystem?.StartUIBetrayal();
             uiBetrayalSystem?.ShowFakeDialog("Update Complete! Optimizations Applied.", 1.7f);
 
+            // Start intermittent player visual glitches to sell the patch gone wrong
+            if (playerGlitchRoutine != null)
+            {
+                StopCoroutine(playerGlitchRoutine);
+            }
+            playerGlitchRoutine = StartCoroutine(PlayerVisualGlitchRoutine());
+
             yield return null;
         }
 
@@ -598,7 +742,11 @@ namespace BossRoom
             if (go != null)
             {
                 player = go.transform;
-                if (collisionSystem != null) collisionSystem.SetPlayer(player);
+                if (collisionSystem != null)
+                {
+                    // Ensure the paradox system has both the boss instance and player instance
+                    collisionSystem.Initialize(this, player);
+                }
                 if (inputSystem != null)
                 {
                     var pc = go.GetComponent<BossRoomPlayerController>();
@@ -606,6 +754,50 @@ namespace BossRoom
                 }
                 if (gaslightingSystem != null) gaslightingSystem.SetPlayer(go);
             }
+        }
+
+        IEnumerator PlayerVisualGlitchRoutine()
+        {
+            while (isPhase2 && isFightActive && !isDefeated)
+            {
+                if (player != null && Random.value < 0.35f)
+                {
+                    yield return StartCoroutine(TemporaryPlayerAssetSwap(Random.Range(0.8f, 1.8f)));
+                }
+                yield return new WaitForSeconds(Random.Range(3f, 6f));
+            }
+        }
+
+        IEnumerator TemporaryPlayerAssetSwap(float duration)
+        {
+            if (player == null) yield break;
+            var sr = player.GetComponent<SpriteRenderer>();
+            if (sr == null) yield break;
+
+            var originalSprite = sr.sprite;
+            var originalColor = sr.color;
+
+            // Create a simple placeholder "office asset" (a beige folder-like rectangle)
+            Texture2D tex = new Texture2D(32, 32, TextureFormat.ARGB32, false);
+            Color folder = new Color(0.95f, 0.88f, 0.64f, 1f);
+            for (int x = 0; x < 32; x++)
+            {
+                for (int y = 0; y < 32; y++)
+                {
+                    tex.SetPixel(x, y, folder);
+                }
+            }
+            tex.Apply();
+            var tempSprite = Sprite.Create(tex, new Rect(0, 0, 32, 32), new Vector2(0.5f, 0.5f), 16f);
+
+            sr.sprite = tempSprite;
+            sr.color = Color.white;
+
+            yield return new WaitForSeconds(duration);
+
+            // Restore
+            sr.sprite = originalSprite;
+            sr.color = originalColor;
         }
 
         IEnumerator BackgroundTyping()
@@ -636,11 +828,14 @@ namespace BossRoom
         {
             if (projectilePrefab == null) return;
             GameObject proj = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            proj.SetActive(true);
             Vector2 dir = (pos - (Vector2)transform.position).normalized;
-            Rigidbody2D rb = proj.GetComponent<Rigidbody2D>();
-            if (rb) rb.linearVelocity = dir * projectileSpeed;
-            var ps = proj.GetComponent<BossProjectile>();
-            if (ps == null) ps = proj.AddComponent<BossProjectile>();
+            var rb = proj.GetComponent<Rigidbody2D>() ?? proj.AddComponent<Rigidbody2D>();
+            rb.bodyType = RigidbodyType2D.Dynamic;
+            rb.simulated = true;
+            rb.gravityScale = 0f;
+            rb.linearVelocity = dir * projectileSpeed;
+            var ps = proj.GetComponent<BossProjectile>() ?? proj.AddComponent<BossProjectile>();
             ps.damage = Mathf.CeilToInt(attackDamage);
             Destroy(proj, 5f);
         }

@@ -161,9 +161,9 @@ namespace BossRoom
                 // Disable player movement temporarily during intro
                 if (playIntroSequence && !skipIntro)
                 {
-                    MonoBehaviour playerController = player.GetComponent<MonoBehaviour>();
-                    if (playerController != null)
-                        playerController.enabled = false;
+                    var playerControllerComp = player.GetComponent<BossRoomPlayerController>();
+                    if (playerControllerComp != null)
+                        playerControllerComp.enabled = false;
                 }
             }
 
@@ -194,19 +194,28 @@ namespace BossRoom
 
             if (collisionSystem != null)
             {
+                // Ensure player and boss references are bound properly
+                Transform playerTransform = player != null ? player.transform : null;
+                if (bossController != null || playerTransform != null)
+                {
+                    collisionSystem.Initialize(bossController, playerTransform);
+                }
                 collisionSystem.SetIntensity(BugManager.BugIntensity.Mild);
-                DebugLog("Collision Paradox System initialized");
+                DebugLog("Collision Paradox System initialized and wired to scene objects");
             }
 
             if (inputSystem != null)
             {
                 inputSystem.SetIntensity(BugManager.BugIntensity.Mild);
+                var pc = player != null ? player.GetComponent<BossRoomPlayerController>() : null;
+                if (pc != null) inputSystem.SetPlayerController(pc);
                 DebugLog("Input Desync System initialized");
             }
 
             if (gaslightingSystem != null)
             {
                 gaslightingSystem.SetIntensity(BugManager.BugIntensity.Mild);
+                if (player != null) gaslightingSystem.SetPlayer(player);
                 DebugLog("Goal Gaslighting System initialized");
             }
 
@@ -247,9 +256,9 @@ namespace BossRoom
             // Re-enable player movement
             if (player != null)
             {
-                MonoBehaviour playerController = player.GetComponent<MonoBehaviour>();
-                if (playerController != null)
-                    playerController.enabled = true;
+                var playerControllerComp = player.GetComponent<BossRoomPlayerController>();
+                if (playerControllerComp != null)
+                    playerControllerComp.enabled = true;
             }
 
             // Start boss fight
@@ -264,6 +273,11 @@ namespace BossRoom
 
             if (bossController != null)
             {
+                // Also ensure boss has the player reference bound for systems that depend on it
+                if (collisionSystem != null && player != null)
+                {
+                    collisionSystem.SetPlayer(player.transform);
+                }
                 bossController.StartBossFight();
             }
 
