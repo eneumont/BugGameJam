@@ -732,6 +732,8 @@ namespace BossRoom
             // restore input and clean up after a little while
             yield return new WaitForSeconds(2f);
             inputSystem?.RestoreControlScheme();
+
+            FindFirstObjectByType<BossRoomPlayerController>().beatBoss = true;
         }
         #endregion
 
