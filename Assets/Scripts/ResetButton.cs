@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ResetButton : MonoBehaviour
 {
@@ -6,4 +7,15 @@ public class ResetButton : MonoBehaviour
     {
         GameProgress.LoadPreviousScene();
     }
+    public void ReturnToTitle() 
+    {
+        GameProgress.ResetProgress();
+        SceneManager.LoadScene("TitleScn");
+    }
+    public void QuitGame()
+    {
+        Debug.Log("Quitting game...");
+        Application.Quit();
+    }
+    
 }
