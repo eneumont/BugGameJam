@@ -145,11 +145,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[0]'
-      value: Next question
+      value: Next question.
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[1]'
-      value: What was the lettuce's name
+      value: What was the lettuce's name?
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[2]'
@@ -1231,7 +1231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[0]'
-      value: Yipee
+      value: Yipee!
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[1]'
@@ -1460,7 +1460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[0]'
-      value: What? no.
+      value: What? no...
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[1]'
@@ -2000,7 +2000,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[1]'
-      value: On the last question to.
+      value: On the last question too.
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[2]'
@@ -2214,7 +2214,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[1]'
-      value: I probably shouldn't have had that shroom
+      value: I probably shouldn't have had that shroom.
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[2]'
@@ -2331,7 +2331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[1]'
-      value: You're back
+      value: You're back.
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[2]'
@@ -2687,7 +2687,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[0]'
-      value: Congrats
+      value: Congrats!
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[1]'
@@ -3039,7 +3039,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[0]'
-      value: Good job
+      value: Good job!
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[1]'
@@ -3657,7 +3657,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[1]'
-      value: You failure
+      value: You failure!
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[2]'
@@ -4301,7 +4301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[0]'
-      value: Well time for a pop quiz
+      value: Well time for a pop quiz!
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[1]'
@@ -5912,7 +5912,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[0]'
-      value: Final question
+      value: Final question.
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[1]'

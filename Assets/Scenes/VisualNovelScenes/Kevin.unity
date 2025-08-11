@@ -311,7 +311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[1]'
-      value: We had such a lovely time at this little fern
+      value: We had such a lovely time at this little fern.
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[2]'
@@ -323,11 +323,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[4]'
-      value: Blah Blah Blah
+      value: '*Blah Blah Blah*'
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[5]'
-      value: Honeymoon stuff
+      value: Honeymoon stuff.
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[6]'
@@ -1398,11 +1398,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[0]'
-      value: HEHEHEHEHHEHEHHEHEHEHEH
+      value: HEHEHEHEHHEHEHHEHEHEHEHE!
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[1]'
-      value: I am back
+      value: I am back!
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[2]'
@@ -2768,10 +2768,10 @@ MonoBehaviour:
   - {fileID: 1970737983}
   - {fileID: 1172337894}
   ButtonTexts:
-  - Greet her politely
-  - Make a bug joke
-  - Ask about their honeymoon
-  - Offer her your chips
+  - Greet her politely.
+  - Make a bug joke.
+  - Ask about their honeymoon.
+  - Offer her your chips.
   Paths:
   - {fileID: 1317929299}
   - {fileID: 1354859856}
@@ -2813,7 +2813,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[2]'
-      value: There was a talking microwave and it... it
+      value: There was a talking microwave and it... it...
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[3]'
@@ -3083,7 +3083,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[0]'
-      value: Uh... sure
+      value: Uh... sure?
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[1]'
@@ -3237,7 +3237,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[1]'
-      value: However morale is down 98%
+      value: However morale is down 98%.
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[2]'
@@ -3537,7 +3537,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[1]'
-      value: "Did you know that mmmy name is actually short for \u201CMicrowaveko\u201D"
+      value: "Did you know that mmmy name is actually short for \u201CMicrowaveko\u201D?"
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[2]'
@@ -5123,10 +5123,10 @@ MonoBehaviour:
   - {fileID: 1970737983}
   - {fileID: 1172337894}
   ButtonTexts:
-  - Answer seriously
-  - Ask if he is single
-  - Challenge to an arm wrestle
-  - Complement his exoskeleton
+  - Answer seriously.
+  - Ask if he is single.
+  - Challenge to an arm wrestle.
+  - Complement his exoskeleton.
   Paths:
   - {fileID: 392882806}
   - {fileID: 1824180471}
@@ -5707,7 +5707,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[1]'
-      value: Thank you for noticing
+      value: Thank you for noticing.
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[2]'

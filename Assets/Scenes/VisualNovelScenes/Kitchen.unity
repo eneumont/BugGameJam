@@ -922,7 +922,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[4]'
-      value: Senpai... daisuki *Blushes*
+      value: Senpai... daisuki! *Blushes*
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[5]'
@@ -1700,10 +1700,10 @@ MonoBehaviour:
   - {fileID: 1970737983}
   - {fileID: 1172337894}
   ButtonTexts:
-  - Deny it
-  - Admit it
-  - Blame the toaster
-  - Accuse her of seeing other humans
+  - Deny it.
+  - Admit it.
+  - Blame the toaster.
+  - Accuse her of seeing other humans.
   Paths:
   - {fileID: 1317929299}
   - {fileID: 1354859856}
@@ -1751,7 +1751,7 @@ PrefabInstance:
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[3]'
       value: '*You proceed to head over to the microwave and just as you are about
-        to open the door a face suddenly appears on the microwave*'
+        to open the door a face suddenly appears on the microwave.*'
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[4]'
@@ -1871,11 +1871,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[1]'
-      value: It's ok *sob*
+      value: It's ok... *sob*
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[2]'
-      value: No really I'll be fine *sniffle*
+      value: No really I'll be fine... *sniffle*
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[3]'
@@ -2433,7 +2433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[2]'
-      value: I'mmmm sorry for doubting you
+      value: I'mmmm sorry for doubting you.
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[3]'
@@ -3296,15 +3296,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[0]'
-      value: '*You procced to give her wad of gum*'
+      value: '*You procced to give her wad of gum.*'
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[1]'
-      value: '*She hesitates for a second before taking the wad*'
+      value: '*She hesitates for a second before taking the wad.*'
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[2]'
-      value: '*As she takes the wad you notice that her clock is now stuck at 12:24*'
+      value: '*As she takes the wad you notice that her clock is now stuck at 12:24.*'
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[3]'
@@ -4071,21 +4071,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[0]'
-      value: '*You procced to put your pasta in the microwave*'
+      value: '*You procced to put your pasta in the microwave.*'
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[1]'
-      value: '*After a bit you start to hear crackles and quiet whispers*'
+      value: '*After a bit you start to hear crackles and quiet whispers.*'
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[2]'
       value: '*Then suddenly the whole microwave explodes with your pasta still inside
-        it*'
+        it.*'
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[3]'
       value: '*In its final moments you chould have swore you heard the microwave
-        say "Without senpai... I''d rather be dead"*'
+        say "Without senpai... I''d rather be dead."*'
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[4]'
@@ -4293,7 +4293,7 @@ MonoBehaviour:
   - Confess your love for it.
   - Reject it.
   - Speak Binary to it.
-  - Offer it some gum
+  - Offer it some gum.
   Paths:
   - {fileID: 392882806}
   - {fileID: 1824180471}
@@ -4331,7 +4331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[1]'
-      value: '*beeps sadly*'
+      value: '*beeps sadly...*'
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[2]'
@@ -5164,7 +5164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[3]'
-      value: I can't do this anymore I am leaving
+      value: I can't do this anymore I am leaving.
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[4]'
