@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public static class GameProgress
 {
     private const string ProgressKey = "HasProgressed";
+    private const string PreviousSceneKey = "PreviousScene";
+
 
     public static int hasProgressed
     {
@@ -25,5 +28,27 @@ public static class GameProgress
     {
         PlayerPrefs.DeleteKey(ProgressKey);
         PlayerPrefs.Save();
+    }
+
+    // Save the current scene name as the previous scene
+    public static void SaveCurrentSceneAsPrevious()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        PlayerPrefs.SetString(PreviousSceneKey, currentSceneName);
+        PlayerPrefs.Save();
+    }
+
+    // Load the stored previous scene
+    public static void LoadPreviousScene()
+    {
+        if (PlayerPrefs.HasKey(PreviousSceneKey))
+        {
+            string previousSceneName = PlayerPrefs.GetString(PreviousSceneKey);
+            SceneManager.LoadScene(previousSceneName);
+        }
+        else
+        {
+            Debug.LogWarning("No previous scene saved!");
+        }
     }
 }
