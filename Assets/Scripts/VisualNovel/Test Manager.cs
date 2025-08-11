@@ -1,17 +1,18 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TestManager : MonoBehaviour
 {
-    private int lives = 2;
+	private int lives = 2;
 
-    [SerializeField]
-    Image heart1;
+	[SerializeField]
+	Image heart1;
 	[SerializeField]
 	Image heart2;
-    [SerializeField]
-    Sprite EmptyHeart;
+	[SerializeField]
+	Sprite EmptyHeart;
 
 	[SerializeField]
 	GameObject loseText;
@@ -59,14 +60,10 @@ public class TestManager : MonoBehaviour
 			go.SetActive(false);
 		}
 
-		yield return new WaitForSeconds(5f);
+		yield return new WaitForSeconds(2f);
 
-		int currentSceneIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
-		int loseSceneIndex = currentSceneIndex - 3;
-		// Check if the next scene index is within bounds
-		if (loseSceneIndex < UnityEngine.SceneManagement.SceneManager.sceneCountInBuildSettings)
-		{
-			UnityEngine.SceneManagement.SceneManager.LoadScene(loseSceneIndex);
-		}
+		GameProgress.SaveSceneAsPrevious("LunchBreak");
+
+		UnityEngine.SceneManagement.SceneManager.LoadScene("OutOfOffice");
 	}
 }
