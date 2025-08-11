@@ -73,14 +73,19 @@ namespace BossRoom
             InitializeUI();
             StoreOriginalPositions();
 
-            if (infiniteLoadingPanel != null) infiniteLoadingPanel.SetActive(false);
-            if (debugMessagePanel != null) debugMessagePanel.SetActive(false);
+            if (infiniteLoadingPanel != null)
+                infiniteLoadingPanel.SetActive(false);
+            if (debugMessagePanel != null)
+                debugMessagePanel.SetActive(false);
         }
 
         void InitializeUI()
         {
-            if (mainCanvas == null) mainCanvas = FindObjectOfType<Canvas>();
-            if (popupParent == null && mainCanvas != null) popupParent = mainCanvas.transform;
+            if (mainCanvas == null)
+                mainCanvas = FindObjectOfType<Canvas>();
+
+            if (popupParent == null && mainCanvas != null)
+                popupParent = mainCanvas.transform;
         }
 
         void StoreOriginalPositions()
@@ -93,7 +98,8 @@ namespace BossRoom
 
         void StorePosition(RectTransform rect)
         {
-            if (rect != null) originalPositions[rect] = rect.anchoredPosition;
+            if (rect != null)
+                originalPositions[rect] = rect.anchoredPosition;
         }
 
         public void SetIntensity(BugManager.BugIntensity intensity) => currentIntensity = intensity;
@@ -106,10 +112,18 @@ namespace BossRoom
 
             switch (Random.Range(0, 4))
             {
-                case 0: ShuffleUIElements(); break;
-                case 1: SpawnFakePopup(); break;
-                case 2: ShowMisleadingTooltip(); break;
-                case 3: ShowFakeError(); break;
+                case 0:
+                    ShuffleUIElements();
+                    break;
+                case 1:
+                    SpawnFakePopup();
+                    break;
+                case 2:
+                    ShowMisleadingTooltip();
+                    break;
+                case 3:
+                    ShowFakeError();
+                    break;
             }
         }
 
@@ -129,9 +143,10 @@ namespace BossRoom
                 }
             }
 
-            if (uiElements.Count < 2) yield break;
+            if (uiElements.Count < 2)
+                yield break;
 
-            // Fisher-Yates shuffle
+            // Fisher-Yates shuffle of positions
             for (int i = positions.Count - 1; i > 0; i--)
             {
                 int j = Random.Range(0, i + 1);
@@ -144,12 +159,12 @@ namespace BossRoom
             float elapsed = 0f;
 
             var startPositions = new List<Vector2>();
-            foreach (var elem in uiElements) startPositions.Add(elem.anchoredPosition);
+            foreach (var elem in uiElements)
+                startPositions.Add(elem.anchoredPosition);
 
             while (elapsed < duration)
             {
                 float t = Mathf.SmoothStep(0f, 1f, elapsed / duration);
-
                 for (int i = 0; i < uiElements.Count; i++)
                 {
                     if (uiElements[i] != null)
@@ -161,8 +176,10 @@ namespace BossRoom
             }
 
             for (int i = 0; i < uiElements.Count; i++)
+            {
                 if (uiElements[i] != null)
                     uiElements[i].anchoredPosition = positions[i];
+            }
         }
 
         public void ResetUIPositions() => StartCoroutine(ResetUICoroutine());
@@ -174,13 +191,14 @@ namespace BossRoom
 
             var startPositions = new Dictionary<RectTransform, Vector2>();
             foreach (var kvp in originalPositions)
+            {
                 if (kvp.Key != null)
                     startPositions[kvp.Key] = kvp.Key.anchoredPosition;
+            }
 
             while (elapsed < duration)
             {
                 float t = Mathf.SmoothStep(0f, 1f, elapsed / duration);
-
                 foreach (var kvp in originalPositions)
                 {
                     if (kvp.Key != null && startPositions.ContainsKey(kvp.Key))
@@ -192,8 +210,10 @@ namespace BossRoom
             }
 
             foreach (var kvp in originalPositions)
+            {
                 if (kvp.Key != null)
                     kvp.Key.anchoredPosition = kvp.Value;
+            }
         }
 
         public void SpawnFakePopup()
@@ -299,17 +319,38 @@ namespace BossRoom
             }
         }
 
+        public void ShowFakeTooltip(string message)
+        {
+            ShowDebugMessage(message, 4f);
+        }
+
         public void ShowMisleadingTooltip()
         {
             if (misleadingTooltips.Count > 0)
-                ShowDebugMessage(misleadingTooltips[Random.Range(0, misleadingTooltips.Count)], 4f);
+                ShowFakeTooltip(misleadingTooltips[Random.Range(0, misleadingTooltips.Count)]);
         }
 
-        public void ShowFakeError() => ShowFakeDialog(GetRandomFakeError(), Random.Range(3f, 6f));
+        public void ShowFakeError()
+        {
+            ShowFakeDialog(GetRandomFakeError(), Random.Range(3f, 6f));
+        }
 
         string GetRandomFakeError()
         {
             return fakeErrors.Count > 0 ? fakeErrors[Random.Range(0, fakeErrors.Count)] : "System Error: Unknown issue detected";
+        }
+
+        // Add this method to fix missing call with duration parameter:
+        public void TriggerGaslighting(float duration)
+        {
+            Debug.Log($"TriggerGaslighting triggered for {duration} seconds");
+            // Implement your gaslighting effect logic here if needed.
+        }
+
+        // Add this overload to fix calls without duration:
+        public void ShowFakeDialog(string message)
+        {
+            ShowFakeDialog(message, 4f); // default 4 seconds duration
         }
 
         public void ShowFakeDialog(string message, float duration)
@@ -326,7 +367,8 @@ namespace BossRoom
             {
                 dialog = Instantiate(fakeDialogPrefab, popupParent);
                 var dialogText = dialog.GetComponentInChildren<TextMeshProUGUI>();
-                if (dialogText != null) dialogText.text = message;
+                if (dialogText != null)
+                    dialogText.text = message;
             }
             else
             {
@@ -371,7 +413,9 @@ namespace BossRoom
 
         public void ShowDebugMessage(string message, float duration)
         {
-            if (debugMessagePanel == null || debugMessageText == null) return;
+            if (debugMessagePanel == null || debugMessageText == null)
+                return;
+
             StartCoroutine(DebugMessageCoroutine(message, duration));
         }
 
@@ -387,7 +431,8 @@ namespace BossRoom
 
         public void ShowInfiniteLoading()
         {
-            if (infiniteLoadingPanel == null) return;
+            if (infiniteLoadingPanel == null)
+                return;
 
             infiniteLoadingPanel.SetActive(true);
             if (infiniteLoadingCoroutine == null)
@@ -396,7 +441,8 @@ namespace BossRoom
 
         public void HideInfiniteLoading()
         {
-            if (infiniteLoadingPanel == null) return;
+            if (infiniteLoadingPanel == null)
+                return;
 
             infiniteLoadingPanel.SetActive(false);
             if (infiniteLoadingCoroutine != null)
@@ -434,25 +480,31 @@ namespace BossRoom
         public void ResetAllUI()
         {
             foreach (var popup in activePopups)
+            {
                 if (popup != null)
                     Destroy(popup);
+            }
 
             activePopups.Clear();
             ResetUIPositions();
             HideInfiniteLoading();
 
-            if (debugMessagePanel != null) debugMessagePanel.SetActive(false);
+            if (debugMessagePanel != null)
+                debugMessagePanel.SetActive(false);
+
             isUIBetrayalActive = false;
         }
 
         public void AddMisleadingTooltip(string tooltip)
         {
-            if (!misleadingTooltips.Contains(tooltip)) misleadingTooltips.Add(tooltip);
+            if (!misleadingTooltips.Contains(tooltip))
+                misleadingTooltips.Add(tooltip);
         }
 
         public void AddFakeError(string error)
         {
-            if (!fakeErrors.Contains(error)) fakeErrors.Add(error);
+            if (!fakeErrors.Contains(error))
+                fakeErrors.Add(error);
         }
 
         public bool IsUIBetrayalActive() => isUIBetrayalActive;

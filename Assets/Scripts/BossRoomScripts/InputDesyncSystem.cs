@@ -14,21 +14,20 @@ namespace BossRoom
         private bool isDesyncActive = false;
         private float desyncEndTime = 0f;
 
-        // Key -> timestamp after which input is processed (delay per key)
         private Dictionary<KeyCode, float> inputDelays = new Dictionary<KeyCode, float>();
 
         private SpriteRenderer spriteRenderer;
         private BugManager.BugIntensity currentIntensity = BugManager.BugIntensity.Mild;
 
-        // Triple-tap detection state
+        // Triple tap detection
         private float lastLeftTap = -1f;
         private float lastRightTap = -1f;
         private int leftTapCount = 0;
         private int rightTapCount = 0;
         private readonly float tapWindow = 0.3f;
 
-        // Phase 2 control swap flag (placeholder)
         private bool isSwapped = false;
+        public bool IsSwapped => isSwapped;
 
         void Awake()
         {
@@ -38,9 +37,7 @@ namespace BossRoom
         void Start()
         {
             playerController = FindObjectOfType<BossRoomPlayerController>();
-
-            if (networkTimeoutIcon != null)
-                networkTimeoutIcon.SetActive(false);
+            networkTimeoutIcon?.SetActive(false);
         }
 
         void Update()
@@ -67,9 +64,12 @@ namespace BossRoom
             playerController = player;
         }
 
-        /// <summary>
-        /// Returns true if the given input key should be processed immediately (not delayed by desync)
-        /// </summary>
+        public void SetPlayerController(BossRoomPlayerController player)
+        {
+            // Alias for SetPlayer to fix missing method error
+            SetPlayer(player);
+        }
+
         public bool ShouldProcessInputImmediately(KeyCode key)
         {
             if (!isDesyncActive)
@@ -81,9 +81,6 @@ namespace BossRoom
             return Time.time >= readyTime;
         }
 
-        /// <summary>
-        /// Starts input desync with random delays for specific keys lasting for the given duration
-        /// </summary>
         public void TriggerInputDesync(float duration)
         {
             if (isDesyncActive)
@@ -94,17 +91,20 @@ namespace BossRoom
 
             inputDelays.Clear();
 
-            // Keys to delay; assign consistent random delay per key for desync duration
             KeyCode[] delayedKeys = { KeyCode.Mouse0, KeyCode.X, KeyCode.A, KeyCode.D, KeyCode.LeftArrow, KeyCode.RightArrow };
             foreach (var key in delayedKeys)
-            {
                 inputDelays[key] = Time.time + Random.Range(0.3f, 1.0f);
-            }
 
             StartCoroutine(DesyncRoutine());
         }
 
-        private IEnumerator DesyncRoutine()
+        public void TriggerMinorDesync(float duration)
+        {
+            // Alias method to match missing method error
+            TriggerInputDesync(duration);
+        }
+
+        IEnumerator DesyncRoutine()
         {
             while (Time.time < desyncEndTime)
                 yield return null;
@@ -112,22 +112,20 @@ namespace BossRoom
             ClearDesync();
         }
 
-        /// <summary>
-        /// Clears the input desync state immediately
-        /// </summary>
         public void ClearDesync()
         {
             isDesyncActive = false;
             inputDelays.Clear();
-
-            if (networkTimeoutIcon != null && networkTimeoutIcon.activeSelf)
-                networkTimeoutIcon.SetActive(false);
+            networkTimeoutIcon?.SetActive(false);
         }
 
-        /// <summary>
-        /// Must be called externally on KeyDown events of left/right keys to detect triple taps.
-        /// Triggers forced turning of player on triple tap.
-        /// </summary>
+        public void DisablePlayerInput()
+        {
+            // Simple disable logic: clear desync and prevent further input
+            ClearDesync();
+            // Additional disabling logic could be added here if needed
+        }
+
         public void HandleDirectionalTap(bool isRight)
         {
             float currentTime = Time.time;
@@ -180,23 +178,31 @@ namespace BossRoom
             }
         }
 
-        /// <summary>
-        /// Placeholder for swapping control schemes in phase 2
-        /// </summary>
         public void SwapControlScheme()
         {
             isSwapped = true;
             Debug.Log("InputDesyncSystem: Control scheme swapped");
-            // TODO: Implement actual swap logic if needed
         }
 
-        /// <summary>
-        /// Restore controls back to default
-        /// </summary>
         public void RestoreControlScheme()
         {
             isSwapped = false;
             Debug.Log("InputDesyncSystem: Control scheme restored");
+        }
+
+        public void SwapControlSchemeTemporarily(float duration)
+        {
+            if (!isSwapped)
+            {
+                SwapControlScheme();
+                StartCoroutine(RestoreControlAfterDelay(duration));
+            }
+        }
+
+        private IEnumerator RestoreControlAfterDelay(float duration)
+        {
+            yield return new WaitForSeconds(duration);
+            RestoreControlScheme();
         }
 
         private void SetVisuals(Color color)

@@ -28,20 +28,18 @@ namespace BossRoom
         private BossController bossController;
         private GameObject player;
 
-        // Fake damage tracking
         private float displayedBossHealth = 1f;
         private bool isShowingFakeHealth = false;
         private int correctHitMarkerIndex = 0;
+
+        private UnityEngine.UI.Image bossHealthImage;
 
         void Start()
         {
             InitializeSystem();
 
-            // Auto-create hit markers if none exist
             if (hitMarkers.Count == 0)
-            {
                 CreateHitMarkers();
-            }
         }
 
         void InitializeSystem()
@@ -54,7 +52,6 @@ namespace BossRoom
                 UpdateBossHealthUI(displayedBossHealth);
             }
 
-            // Auto-find UI elements if not assigned
             if (bossHealthFill == null)
             {
                 var healthBar = GameObject.Find("BossHealthBar");
@@ -69,15 +66,17 @@ namespace BossRoom
                     bossHealthPercentageText = healthText.GetComponent<TextMeshProUGUI>();
             }
 
-            // Auto-find player hearts
+            if (bossHealthFill != null)
+                bossHealthImage = bossHealthFill.GetComponent<UnityEngine.UI.Image>();
+
             if (playerHearts.Count == 0)
             {
-                var heartObjs = GameObject.FindGameObjectsWithTag("PlayerHeart");
-                foreach (var heartObj in heartObjs)
+                var hearts = GameObject.FindGameObjectsWithTag("PlayerHeart");
+                foreach (var heart in hearts)
                 {
-                    var heartImage = heartObj.GetComponent<UnityEngine.UI.Image>();
-                    if (heartImage != null)
-                        playerHearts.Add(heartImage);
+                    var img = heart.GetComponent<UnityEngine.UI.Image>();
+                    if (img != null)
+                        playerHearts.Add(img);
                 }
             }
 
@@ -87,16 +86,15 @@ namespace BossRoom
 
         void CreateHitMarkers()
         {
-            // Create some simple hit markers around the boss
             var boss = FindObjectOfType<BossController>();
             if (boss == null) return;
 
             Vector3 bossPos = boss.transform.position;
             Vector3[] positions = {
-                bossPos + new Vector3(-2, 1, 0),   // Left side
-                bossPos + new Vector3(2, 1, 0),    // Right side
-                bossPos + new Vector3(0, 2, 0),    // Top
-                bossPos + new Vector3(0, -1, 0)    // Bottom
+                bossPos + new Vector3(-2, 1, 0),
+                bossPos + new Vector3(2, 1, 0),
+                bossPos + new Vector3(0, 2, 0),
+                bossPos + new Vector3(0, -1, 0)
             };
 
             for (int i = 0; i < positions.Length; i++)
@@ -104,17 +102,15 @@ namespace BossRoom
                 GameObject marker = new GameObject($"HitMarker_{i}");
                 marker.transform.position = positions[i];
 
-                // Add sprite renderer
-                SpriteRenderer sr = marker.AddComponent<SpriteRenderer>();
+                var sr = marker.AddComponent<SpriteRenderer>();
 
-                // Create a simple circle sprite
                 Texture2D texture = new Texture2D(32, 32);
                 for (int x = 0; x < 32; x++)
                 {
                     for (int y = 0; y < 32; y++)
                     {
-                        float distance = Vector2.Distance(new Vector2(x, y), new Vector2(16, 16));
-                        if (distance < 12 && distance > 8)
+                        float dist = Vector2.Distance(new Vector2(x, y), new Vector2(16, 16));
+                        if (dist < 12 && dist > 8)
                             texture.SetPixel(x, y, Color.yellow);
                         else
                             texture.SetPixel(x, y, Color.clear);
@@ -122,8 +118,8 @@ namespace BossRoom
                 }
                 texture.Apply();
 
-                Sprite markerSprite = Sprite.Create(texture, new Rect(0, 0, 32, 32), new Vector2(0.5f, 0.5f));
-                sr.sprite = markerSprite;
+                Sprite sprite = Sprite.Create(texture, new Rect(0, 0, 32, 32), new Vector2(0.5f, 0.5f));
+                sr.sprite = sprite;
                 sr.sortingOrder = 10;
 
                 hitMarkers.Add(marker);
@@ -145,22 +141,21 @@ namespace BossRoom
         {
             for (int i = 0; i < playerHearts.Count && i < maxLives; i++)
             {
-                if (playerHearts[i] != null)
+                if (playerHearts[i] == null) continue;
+
+                if (i < currentLives)
                 {
-                    if (i < currentLives)
-                    {
-                        if (fullHeartSprite != null)
-                            playerHearts[i].sprite = fullHeartSprite;
-                        else
-                            playerHearts[i].color = Color.red; // Fallback
-                    }
+                    if (fullHeartSprite != null)
+                        playerHearts[i].sprite = fullHeartSprite;
                     else
-                    {
-                        if (emptyHeartSprite != null)
-                            playerHearts[i].sprite = emptyHeartSprite;
-                        else
-                            playerHearts[i].color = Color.gray; // Fallback
-                    }
+                        playerHearts[i].color = Color.red;
+                }
+                else
+                {
+                    if (emptyHeartSprite != null)
+                        playerHearts[i].sprite = emptyHeartSprite;
+                    else
+                        playerHearts[i].color = Color.gray;
                 }
             }
         }
@@ -192,6 +187,9 @@ namespace BossRoom
 
         public void TriggerGaslighting()
         {
+            if (isGaslightingActive)
+                return;
+
             isGaslightingActive = true;
             StartCoroutine(GaslightingSequence());
         }
@@ -212,11 +210,11 @@ namespace BossRoom
             {
                 float randomEvent = Random.value;
 
-                if (randomEvent < 0.3f)
+                if (randomEvent < fakeDamageChance)
                     TriggerFakeDamage();
-                else if (randomEvent < 0.6f)
+                else if (randomEvent < fakeDamageChance + wrongHitMarkerChance)
                     TriggerWrongHitMarkers();
-                else if (randomEvent < 0.9f)
+                else if (randomEvent < fakeDamageChance + wrongHitMarkerChance + fakeHealChance)
                     TriggerFakeHeal();
 
                 yield return new WaitForSeconds(Random.Range(1f, 3f));
@@ -231,7 +229,6 @@ namespace BossRoom
 
             if (isShowingFakeHealth)
             {
-                // Slowly move towards real health
                 displayedBossHealth = Mathf.MoveTowards(displayedBossHealth, realHealth, Time.deltaTime * 0.3f);
                 UpdateBossHealthUI(displayedBossHealth);
 
@@ -247,7 +244,11 @@ namespace BossRoom
 
         void UpdateBossHealthUI(float normalizedHealth)
         {
-            if (bossHealthFill != null)
+            if (bossHealthImage != null)
+            {
+                bossHealthImage.fillAmount = Mathf.Clamp01(normalizedHealth);
+            }
+            else if (bossHealthFill != null)
             {
                 bossHealthFill.localScale = new Vector3(Mathf.Clamp01(normalizedHealth), 1f, 1f);
             }
@@ -258,10 +259,16 @@ namespace BossRoom
             }
         }
 
+        float lastShuffleTime = 0f;
+        float shuffleInterval = 1f;
+
         void UpdateHitMarkerMisleading()
         {
-            if (Random.value < wrongHitMarkerChance * Time.deltaTime)
+            if (Time.time - lastShuffleTime >= shuffleInterval && Random.value < wrongHitMarkerChance)
+            {
                 ShuffleHitMarkers();
+                lastShuffleTime = Time.time;
+            }
         }
 
         public bool ShouldPreventDamage()
@@ -272,8 +279,6 @@ namespace BossRoom
         public void ShowFakeDamage()
         {
             StartCoroutine(FlashHealthBar(Color.red));
-
-            // Show fake damage text or effect
             var uiSystem = FindObjectOfType<UIBetrayalSystem>();
             uiSystem?.ShowDebugMessage("Hit registered!", 1f);
         }
@@ -284,9 +289,8 @@ namespace BossRoom
 
             float fakeDamageAmount = Random.Range(0.05f, 0.15f);
             displayedBossHealth = Mathf.Max(0f, displayedBossHealth - fakeDamageAmount);
-            UpdateBossHealthUI(displayedBossHealth);
             isShowingFakeHealth = true;
-
+            UpdateBossHealthUI(displayedBossHealth);
             StartCoroutine(FlashHealthBar(Color.red));
         }
 
@@ -294,12 +298,12 @@ namespace BossRoom
         {
             float fakeHealAmount = Random.Range(0.03f, 0.08f);
             displayedBossHealth = Mathf.Min(1f, displayedBossHealth + fakeHealAmount);
-            UpdateBossHealthUI(displayedBossHealth);
             isShowingFakeHealth = true;
-
+            UpdateBossHealthUI(displayedBossHealth);
             StartCoroutine(FlashHealthBar(Color.green));
 
-            FindObjectOfType<UIBetrayalSystem>()?.ShowFakeDialog($"Auto-Heal Patch Applied (+{fakeHealAmount * 100f:F0} HP)", 2f);
+            var uiSystem = FindObjectOfType<UIBetrayalSystem>();
+            uiSystem?.ShowFakeDialog($"Auto-Heal Patch Applied (+{fakeHealAmount * 100f:F0} HP)", 2f);
         }
 
         void TriggerWrongHitMarkers()
@@ -321,11 +325,13 @@ namespace BossRoom
 
         IEnumerator HighlightWrongMarkers()
         {
-            List<GameObject> wrongMarkers = new List<GameObject>();
+            var wrongMarkers = new List<GameObject>();
 
             for (int i = 0; i < hitMarkers.Count; i++)
+            {
                 if (i != correctHitMarkerIndex && hitMarkers[i] != null)
                     wrongMarkers.Add(hitMarkers[i]);
+            }
 
             int flashCount = 3;
             float flashDuration = 0.3f;
@@ -354,28 +360,26 @@ namespace BossRoom
 
         IEnumerator FlashHealthBar(Color flashColor)
         {
-            if (bossHealthFill == null) yield break;
+            if (bossHealthImage == null)
+                yield break;
 
-            var img = bossHealthFill.GetComponent<UnityEngine.UI.Image>();
-            if (img == null) yield break;
-
-            Color originalColor = img.color;
-            img.color = flashColor;
+            Color originalColor = bossHealthImage.color;
+            bossHealthImage.color = flashColor;
 
             yield return new WaitForSeconds(0.2f);
 
-            img.color = originalColor;
+            bossHealthImage.color = originalColor;
         }
 
         public bool IsHitMarkerCorrect(GameObject hitMarker)
         {
-            int index = hitMarkers.IndexOf(hitMarker);
-            return index == correctHitMarkerIndex;
+            return hitMarkers.IndexOf(hitMarker) == correctHitMarkerIndex;
         }
 
         public void OnPlayerAttack(GameObject targetMarker)
         {
-            if (!isGaslightingActive) return;
+            if (!isGaslightingActive)
+                return;
 
             bool hitCorrect = IsHitMarkerCorrect(targetMarker);
 
@@ -383,7 +387,7 @@ namespace BossRoom
                 TriggerFakeDamage();
             else if (hitCorrect && Random.value < preventRealDamageChance)
             {
-                // Real damage prevention is handled in ShouldPreventDamage()
+                // Real damage prevention handled externally via ShouldPreventDamage()
             }
         }
 
@@ -400,7 +404,6 @@ namespace BossRoom
             }
         }
 
-        // Helper methods for hit markers
         public void AddHitMarker(GameObject marker)
         {
             if (!hitMarkers.Contains(marker))
@@ -418,6 +421,39 @@ namespace BossRoom
             if (correctHitMarkerIndex >= 0 && correctHitMarkerIndex < hitMarkers.Count)
                 return hitMarkers[correctHitMarkerIndex];
             return null;
+        }
+
+        // === Added missing methods to fix errors ===
+
+        public bool IsCurrentlyGaslighting()
+        {
+            return isGaslightingActive;
+        }
+
+        public void StopGaslighting()
+        {
+            ClearGaslighting();
+        }
+
+        public bool ShouldBlockDamage()
+        {
+            return isGaslightingActive && Random.value < preventRealDamageChance;
+        }
+
+        // Added an overload for UpdateHealthBar to accept 2 params to fix errors
+        public void UpdateHealthBar(float healthNormalized, bool useFake = false)
+        {
+            if (useFake)
+            {
+                displayedBossHealth = healthNormalized;
+                isShowingFakeHealth = true;
+            }
+            UpdateBossHealthUI(healthNormalized);
+        }
+
+        public void TriggerCollisionParadox()
+        {
+            Debug.LogWarning("TriggerCollisionParadox called on GoalGaslightingSystem but not implemented.");
         }
     }
 }

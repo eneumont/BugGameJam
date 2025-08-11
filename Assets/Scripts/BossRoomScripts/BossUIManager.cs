@@ -21,11 +21,14 @@ namespace BossRoom
             HideDialog();
         }
 
-        public void UpdateHealthBar(float healthPercent)
+        public void UpdateHealthBar(float healthPercent, bool isHonest)
         {
             healthPercent = Mathf.Clamp01(healthPercent);
             healthFill.localScale = new Vector3(healthPercent, 1f, 1f);
-            healthPercentageText.text = $"{(healthPercent * 100f):F0}%";
+
+            // Optionally mark dishonest health with asterisk
+            string honestyMark = isHonest ? "" : "*";
+            healthPercentageText.text = $"{(healthPercent * 100f):F0}%{honestyMark}";
         }
 
         public void ShowDialog(string message, float duration)

@@ -7,6 +7,8 @@ TagManager:
   - Clickable
   - GoodFile
   - BadFile
+  - Boss
+  - IsGround
   layers:
   - Default
   - TransparentFX

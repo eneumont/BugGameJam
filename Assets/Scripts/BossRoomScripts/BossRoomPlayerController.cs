@@ -34,7 +34,7 @@ public class BossRoomPlayerController : MonoBehaviour
     private float lastRightTap = -1f;
     private int leftTapCount = 0;
     private int rightTapCount = 0;
-    private float tapWindow = 0.3f;
+    private readonly float tapWindow = 0.3f;
 
     // Force facing direction set by triple-tap
     private bool forceFacingActive = false;
@@ -81,13 +81,16 @@ public class BossRoomPlayerController : MonoBehaviour
 
     void UpdateGrounded()
     {
-        // Raycast straight down from groundCheckPoint
-        RaycastHit2D hit = Physics2D.Raycast(groundCheckPoint.position, Vector2.down, groundCheckDistance, groundLayer);
-        isGrounded = hit.collider != null;
+        // More forgiving ground check
+        isGrounded = Physics2D.Raycast(groundCheckPoint.position, Vector2.down, groundCheckDistance, groundLayer)
+            || Physics2D.OverlapCircle(groundCheckPoint.position, groundCheckDistance * 0.75f, groundLayer);
     }
 
     void HandleTripleTap()
     {
+        if (inputDesync != null && inputDesync.IsSwapped)
+            return;
+
         float currentTime = Time.time;
 
         // Left tap
@@ -100,7 +103,10 @@ public class BossRoomPlayerController : MonoBehaviour
             lastLeftTap = currentTime;
 
             if (leftTapCount >= 3)
+            {
                 SetForcedFacing(false);
+                leftTapCount = 0;
+            }
         }
 
         // Right tap
@@ -113,20 +119,25 @@ public class BossRoomPlayerController : MonoBehaviour
             lastRightTap = currentTime;
 
             if (rightTapCount >= 3)
+            {
                 SetForcedFacing(true);
+                rightTapCount = 0;
+            }
         }
     }
 
     public void SetForcedFacing(bool right)
     {
         if (forceFacingActive && forcedFacingRight == right)
-            return; // already forced this way
+            return;
 
         forcedFacingRight = right;
         forceFacingActive = true;
+
         if (facingRight != right)
             Flip();
-        Debug.Log($"Force facing {(right ? "right" : "left")} due to triple tap");
+
+        Debug.Log($"Force facing {(right ? "right" : "left")} scheduled due to triple tap");
     }
 
     void HandleMovement()
@@ -151,34 +162,22 @@ public class BossRoomPlayerController : MonoBehaviour
             jumpInput = Input.GetKeyDown(KeyCode.Space);
         }
 
-        // Move player
+        // Horizontal movement
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
         // Jump
         if (jumpInput && isGrounded)
         {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f); // Reset vertical speed for consistent jumps
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            if (anim != null)
-                anim.SetTrigger("Jump");
+            anim?.SetTrigger("Jump");
         }
 
-        // If forced facing is active, only disable it when player *intentionally* moves opposite direction:
-        if (forceFacingActive)
-        {
-            if ((forcedFacingRight && moveInput < 0) || (!forcedFacingRight && moveInput > 0))
-            {
-                forceFacingActive = false;
-                Debug.Log("Forced facing cleared by player moving opposite direction");
-            }
-        }
-
-        // Flip if forced facing not active
+        // Facing
         if (!forceFacingActive)
         {
-            if (moveInput > 0 && !facingRight)
-                Flip();
-            else if (moveInput < 0 && facingRight)
-                Flip();
+            if (moveInput > 0 && !facingRight) Flip();
+            else if (moveInput < 0 && facingRight) Flip();
         }
     }
 
@@ -198,8 +197,7 @@ public class BossRoomPlayerController : MonoBehaviour
 
     void PerformAttack()
     {
-        if (anim != null)
-            anim.SetTrigger("Attack");
+        anim?.SetTrigger("Attack");
 
         var hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
@@ -242,37 +240,25 @@ public class BossRoomPlayerController : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        gaslighting?.UpdatePlayerHearts(currentHealth, maxHealth);
 
-        if (gaslighting != null)
-            gaslighting.UpdatePlayerHearts(currentHealth, maxHealth);
-
-        if (currentHealth <= 0)
-            Die();
+        if (currentHealth <= 0) Die();
     }
 
     void Die()
     {
         Debug.Log("Player died!");
         var setupManager = FindObjectOfType<BossRoom.BossRoomSetupManager>();
-        if (setupManager != null)
-            setupManager.OnPlayerDeath();
+        setupManager?.OnPlayerDeath();
     }
 
-    public bool IsFacingRight()
-    {
-        return facingRight;
-    }
-
-    public int GetCurrentHealth()
-    {
-        return currentHealth;
-    }
+    public bool IsFacingRight() => facingRight;
+    public int GetCurrentHealth() => currentHealth;
 
     public void Heal(int amount)
     {
         currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
-        if (gaslighting != null)
-            gaslighting.UpdatePlayerHearts(currentHealth, maxHealth);
+        gaslighting?.UpdatePlayerHearts(currentHealth, maxHealth);
     }
 
     void OnDrawGizmosSelected()
@@ -286,6 +272,7 @@ public class BossRoomPlayerController : MonoBehaviour
         {
             Gizmos.color = Color.green;
             Gizmos.DrawLine(groundCheckPoint.position, groundCheckPoint.position + Vector3.down * groundCheckDistance);
+            Gizmos.DrawWireSphere(groundCheckPoint.position, groundCheckDistance * 0.75f);
         }
     }
 }

@@ -10,20 +10,25 @@ namespace BossRoom
         public List<GameObject> paradoxObjects = new List<GameObject>();
 
         [Header("Paradox Settings")]
-        public bool reverseOnlyMode = false; // Only passable when moving backward
-        public bool lookAwayMode = false; // Only passable when not looking at them
+        public bool reverseOnlyMode = false;
+        public bool lookAwayMode = false;
 
         private Dictionary<GameObject, CollisionParadoxObject> paradoxComponents = new Dictionary<GameObject, CollisionParadoxObject>();
-        private BugManager.BugIntensity currentIntensity = BugManager.BugIntensity.Mild;
         private bool isParadoxActive = false;
 
-        // Player reference
+        // Player references
         private Transform playerTransform;
         private BossRoomPlayerController playerController;
         private Rigidbody2D playerRigidbody;
 
-        void Start()
+        private BossController bossController;
+
+        private BugManager.BugIntensity currentIntensity = BugManager.BugIntensity.Mild;
+
+        public void Initialize(BossController boss, Transform player)
         {
+            bossController = boss;
+            SetPlayer(player);
             InitializeParadoxObjects();
         }
 
@@ -39,10 +44,8 @@ namespace BossRoom
 
         void InitializeParadoxObjects()
         {
-            // Auto-find paradox objects if none assigned
             if (paradoxObjects.Count == 0)
             {
-                // Look for objects with specific tags or names
                 GameObject[] walls = GameObject.FindGameObjectsWithTag("Wall");
                 foreach (var wall in walls)
                 {
@@ -52,40 +55,32 @@ namespace BossRoom
                     }
                 }
 
-                // If still none found, create some
                 if (paradoxObjects.Count == 0)
                 {
-                    Debug.LogWarning("No paradox objects found. Create some walls with 'Paradox' in the name or assign them manually.");
+                    Debug.LogWarning("No paradox objects found. Create walls with 'Paradox' in the name or assign manually.");
                 }
             }
 
-            foreach (GameObject obj in paradoxObjects)
+            foreach (var obj in paradoxObjects)
             {
                 if (obj != null)
                 {
-                    CollisionParadoxObject paradoxComp = obj.GetComponent<CollisionParadoxObject>();
-                    if (paradoxComp == null)
-                        paradoxComp = obj.AddComponent<CollisionParadoxObject>();
-
+                    var paradoxComp = obj.GetComponent<CollisionParadoxObject>() ?? obj.AddComponent<CollisionParadoxObject>();
                     paradoxComponents[obj] = paradoxComp;
                     paradoxComp.Initialize(this);
                 }
             }
         }
 
-        public void SetIntensity(BugManager.BugIntensity intensity)
+        // This method now accepts optional duration for compatibility
+        public void TriggerCollisionParadox(float duration = 0f)
         {
-            currentIntensity = intensity;
-
-            foreach (var paradoxComp in paradoxComponents.Values)
+            if (bossController == null)
             {
-                if (paradoxComp != null)
-                    paradoxComp.SetIntensity(intensity);
+                Debug.LogError("BossController not assigned to CollisionParadoxSystem!");
+                return;
             }
-        }
 
-        public void TriggerCollisionParadox()
-        {
             if (paradoxComponents.Count == 0)
             {
                 Debug.LogWarning("No paradox objects available for collision paradox!");
@@ -94,47 +89,62 @@ namespace BossRoom
 
             isParadoxActive = true;
 
-            // Choose paradox mode based on intensity
-            if (currentIntensity == BugManager.BugIntensity.Mild)
+            // Use currentIntensity set by SetIntensity (or fallback to Mild)
+            switch (currentIntensity)
             {
-                // Simple reverse-only mode
-                reverseOnlyMode = true;
-                lookAwayMode = false;
-            }
-            else
-            {
-                // More complex modes for aggressive phase
-                int mode = Random.Range(0, 3);
-                reverseOnlyMode = mode == 0 || mode == 2;
-                lookAwayMode = mode == 1 || mode == 2;
+                case BugManager.BugIntensity.Mild:
+                    reverseOnlyMode = true;
+                    lookAwayMode = false;
+                    break;
+
+                case BugManager.BugIntensity.Aggressive:
+                    int mode = Random.Range(0, 3);
+                    reverseOnlyMode = (mode == 0 || mode == 2);
+                    lookAwayMode = (mode == 1 || mode == 2);
+                    break;
+
+                case BugManager.BugIntensity.Paused:
+                default:
+                    reverseOnlyMode = false;
+                    lookAwayMode = false;
+                    break;
             }
 
-            // Activate paradox on random objects
             int objectsToAffect = Mathf.Min(Random.Range(1, 4), paradoxComponents.Count);
             List<GameObject> objectsToActivate = new List<GameObject>(paradoxObjects);
 
             for (int i = 0; i < objectsToAffect; i++)
             {
-                if (objectsToActivate.Count > 0)
-                {
-                    int randomIndex = Random.Range(0, objectsToActivate.Count);
-                    GameObject obj = objectsToActivate[randomIndex];
-                    objectsToActivate.RemoveAt(randomIndex);
+                if (objectsToActivate.Count == 0) break;
 
-                    if (paradoxComponents.ContainsKey(obj))
-                    {
-                        paradoxComponents[obj].ActivateParadox(reverseOnlyMode, lookAwayMode);
-                    }
+                int randomIndex = Random.Range(0, objectsToActivate.Count);
+                GameObject obj = objectsToActivate[randomIndex];
+                objectsToActivate.RemoveAt(randomIndex);
+
+                if (paradoxComponents.ContainsKey(obj))
+                {
+                    paradoxComponents[obj].ActivateParadox(reverseOnlyMode, lookAwayMode);
                 }
             }
 
-            // Show debug notification
             FindObjectOfType<UIBetrayalSystem>()?.ShowDebugMessage(GetParadoxDescription(), 4f);
+
+            // If a duration was provided, schedule reset after duration
+            if (duration > 0f)
+            {
+                StartCoroutine(ResetAfterDelay(duration));
+            }
+        }
+
+        IEnumerator ResetAfterDelay(float duration)
+        {
+            yield return new WaitForSeconds(duration);
+            ResetCollision();
         }
 
         public IEnumerator TriggerCollisionParadoxTimed(float duration)
         {
-            TriggerCollisionParadox();
+            TriggerCollisionParadox(duration);
             yield return new WaitForSeconds(duration);
             ResetCollision();
         }
@@ -147,21 +157,16 @@ namespace BossRoom
 
             foreach (var paradoxComp in paradoxComponents.Values)
             {
-                if (paradoxComp != null)
-                    paradoxComp.DeactivateParadox();
+                paradoxComp?.DeactivateParadox();
             }
         }
 
         string GetParadoxDescription()
         {
-            if (reverseOnlyMode && lookAwayMode)
-                return "Debug: Multi-directional phase variance detected";
-            else if (reverseOnlyMode)
-                return "Debug: Reverse-motion bypass enabled";
-            else if (lookAwayMode)
-                return "Debug: Observer-dependent solidity active";
-            else
-                return "Debug: Paradox state undefined";
+            if (reverseOnlyMode && lookAwayMode) return "Debug: Multi-directional phase variance detected";
+            if (reverseOnlyMode) return "Debug: Reverse-motion bypass enabled";
+            if (lookAwayMode) return "Debug: Observer-dependent solidity active";
+            return "Debug: Paradox state undefined";
         }
 
         public bool IsPlayerMovingBackward()
@@ -169,15 +174,10 @@ namespace BossRoom
             if (playerTransform == null || playerRigidbody == null || playerController == null)
                 return false;
 
-            // Check if player is facing right but moving left, or facing left but moving right
             bool facingRight = playerController.IsFacingRight();
             float velocityX = playerRigidbody.linearVelocity.x;
 
-            // Moving backward = moving opposite to facing direction
-            if (facingRight && velocityX < -0.1f) return true; // Facing right, moving left
-            if (!facingRight && velocityX > 0.1f) return true;  // Facing left, moving right
-
-            return false;
+            return (facingRight && velocityX < -0.1f) || (!facingRight && velocityX > 0.1f);
         }
 
         public bool IsPlayerLookingAt(GameObject obj)
@@ -188,24 +188,15 @@ namespace BossRoom
             Vector2 directionToObject = (obj.transform.position - playerTransform.position).normalized;
             bool facingRight = playerController.IsFacingRight();
 
-            // Player is looking at object if it's in the direction they're facing
-            if (facingRight && directionToObject.x > 0.3f) return true;
-            if (!facingRight && directionToObject.x < -0.3f) return true;
-
-            return false;
+            return (facingRight && directionToObject.x > 0.3f) || (!facingRight && directionToObject.x < -0.3f);
         }
 
-        // Add objects dynamically
         public void AddParadoxObject(GameObject obj)
         {
             if (!paradoxObjects.Contains(obj))
             {
                 paradoxObjects.Add(obj);
-
-                CollisionParadoxObject paradoxComp = obj.GetComponent<CollisionParadoxObject>();
-                if (paradoxComp == null)
-                    paradoxComp = obj.AddComponent<CollisionParadoxObject>();
-
+                var paradoxComp = obj.GetComponent<CollisionParadoxObject>() ?? obj.AddComponent<CollisionParadoxObject>();
                 paradoxComponents[obj] = paradoxComp;
                 paradoxComp.Initialize(this);
             }
@@ -213,20 +204,17 @@ namespace BossRoom
 
         public void RemoveParadoxObject(GameObject obj)
         {
-            if (paradoxObjects.Contains(obj))
+            if (paradoxObjects.Remove(obj) && paradoxComponents.TryGetValue(obj, out var comp))
             {
-                paradoxObjects.Remove(obj);
-
-                if (paradoxComponents.ContainsKey(obj))
-                {
-                    CollisionParadoxObject comp = paradoxComponents[obj];
-                    if (comp != null)
-                        comp.DeactivateParadox();
-
-                    paradoxComponents.Remove(obj);
-                }
+                comp?.DeactivateParadox();
+                paradoxComponents.Remove(obj);
             }
         }
-    }
 
+        // The critical SetIntensity method to satisfy BugManager calls
+        public void SetIntensity(BugManager.BugIntensity intensity)
+        {
+            currentIntensity = intensity;
+        }
+    }
 }

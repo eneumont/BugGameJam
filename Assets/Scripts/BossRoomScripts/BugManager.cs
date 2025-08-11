@@ -12,105 +12,131 @@ namespace BossRoom
         public float mildBugInterval = 5f;
         public float aggressiveBugInterval = 2f;
 
-        private BugIntensity currentIntensity = BugIntensity.Mild;
+        private BugIntensity currentIntensityEnum = BugIntensity.Mild; // Enum state
+        private float bugIntensityValue = 0f; // Numeric intensity: 0 = Mild, 1 = Aggressive
+
+        public BugIntensity intensity => currentIntensityEnum;
+        public float intensityValue => bugIntensityValue;
+
+
         private bool bugsActive = true;
         private float lastBugTime;
+        private float currentBugInterval;
 
-        // Bug system references
+        // Bug system references - cached at start
         private CollisionParadoxSystem collisionSystem;
         private InputDesyncSystem inputSystem;
         private GoalGaslightingSystem gaslightingSystem;
         private UIBetrayalSystem uiSystem;
 
-        // Bug probability weights
         [Header("Bug Probabilities")]
         [Range(0f, 1f)] public float collisionBugChance = 0.3f;
         [Range(0f, 1f)] public float inputBugChance = 0.4f;
         [Range(0f, 1f)] public float gaslightBugChance = 0.5f;
         [Range(0f, 1f)] public float uiBugChance = 0.2f; // Phase 2 only
 
+        private BugStats stats = new BugStats();
+
         void Start()
         {
-            InitializeBugSystems();
+            SetIntensityFromFloat(0f); // Initialize intensity to Mild
+            CacheSystems();
             lastBugTime = Time.time;
+        }
+
+        void CacheSystems()
+        {
+            collisionSystem = GetComponent<CollisionParadoxSystem>() ?? FindObjectOfType<CollisionParadoxSystem>();
+            inputSystem = GetComponent<InputDesyncSystem>() ?? FindObjectOfType<InputDesyncSystem>();
+            gaslightingSystem = GetComponent<GoalGaslightingSystem>() ?? FindObjectOfType<GoalGaslightingSystem>();
+            uiSystem = FindObjectOfType<UIBetrayalSystem>();
         }
 
         void Update()
         {
-            if (!bugsActive || currentIntensity == BugIntensity.Paused)
+            if (!bugsActive || currentIntensityEnum == BugIntensity.Paused)
                 return;
 
-            float bugInterval = currentIntensity == BugIntensity.Mild ? mildBugInterval : aggressiveBugInterval;
-
-            if (Time.time - lastBugTime >= bugInterval)
+            if (Time.time - lastBugTime >= currentBugInterval)
             {
                 TriggerRandomBug();
                 lastBugTime = Time.time;
             }
         }
 
-        void InitializeBugSystems()
+        public void IncreaseIntensity(float delta)
         {
-            collisionSystem = GetComponent<CollisionParadoxSystem>();
-            if (collisionSystem == null)
-                collisionSystem = FindObjectOfType<CollisionParadoxSystem>();
+            if (currentIntensityEnum == BugIntensity.Paused) return;
 
-            inputSystem = FindObjectOfType<InputDesyncSystem>();
+            float newIntensity = Mathf.Clamp01(bugIntensityValue + delta);
+            SetIntensityFromFloat(newIntensity);
+        }
 
-            gaslightingSystem = GetComponent<GoalGaslightingSystem>();
-            if (gaslightingSystem == null)
-                gaslightingSystem = FindObjectOfType<GoalGaslightingSystem>();
+        void SetIntensityFromFloat(float intensity)
+        {
+            bugIntensityValue = Mathf.Clamp01(intensity);
 
-            uiSystem = FindObjectOfType<UIBetrayalSystem>();
+            if (bugIntensityValue <= 0f)
+                currentIntensityEnum = BugIntensity.Mild;
+            else if (bugIntensityValue >= 1f)
+                currentIntensityEnum = BugIntensity.Aggressive;
+            else
+                currentIntensityEnum = BugIntensity.Mild; // Or add mid-level if you want
+
+            currentBugInterval = Mathf.Lerp(mildBugInterval, aggressiveBugInterval, bugIntensityValue);
+
+            SetIntensityToSystems(currentIntensityEnum);
         }
 
         public void SetBugIntensity(BugIntensity intensity)
         {
-            currentIntensity = intensity;
+            currentIntensityEnum = intensity;
 
-            if (collisionSystem != null)
-                collisionSystem.SetIntensity(intensity);
-            if (inputSystem != null)
-                inputSystem.SetIntensity(intensity);
-            if (gaslightingSystem != null)
-                gaslightingSystem.SetIntensity(intensity);
-            if (uiSystem != null)
-                uiSystem.SetIntensity(intensity);
+            bugIntensityValue = (intensity == BugIntensity.Mild) ? 0f : (intensity == BugIntensity.Aggressive) ? 1f : bugIntensityValue;
+
+            currentBugInterval = Mathf.Lerp(mildBugInterval, aggressiveBugInterval, bugIntensityValue);
+
+            SetIntensityToSystems(currentIntensityEnum);
+        }
+
+        void SetIntensityToSystems(BugIntensity intensity)
+        {
+            collisionSystem?.SetIntensity(intensity);
+            inputSystem?.SetIntensity(intensity);
+            gaslightingSystem?.SetIntensity(intensity);
+            uiSystem?.SetIntensity(intensity);
         }
 
         void TriggerRandomBug()
         {
-            List<System.Action> availableBugs = new List<System.Action>();
+            var availableBugs = new List<System.Action>();
 
-            if (Random.Range(0f, 1f) < collisionBugChance)
-                availableBugs.Add(() => collisionSystem?.TriggerCollisionParadox());
+            if (Random.value < collisionBugChance)
+                availableBugs.Add(() => { collisionSystem?.TriggerCollisionParadox(); IncrementBugStat("collision"); });
 
-            if (Random.Range(0f, 1f) < inputBugChance)
-                availableBugs.Add(() => inputSystem?.TriggerInputDesync(Random.Range(0.3f, 1.5f)));
+            if (Random.value < inputBugChance)
+                availableBugs.Add(() => { inputSystem?.TriggerInputDesync(Random.Range(0.3f, 1.5f)); IncrementBugStat("input"); });
 
-            if (Random.Range(0f, 1f) < gaslightBugChance)
-                availableBugs.Add(() => gaslightingSystem?.TriggerGaslighting());
+            if (Random.value < gaslightBugChance)
+                availableBugs.Add(() => { gaslightingSystem?.TriggerGaslighting(); IncrementBugStat("gaslight"); });
 
-            if (currentIntensity == BugIntensity.Aggressive)
-            {
-                if (Random.Range(0f, 1f) < uiBugChance)
-                    availableBugs.Add(() => uiSystem?.TriggerRandomUIBug());
-            }
+            if (currentIntensityEnum == BugIntensity.Aggressive && Random.value < uiBugChance)
+                availableBugs.Add(() => { uiSystem?.TriggerRandomUIBug(); IncrementBugStat("ui"); });
 
-            if (availableBugs.Count > 0)
-            {
-                int randomIndex = Random.Range(0, availableBugs.Count);
-                availableBugs[randomIndex].Invoke();
-            }
+            if (availableBugs.Count == 0)
+                return;
+
+            int index = Random.Range(0, availableBugs.Count);
+            availableBugs[index].Invoke();
         }
 
         public void PauseAllBugs()
         {
             bugsActive = false;
-            currentIntensity = BugIntensity.Paused;
+            currentIntensityEnum = BugIntensity.Paused;
 
             collisionSystem?.ResetCollision();
-            inputSystem?.ClearDesync();          // FIXED HERE
+            inputSystem?.ClearDesync();
             gaslightingSystem?.ClearGaslighting();
             uiSystem?.ResetAllUI();
         }
@@ -118,11 +144,11 @@ namespace BossRoom
         public void ResumeAllBugs()
         {
             bugsActive = true;
-            if (currentIntensity == BugIntensity.Paused)
-                currentIntensity = BugIntensity.Mild;
+            if (currentIntensityEnum == BugIntensity.Paused)
+                SetBugIntensity(BugIntensity.Mild);
         }
 
-        // Manual bug triggers for specific attacks
+        // Manual triggers for external calls
         public void TriggerCollisionBug(float duration = 5f)
         {
             if (collisionSystem != null)
@@ -131,8 +157,7 @@ namespace BossRoom
 
         public void TriggerInputBug(float desyncAmount, float duration = 3f)
         {
-            if (inputSystem != null)
-                inputSystem.TriggerInputDesync(duration); // Pass only duration, matching InputDesyncSystem's signature
+            inputSystem?.TriggerInputDesync(duration); // only duration needed
         }
 
         public void TriggerGaslightBug(float duration = 4f)
@@ -143,11 +168,22 @@ namespace BossRoom
 
         public void TriggerUIBug()
         {
-            if (uiSystem != null)
-                uiSystem.TriggerRandomUIBug();
+            uiSystem?.TriggerRandomUIBug();
         }
 
-        // Debug methods
+        public BugStats GetBugStats() => stats;
+
+        void IncrementBugStat(string bugType)
+        {
+            switch (bugType.ToLower())
+            {
+                case "collision": stats.collisionBugsTriggered++; break;
+                case "input": stats.inputBugsTriggered++; break;
+                case "gaslight": stats.gaslightBugsTriggered++; break;
+                case "ui": stats.uiBugsTriggered++; break;
+            }
+        }
+
         [System.Serializable]
         public class BugStats
         {
@@ -156,32 +192,6 @@ namespace BossRoom
             public int gaslightBugsTriggered;
             public int uiBugsTriggered;
             public float totalBugTime;
-        }
-
-        private BugStats stats = new BugStats();
-
-        public BugStats GetBugStats()
-        {
-            return stats;
-        }
-
-        public void IncrementBugStat(string bugType)
-        {
-            switch (bugType.ToLower())
-            {
-                case "collision":
-                    stats.collisionBugsTriggered++;
-                    break;
-                case "input":
-                    stats.inputBugsTriggered++;
-                    break;
-                case "gaslight":
-                    stats.gaslightBugsTriggered++;
-                    break;
-                case "ui":
-                    stats.uiBugsTriggered++;
-                    break;
-            }
         }
     }
 }
