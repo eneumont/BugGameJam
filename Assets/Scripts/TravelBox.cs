@@ -31,7 +31,7 @@ public class TravelBox : MonoBehaviour
 
     private void Update()
     {
-        if (playerInRange && Input.GetKeyDown(KeyCode.E))
+        if (playerInRange)
         {
             if (GameProgress.hasProgressed >= requiredProgress)
             {

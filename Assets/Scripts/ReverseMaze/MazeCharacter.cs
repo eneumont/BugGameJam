@@ -7,13 +7,12 @@ using UnityEngine.UI;
 public class MazeCharacter : MonoBehaviour {
     [SerializeField] float speed = 5f;
     [SerializeField] SpriteRenderer[] heartImgs;
-    Vector3 spawnPos;
     
+    Vector3 spawnPos;
     Rigidbody2D rb;
     Vector2 input;
     Control c;
     public bool done = false;
-
     int Lives = 0;
 
     public enum Control {
