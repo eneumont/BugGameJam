@@ -26,6 +26,9 @@ public class SetUpChoices : MonoBehaviour
 	[SerializeField]
 	int[] correctButtons; // Base 0
 
+	[SerializeField]
+	TestManager testManager;
+
 	public void SetUpTheChoices()
 	{
 		if (Buttons.Length != ButtonTexts.Length) { return; }
@@ -62,24 +65,84 @@ public class SetUpChoices : MonoBehaviour
 	public void ChoiceZero()
 	{
 		Paths[0].startNewTalking();
+
+		bool correctChoice = false;
+		foreach (int correctButton in correctButtons)
+		{
+			if (correctButton == 0)
+			{
+				correctChoice = true;
+			}
+		}
+
+		if (testManager != null && !correctChoice)
+		{
+			testManager.LoseLife();
+		}
+
 		EndChoice();
 	}
 
 	public void ChoiceOne()
 	{
 		Paths[1].startNewTalking();
+
+		bool correctChoice = false;
+		foreach (int correctButton in correctButtons)
+		{
+			if (correctButton == 1)
+			{
+				correctChoice = true;
+			}
+		}
+
+		if (testManager != null && !correctChoice)
+		{
+			testManager.LoseLife();
+		}
+
 		EndChoice();
 	}
 
 	public void ChoiceTwo()
 	{
 		Paths[2].startNewTalking();
+
+		bool correctChoice = false;
+		foreach (int correctButton in correctButtons)
+		{
+			if (correctButton == 2)
+			{
+				correctChoice = true;
+			}
+		}
+
+		if (testManager != null && !correctChoice)
+		{
+			testManager.LoseLife();
+		}
+
 		EndChoice();
 	}
 
 	public void ChoiceThree()
 	{
 		Paths[3].startNewTalking();
+
+		bool correctChoice = false;
+		foreach (int correctButton in correctButtons)
+		{
+			if (correctButton == 3)
+			{
+				correctChoice = true;
+			}
+		}
+
+		if (testManager != null && !correctChoice)
+		{
+			testManager.LoseLife();
+		}
+
 		EndChoice();
 	}
 

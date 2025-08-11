@@ -4,6 +4,6 @@ public class StaplerSpriteLogic : ClickableSprite
 {
     protected override void OnClick()
     {
-        Debug.Log("You found stapler! +100 gold");
+        Debug.Log("The Stapler Bit your Physcic hand");
     }
 }

@@ -22,7 +22,7 @@ public class HintSystem : MonoBehaviour {
     }
 
     public void hintClick(int time) {
-        newDialogue(true, hintCount, time);
+        newDialogue(true, hintCount);
 
         hintCount++;
         if (hintCount >= hints.Length) {
@@ -31,10 +31,10 @@ public class HintSystem : MonoBehaviour {
     }
 
     public void talk(int n, float time) {
-		newDialogue(false, n, time);
+		newDialogue(false, n);
 	}
 
-    void newDialogue(bool h, int pos, float time) {
+    void newDialogue(bool h, int pos) {
         StopAllCoroutines();
 
 		hintTxt.gameObject.SetActive(true);
@@ -50,7 +50,7 @@ public class HintSystem : MonoBehaviour {
             audioSource.Play();
         }
 
-        StartCoroutine(TextAppearanceTimer(time));
+        StartCoroutine(TextAppearanceTimer(audioSource.clip.length + 0.5f));
     }
 
 	IEnumerator TextAppearanceTimer(float time) {
