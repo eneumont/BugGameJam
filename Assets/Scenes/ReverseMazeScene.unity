@@ -15560,8 +15560,8 @@ MonoBehaviour:
   supervisor: 0
   talkText: {fileID: 58011608}
   speed: 5
-  talkTime: 1
-  talkInt: 0
+  talkTime: 4
+  talkInt: 1
   talking: Thats nice...
 --- !u!212 &213408340
 SpriteRenderer:
@@ -15908,7 +15908,7 @@ MonoBehaviour:
   talkText: {fileID: 1043548499}
   speed: 5
   talkTime: 1
-  talkInt: 0
+  talkInt: 8
   talking: 
 --- !u!212 &298882957
 SpriteRenderer:
@@ -16764,7 +16764,7 @@ MonoBehaviour:
   supervisor: 0
   talkText: {fileID: 1854297275}
   speed: 5
-  talkTime: 1
+  talkTime: 2.8
   talkInt: 0
   talking: Ding
 --- !u!212 &459646816
@@ -17371,8 +17371,8 @@ MonoBehaviour:
   supervisor: 0
   talkText: {fileID: 1455572409}
   speed: 5
-  talkTime: 1
-  talkInt: 0
+  talkTime: 3.8
+  talkInt: 6
   talking: Feels good...
 --- !u!212 &639133599
 SpriteRenderer:
@@ -17616,8 +17616,8 @@ MonoBehaviour:
   supervisor: 0
   talkText: {fileID: 930504350}
   speed: 5
-  talkTime: 1
-  talkInt: 0
+  talkTime: 4.5
+  talkInt: 3
   talking: That wasn't funny...
 --- !u!212 &650625605
 SpriteRenderer:
@@ -17868,6 +17868,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3293573816279400027, guid: dcc38afb8967db942aea91872e311c89, type: 3}
+      propertyPath: talking.Array.size
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3293573816279400027, guid: dcc38afb8967db942aea91872e311c89, type: 3}
       propertyPath: 'hints.Array.data[2]'
       value: Come on man?
       objectReference: {fileID: 0}
@@ -17878,6 +17882,30 @@ PrefabInstance:
     - target: {fileID: 3293573816279400027, guid: dcc38afb8967db942aea91872e311c89, type: 3}
       propertyPath: talkClips.Array.size
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3293573816279400027, guid: dcc38afb8967db942aea91872e311c89, type: 3}
+      propertyPath: 'talking.Array.data[0]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3293573816279400027, guid: dcc38afb8967db942aea91872e311c89, type: 3}
+      propertyPath: 'talking.Array.data[10]'
+      value: Talk to Karen first
+      objectReference: {fileID: 0}
+    - target: {fileID: 3293573816279400027, guid: dcc38afb8967db942aea91872e311c89, type: 3}
+      propertyPath: 'talking.Array.data[11]'
+      value: Not here
+      objectReference: {fileID: 0}
+    - target: {fileID: 3293573816279400027, guid: dcc38afb8967db942aea91872e311c89, type: 3}
+      propertyPath: 'talking.Array.data[12]'
+      value: Go somewhere else
+      objectReference: {fileID: 0}
+    - target: {fileID: 3293573816279400027, guid: dcc38afb8967db942aea91872e311c89, type: 3}
+      propertyPath: 'talking.Array.data[13]'
+      value: Come on
+      objectReference: {fileID: 0}
+    - target: {fileID: 3293573816279400027, guid: dcc38afb8967db942aea91872e311c89, type: 3}
+      propertyPath: 'talking.Array.data[14]'
+      value: ...
       objectReference: {fileID: 0}
     - target: {fileID: 3293573816279400027, guid: dcc38afb8967db942aea91872e311c89, type: 3}
       propertyPath: 'hintClips.Array.data[2]'
@@ -19278,8 +19306,8 @@ MonoBehaviour:
   supervisor: 0
   talkText: {fileID: 1010375005}
   speed: 5
-  talkTime: 1
-  talkInt: 0
+  talkTime: 2.6
+  talkInt: 2
   talking: Ow
 --- !u!212 &1124490689
 SpriteRenderer:
@@ -19748,8 +19776,8 @@ MonoBehaviour:
   supervisor: 0
   talkText: {fileID: 2100395223}
   speed: 5
-  talkTime: 1
-  talkInt: 0
+  talkTime: 4.7
+  talkInt: 4
   talking: Burning...
 --- !u!212 &1295732289
 SpriteRenderer:
@@ -25357,8 +25385,8 @@ MonoBehaviour:
   supervisor: 0
   talkText: {fileID: 882092059}
   speed: 5
-  talkTime: 1
-  talkInt: 0
+  talkTime: 3.1
+  talkInt: 5
   talking: In fighting shape!
 --- !u!212 &1480783463
 SpriteRenderer:
@@ -25750,7 +25778,7 @@ MonoBehaviour:
   talkText: {fileID: 1822197944}
   speed: 5
   talkTime: 1
-  talkInt: 0
+  talkInt: 7
   talking: 
 --- !u!212 &1631673037
 SpriteRenderer:
@@ -26088,7 +26116,7 @@ MonoBehaviour:
   talkText: {fileID: 437366032}
   speed: 5
   talkTime: 1
-  talkInt: 0
+  talkInt: 9
   talking: 
 --- !u!212 &1692797810
 SpriteRenderer:

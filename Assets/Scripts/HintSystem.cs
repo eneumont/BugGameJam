@@ -21,7 +21,7 @@ public class HintSystem : MonoBehaviour {
         audioSource = GetComponent<AudioSource>();    
     }
 
-    public void hintClick(int time) {
+    public void hintClick() {
         newDialogue(true, hintCount);
 
         hintCount++;
@@ -30,7 +30,7 @@ public class HintSystem : MonoBehaviour {
         }
     }
 
-    public void talk(int n, float time) {
+    public void talk(int n) {
 		newDialogue(false, n);
 	}
 

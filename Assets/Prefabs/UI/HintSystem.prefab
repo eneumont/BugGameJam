@@ -350,7 +350,7 @@ MonoBehaviour:
       - m_Target: {fileID: 3293573816279400027}
         m_TargetAssemblyTypeName: HintSystem, Assembly-CSharp
         m_MethodName: hintClick
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
