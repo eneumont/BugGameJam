@@ -5,6 +5,7 @@ public class FishSpriteLogic : ClickableSprite
     [SerializeField] private ProgressMarker progressMarker;
     [SerializeField] private TalkingController talkingController;
     [SerializeField] private SpriteSwitcher spriteSwitcher;
+    [SerializeField] private GameObject clickHint;
 
     private bool hasInteracted = false; // Local check to prevent re-triggering
 
@@ -36,9 +37,8 @@ public class FishSpriteLogic : ClickableSprite
         progressMarker.MarkProgress();
         Debug.Log(GameProgress.hasProgressed);
 
-        if (spriteSwitcher != null)
-            spriteSwitcher.StartSwitching();
-
+        if (spriteSwitcher != null)  spriteSwitcher.StartSwitching();
+        if (clickHint != null) clickHint.SetActive(false);
         talkingController.StartText();
     }
     private void OnDialogEnd()
