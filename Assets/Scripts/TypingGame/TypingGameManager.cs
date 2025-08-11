@@ -357,8 +357,15 @@ public class TypingGameManager : MonoBehaviour
             Debug.Log("Report completed: " + finalSentence);
             gameActive = false;
             typedTextDisplay.text = "REPORT COMPLETE!";
-            // You can add completion logic here (scene transition, victory screen, etc.)
-        }
+
+            //next scene
+			int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+			int nextSceneIndex = currentSceneIndex + 1;
+			// Check if the next scene index is within bounds
+			if (nextSceneIndex < SceneManager.sceneCountInBuildSettings) {
+				SceneManager.LoadScene(nextSceneIndex);
+			}
+		}
     }
 
     void BuildSentenceDisplay()

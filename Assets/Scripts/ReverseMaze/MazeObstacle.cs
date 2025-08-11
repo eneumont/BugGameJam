@@ -22,12 +22,12 @@ public class MazeObstacle : MonoBehaviour {
     void Start() {
         targetPos = endPos;
 		setUp();
-		audioSource = GetComponent<AudioSource>();
+		if (!person) audioSource = GetComponent<AudioSource>();
 		talkText.transform.parent.gameObject.SetActive(false);
     }
 
     void Update() {
-		if (person) {
+		if (person && !supervisor) {
 			transform.position = Vector3.MoveTowards(transform.position, targetPos, 5 * Time.deltaTime);
 
 			if (Vector3.Distance(transform.position, targetPos) < 0.01f) {
@@ -38,7 +38,12 @@ public class MazeObstacle : MonoBehaviour {
 
 	private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.GetComponent<MazeCharacter>()) {
-			if (!person) audioSource.Play();
+			if (!person) {
+				audioSource.Play();
+				talkTime = audioSource.clip.length;
+				FindFirstObjectByType<HintSystem>().justTalk(talkInt, talkTime);
+			}
+
 			talkText.text = talking;
 			talkText.transform.parent.gameObject.SetActive(true);
 			StartCoroutine(interaction(talkTime));

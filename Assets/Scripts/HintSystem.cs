@@ -34,6 +34,14 @@ public class HintSystem : MonoBehaviour {
 		newDialogue(false, n);
 	}
 
+    public void justTalk(int n, float t) {
+        StopAllCoroutines();
+        hintTxt.gameObject.SetActive(true);
+        hintTxtImg.gameObject.SetActive(true);
+        hintTxt.text = talking[n];
+        StartCoroutine(TextAppearanceTimer(t));
+    }
+
     void newDialogue(bool h, int pos) {
         StopAllCoroutines();
 
