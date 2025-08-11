@@ -479,7 +479,16 @@ public class TypingGameManager : MonoBehaviour
         // Wait a moment before transitioning
         yield return new WaitForSeconds(2f);
 
-        SceneManager.LoadScene("BossYellingScene");
+        // Load the typing game scene again rather than the boss yelling... just have players start the typing game again
+        // This can be replaced with the actual boss yelling scene if needed
+
+        //This will be the logic to just reload the TypingGame scene
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+
+
+        //SceneManager.LoadScene("BossYellingScene");
     }
 
     void ClearTypedWithError()
