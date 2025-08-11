@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TestManager : MonoBehaviour
@@ -60,13 +61,14 @@ public class TestManager : MonoBehaviour
 		}
 
 		yield return new WaitForSeconds(5f);
+		SceneManager.LoadScene("TheTest");
 
-		int currentSceneIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
-		int loseSceneIndex = currentSceneIndex - 3;
-		// Check if the next scene index is within bounds
-		if (loseSceneIndex < UnityEngine.SceneManagement.SceneManager.sceneCountInBuildSettings)
-		{
-			UnityEngine.SceneManagement.SceneManager.LoadScene(loseSceneIndex);
-		}
+		//int currentSceneIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+		//int loseSceneIndex = currentSceneIndex - 3;
+		//// Check if the next scene index is within bounds
+		//if (loseSceneIndex < UnityEngine.SceneManagement.SceneManager.sceneCountInBuildSettings)
+		//{
+		//	UnityEngine.SceneManagement.SceneManager.LoadScene(loseSceneIndex);
+		//}
 	}
 }

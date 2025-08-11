@@ -6,33 +6,21 @@ public class CheckPoint : MonoBehaviour {
     [SerializeField] bool exit = false;
     [SerializeField] bool control = false;
 
-    int notDone = 10;
-    Dictionary<int, float> notDoneTalk;
-
-    void Start() {
-        notDoneTalk = new Dictionary<int, float> {
-            { 9, 3 },
-            { 10, 3 }
-        };
-    }
-
-    void Update() {
-        
-    }
+    int notDone = 11;
 
 	private void OnTriggerEnter2D(Collider2D collision) {
-        collision.GetComponent<MazeCharacter>().newControls();
+        collision.gameObject.GetComponent<MazeCharacter>().newControls();
         if (!exit) {
-            if (collision.GetComponent<MazeCharacter>()) {
-                collision.GetComponent<MazeCharacter>().checkPoint(transform.position);
+            if (collision.gameObject.GetComponent<MazeCharacter>()) {
+                collision.gameObject.GetComponent<MazeCharacter>().checkPoint(transform.position);
             }
         } else {
-            if (collision.GetComponent<MazeCharacter>().done) {
+            if (collision.gameObject.GetComponent<MazeCharacter>().done) {
                 SceneManager.LoadScene("");
             } else {
-                collision.GetComponent<HintSystem>().talk(notDone, 3f);
+				FindFirstObjectByType<HintSystem>().talk(notDone);
                 notDone++;
-                if (notDone > 14) notDone = 14;
+                if (notDone > 15) notDone = 15;
             }
         }
 	}

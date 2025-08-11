@@ -21,7 +21,7 @@ public class HintSystem : MonoBehaviour {
         audioSource = GetComponent<AudioSource>();    
     }
 
-    public void hintClick(int time) {
+    public void hintClick() {
         newDialogue(true, hintCount);
 
         hintCount++;
@@ -30,9 +30,17 @@ public class HintSystem : MonoBehaviour {
         }
     }
 
-    public void talk(int n, float time) {
+    public void talk(int n) {
 		newDialogue(false, n);
 	}
+
+    public void justTalk(int n, float t) {
+        StopAllCoroutines();
+        hintTxt.gameObject.SetActive(true);
+        hintTxtImg.gameObject.SetActive(true);
+        hintTxt.text = talking[n];
+        StartCoroutine(TextAppearanceTimer(t));
+    }
 
     void newDialogue(bool h, int pos) {
         StopAllCoroutines();
