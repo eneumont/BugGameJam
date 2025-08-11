@@ -15562,7 +15562,7 @@ MonoBehaviour:
   speed: 5
   talkTime: 1
   talkInt: 0
-  talking: Shouldn't have eaten that...
+  talking: Thats nice...
 --- !u!212 &213408340
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16766,7 +16766,7 @@ MonoBehaviour:
   speed: 5
   talkTime: 1
   talkInt: 0
-  talking: You're getting dizzier...
+  talking: Ding
 --- !u!212 &459646816
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17373,7 +17373,7 @@ MonoBehaviour:
   speed: 5
   talkTime: 1
   talkInt: 0
-  talking: 
+  talking: Feels good...
 --- !u!212 &639133599
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17618,7 +17618,7 @@ MonoBehaviour:
   speed: 5
   talkTime: 1
   talkInt: 0
-  talking: 
+  talking: That wasn't funny...
 --- !u!212 &650625605
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17871,6 +17871,78 @@ PrefabInstance:
       propertyPath: 'hints.Array.data[2]'
       value: Come on man?
       objectReference: {fileID: 0}
+    - target: {fileID: 3293573816279400027, guid: dcc38afb8967db942aea91872e311c89, type: 3}
+      propertyPath: hintClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3293573816279400027, guid: dcc38afb8967db942aea91872e311c89, type: 3}
+      propertyPath: talkClips.Array.size
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3293573816279400027, guid: dcc38afb8967db942aea91872e311c89, type: 3}
+      propertyPath: 'hintClips.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 4bc65b4dae818fa41b798f54b4812482, type: 3}
+    - target: {fileID: 3293573816279400027, guid: dcc38afb8967db942aea91872e311c89, type: 3}
+      propertyPath: 'talkClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 61256140740d2694091f9f7550d0fa15, type: 3}
+    - target: {fileID: 3293573816279400027, guid: dcc38afb8967db942aea91872e311c89, type: 3}
+      propertyPath: 'talkClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: c421191c5a883ff4c8a22a72356afde6, type: 3}
+    - target: {fileID: 3293573816279400027, guid: dcc38afb8967db942aea91872e311c89, type: 3}
+      propertyPath: 'talkClips.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: b56aeb53b4c3567448d7131b02fde7cb, type: 3}
+    - target: {fileID: 3293573816279400027, guid: dcc38afb8967db942aea91872e311c89, type: 3}
+      propertyPath: 'talkClips.Array.data[3]'
+      value: 
+      objectReference: {fileID: 8300000, guid: abdae42c06f16f34290d822ec2959a86, type: 3}
+    - target: {fileID: 3293573816279400027, guid: dcc38afb8967db942aea91872e311c89, type: 3}
+      propertyPath: 'talkClips.Array.data[4]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 7bffd9ecf672fce4aac78a99492ebf1a, type: 3}
+    - target: {fileID: 3293573816279400027, guid: dcc38afb8967db942aea91872e311c89, type: 3}
+      propertyPath: 'talkClips.Array.data[5]'
+      value: 
+      objectReference: {fileID: 8300000, guid: e118f5e32e0f07648859b58787c18129, type: 3}
+    - target: {fileID: 3293573816279400027, guid: dcc38afb8967db942aea91872e311c89, type: 3}
+      propertyPath: 'talkClips.Array.data[6]'
+      value: 
+      objectReference: {fileID: 8300000, guid: b7b74fbe2cda1c64780ebea77ca6da0a, type: 3}
+    - target: {fileID: 3293573816279400027, guid: dcc38afb8967db942aea91872e311c89, type: 3}
+      propertyPath: 'talkClips.Array.data[7]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 61256140740d2694091f9f7550d0fa15, type: 3}
+    - target: {fileID: 3293573816279400027, guid: dcc38afb8967db942aea91872e311c89, type: 3}
+      propertyPath: 'talkClips.Array.data[8]'
+      value: 
+      objectReference: {fileID: 8300000, guid: c421191c5a883ff4c8a22a72356afde6, type: 3}
+    - target: {fileID: 3293573816279400027, guid: dcc38afb8967db942aea91872e311c89, type: 3}
+      propertyPath: 'talkClips.Array.data[9]'
+      value: 
+      objectReference: {fileID: 8300000, guid: b56aeb53b4c3567448d7131b02fde7cb, type: 3}
+    - target: {fileID: 3293573816279400027, guid: dcc38afb8967db942aea91872e311c89, type: 3}
+      propertyPath: 'talkClips.Array.data[10]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d7c7a0c81323b04e86a8792398deb4b, type: 3}
+    - target: {fileID: 3293573816279400027, guid: dcc38afb8967db942aea91872e311c89, type: 3}
+      propertyPath: 'talkClips.Array.data[11]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 1d62af1ccb1e4cd4aa86bf3eb8e25953, type: 3}
+    - target: {fileID: 3293573816279400027, guid: dcc38afb8967db942aea91872e311c89, type: 3}
+      propertyPath: 'talkClips.Array.data[12]'
+      value: 
+      objectReference: {fileID: 8300000, guid: e5b33793aea12444993f2e55ecc421e2, type: 3}
+    - target: {fileID: 3293573816279400027, guid: dcc38afb8967db942aea91872e311c89, type: 3}
+      propertyPath: 'talkClips.Array.data[13]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 39e069d24d8235242b366060f947dfa9, type: 3}
+    - target: {fileID: 3293573816279400027, guid: dcc38afb8967db942aea91872e311c89, type: 3}
+      propertyPath: 'talkClips.Array.data[14]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 679ebcb3c2eeb4e48b4adf42373ab3c3, type: 3}
     - target: {fileID: 7777277642012938148, guid: dcc38afb8967db942aea91872e311c89, type: 3}
       propertyPath: m_SortingOrder
       value: 0
@@ -19208,7 +19280,7 @@ MonoBehaviour:
   speed: 5
   talkTime: 1
   talkInt: 0
-  talking: 
+  talking: Ow
 --- !u!212 &1124490689
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19678,7 +19750,7 @@ MonoBehaviour:
   speed: 5
   talkTime: 1
   talkInt: 0
-  talking: 
+  talking: Burning...
 --- !u!212 &1295732289
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20004,7 +20076,7 @@ Transform:
   m_GameObject: {fileID: 1307965504}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.391, y: -0.7, z: 0}
+  m_LocalPosition: {x: -0.391, y: -0.92, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -25191,7 +25263,7 @@ Transform:
   m_GameObject: {fileID: 1473119894}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.005, y: -0.7, z: 0}
+  m_LocalPosition: {x: 0.005, y: -0.92, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -25344,7 +25416,7 @@ MonoBehaviour:
   speed: 5
   talkTime: 1
   talkInt: 0
-  talking: 
+  talking: In fighting shape!
 --- !u!212 &1480783463
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26253,7 +26325,7 @@ Transform:
   m_GameObject: {fileID: 1802630193}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.401, y: -0.7, z: 0}
+  m_LocalPosition: {x: 0.401, y: -0.92, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -26808,7 +26880,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 99
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 8475019637894585037, guid: c4c5558799a86584f94a8ea52bc24aee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
