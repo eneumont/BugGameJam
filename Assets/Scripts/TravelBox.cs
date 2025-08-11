@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.InputSystem;  // Requires new Input System package
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class TravelBox : MonoBehaviour
@@ -13,42 +12,26 @@ public class TravelBox : MonoBehaviour
 
     private bool playerInRange = false;
 
-    private PlayerInput playerInput;
-
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
-
-            // Try to get PlayerInput component from player
-            playerInput = other.GetComponent<PlayerInput>();
-            if (playerInput != null)
-            {
-                playerInput.actions["Interact"].performed += OnInteractPerformed;
-            }
-
-            Debug.Log("Player in range. Press Interact to travel.");
+            Debug.Log("Player in range. Press 'E' to travel.");
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
-
-            if (playerInput != null)
-            {
-                playerInput.actions["Interact"].performed -= OnInteractPerformed;
-                playerInput = null;
-            }
         }
     }
 
-    private void OnInteractPerformed(InputAction.CallbackContext context)
+    private void Update()
     {
-        if (playerInRange)
+        if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
             if (GameProgress.hasProgressed >= requiredProgress)
             {

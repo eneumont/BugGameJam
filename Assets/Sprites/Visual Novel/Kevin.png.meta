@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 60fa9f30698777d4b80e72317dd50c8c
+guid: 2cc0308b6d15a4d4484b4e001341f80a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7149551760361722873
-    second: Cafeteria Background_0
+      213: 1993710755605868245
+    second: Kevin_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cafeteria Background_0
+      name: Kevin_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 55
         y: 0
-        width: 1920
-        height: 1080
+        width: 366
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 70cee5ccd80b7cc90800000000000000
-      internalID: -7149551760361722873
+      spriteID: 5de63cc7e551bab10800000000000000
+      internalID: 1993710755605868245
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Cafeteria Background_0: -7149551760361722873
+      Kevin_0: 1993710755605868245
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4d8cff263c5e6af40aff997f93fa4e1a
+guid: 1a941bdfc6d850d4abc65d6a6aae283e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 181656586610456116
-    second: TrashCanBro_0
+      213: -1541314442797551188
+    second: WarningSymbol (2)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TrashCanBro_0
+      name: WarningSymbol (2)_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 22
-        width: 1000
-        height: 974
+        x: 0
+        y: 6
+        width: 120
+        height: 232
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 436b60cf3bf558200800000000000000
-      internalID: 181656586610456116
+      spriteID: ca17fd53ea62c9ae0800000000000000
+      internalID: -1541314442797551188
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      TrashCanBro_0: 181656586610456116
+      WarningSymbol (2)_0: -1541314442797551188
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
