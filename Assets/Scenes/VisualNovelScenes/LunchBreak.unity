@@ -2307,8 +2307,8 @@ MonoBehaviour:
   ButtonTexts:
   - Eat the sandwhich anyway.
   - Negotiate with the sandwich.
-  - Throw the sandwich away
-  - Compliment the sandwich
+  - Throw the sandwich away.
+  - Compliment the sandwich.
   Paths:
   - {fileID: 1317929299}
   - {fileID: 1354859856}
@@ -2350,7 +2350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[2]'
-      value: But I can give you a pickle
+      value: But I can give you a pickle.
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[3]'
@@ -2462,7 +2462,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[3]'
-      value: What is with this stupid glitchy game and nothing making sense?
+      value: What is with this stupid glitchy game and it constently changing?
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[4]'
@@ -2470,8 +2470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[5]'
-      value: Its even using text to tell what I am doing instead of actually animating
-        it.
+      value: Its even using text to tell what I am doing!
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[6]'
@@ -2583,7 +2582,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[4]'
-      value: Bye
+      value: Bye.
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[5]'
@@ -2777,7 +2776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[2]'
-      value: Afterall maybe my sandwhiches are the best wingmen.
+      value: Afterall maybe my sandwhiches are the best.
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[3]'
@@ -3021,7 +3020,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[1]'
-      value: HEY EVERYONE, I KNOW THIS GUYS BROWSER HISTORY
+      value: HEY EVERYONE, I KNOW THIS GUYS BROWSER HISTORY!
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[2]'
@@ -3241,7 +3240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[0]'
-      value: Well, I guess its time to find love
+      value: Well, I guess its time to find love.
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[1]'
@@ -3539,10 +3538,10 @@ MonoBehaviour:
   - {fileID: 1970737983}
   - {fileID: 1172337894}
   ButtonTexts:
-  - Eat the Lettuce to silence it
-  - Interrogate the lettuce
-  - Throw the lettuce across the room
-  - Offer it a job
+  - Eat the Lettuce to silence it.
+  - Interrogate the lettuce.
+  - Throw the lettuce across the room.
+  - Offer it a job.
   Paths:
   - {fileID: 1440489541}
   - {fileID: 365946666}
@@ -4317,7 +4316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[2]'
-      value: I should probably just sit down and eat
+      value: I should probably just sit down and eat...
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[3]'
@@ -4715,19 +4714,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[0]'
-      value: AHHHHHHHHHHHHHHHHHHH
+      value: AHHHHHHHHHHHHHHHHHHH!
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[1]'
-      value: AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+      value: AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH!
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[2]'
-      value: AAAAAAAAAAAAAAAAAAAAAAAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+      value: AAAAAAAAAAAAAAAAAAAAAAAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH!
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[3]'
-      value: Oh wait this is actually kinda nice
+      value: Oh wait this is actually kinda nice.
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[4]'
@@ -4864,7 +4863,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[0]'
-      value: Now listen hear kid
+      value: Now listen here kid.
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[1]'
@@ -5660,11 +5659,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[2]'
-      value: '*The dead is done and you decide to turn away*'
+      value: '*The dead is done and you turn away*'
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[3]'
-      value: '*Suddenly you hear behind you*'
+      value: '*All of a sudden you hear*'
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[4]'
@@ -5763,7 +5762,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[1]'
-      value: You're going to make me stale
+      value: You're going to make me stale.
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[2]'
@@ -6038,7 +6037,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[2]'
-      value: I will remember what you have done here
+      value: I will remember what you have done here!
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[3]'
