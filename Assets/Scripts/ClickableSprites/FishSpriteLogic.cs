@@ -10,14 +10,18 @@ public class FishSpriteLogic : ClickableSprite
 
     private void OnEnable()
     {
-        if (talkingController != null)
+        if (talkingController != null) 
+        {
             talkingController.OnTextEnded += OnDialogEnd;
+        }
     }
 
     private void OnDisable()
     {
-        if (talkingController != null)
+        if (talkingController != null) 
+        {
             talkingController.OnTextEnded -= OnDialogEnd;
+        }
     }
 
     protected override void OnClick()
@@ -37,7 +41,6 @@ public class FishSpriteLogic : ClickableSprite
 
         talkingController.StartText();
     }
-
     private void OnDialogEnd()
     {
         if (spriteSwitcher != null)
