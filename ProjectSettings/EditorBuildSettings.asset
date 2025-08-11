@@ -9,12 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/TitleScn.unity
-    guid: 0d1ecb060c0797b4096955e41677b29a
-  - enabled: 1
-    path: Assets/Scenes/YourOffice(GoToPuzzleRoom3).unity
-    guid: eff20c185619e7741965c6389dc57645
-  - enabled: 1
     path: Assets/Scenes/PuzzleRoom3.unity
     guid: bbe967da78bea6944b2bc336292932be
   - enabled: 1
@@ -53,8 +47,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WinScene.unity
     guid: 283081cd42c32e44daea9d5bd72864e6
-    path: Assets/Scenes/OutOfOffice.unity
-    guid: dc2a6558452a7fe4c8f6d0825f9aa9c7
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
