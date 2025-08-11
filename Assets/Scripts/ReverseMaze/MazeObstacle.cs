@@ -8,6 +8,7 @@ public class MazeObstacle : MonoBehaviour {
     [SerializeField] Vector3 startPos;
     [SerializeField] Vector3 endPos;
 	[SerializeField] bool supervisor = false;
+	[SerializeField] bool boss = false;
 	[SerializeField] TextMeshProUGUI talkText;
 
     [SerializeField] float speed = 5;
@@ -47,6 +48,10 @@ public class MazeObstacle : MonoBehaviour {
 			talkText.text = talking;
 			talkText.transform.parent.gameObject.SetActive(true);
 			StartCoroutine(interaction(talkTime));
+
+			if (boss) {
+				return;
+			}
 
 			if (supervisor) {
 				collision.gameObject.GetComponent<MazeCharacter>().readyToExit();

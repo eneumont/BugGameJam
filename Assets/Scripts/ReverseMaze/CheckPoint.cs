@@ -16,8 +16,14 @@ public class CheckPoint : MonoBehaviour {
             }
         } else {
             if (collision.gameObject.GetComponent<MazeCharacter>().done) {
-                SceneManager.LoadScene("");
-            } else {
+				int currentSceneIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+				int nextSceneIndex = currentSceneIndex + 1;
+				// Check if the next scene index is within bounds
+				if (nextSceneIndex < UnityEngine.SceneManagement.SceneManager.sceneCountInBuildSettings)
+				{
+					UnityEngine.SceneManagement.SceneManager.LoadScene(nextSceneIndex);
+				}
+			} else {
 				FindFirstObjectByType<HintSystem>().talk(notDone);
                 notDone++;
                 if (notDone > 15) notDone = 15;
