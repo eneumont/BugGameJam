@@ -6,7 +6,7 @@ public class CheckPoint : MonoBehaviour {
     [SerializeField] bool exit = false;
     [SerializeField] bool control = false;
 
-    int notDone;
+    int notDone = 10;
     Dictionary<int, float> notDoneTalk;
 
     void Start() {
@@ -32,7 +32,7 @@ public class CheckPoint : MonoBehaviour {
             } else {
                 collision.GetComponent<HintSystem>().talk(notDone, 3f);
                 notDone++;
-                if (notDone > 12) notDone = 12;
+                if (notDone > 14) notDone = 14;
             }
         }
 	}

@@ -17,12 +17,12 @@ public class MazeObstacle : MonoBehaviour {
     
     Vector3 targetPos;
     bool heal;
-	AudioSource audioSource;
+	//AudioSource audioSource;
 
     void Start() {
         targetPos = endPos;
 		setUp();
-		audioSource = GetComponent<AudioSource>();
+		//audioSource = GetComponent<AudioSource>();
 		talkText.transform.parent.gameObject.SetActive(false);
     }
 
@@ -38,7 +38,7 @@ public class MazeObstacle : MonoBehaviour {
 
 	private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.GetComponent<MazeCharacter>()) {
-			if (!person) audioSource.Play();
+			//if (!person) audioSource.Play();
 			talkText.text = talking;
 			talkText.transform.parent.gameObject.SetActive(true);
 			StartCoroutine(interaction(talkTime));
