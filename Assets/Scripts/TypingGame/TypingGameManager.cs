@@ -67,13 +67,28 @@ public class TypingGameManager : MonoBehaviour
         timer = wordTime;
         typedTextDisplay.text = introMessage;
 
+        // Hard mode adjustments
+        if (GameProgress.HardMode)
+        {
+            // Less time to type words
+            wordTime *= 0.7f; // 30% less time
+            timer = wordTime;
+
+            // Bugs happen more frequently
+            nextLagTime = Time.time + Random.Range(5f, 10f);
+            nextRemapTime = Time.time + Random.Range(10f, 20f);
+            nextBadWordTime = Time.time + Random.Range(12f, 25f);
+        }
+        else
+        {
+            // Normal mode timings
+            nextLagTime = Time.time + Random.Range(10f, 20f);
+            nextRemapTime = Time.time + Random.Range(15f, 25f);
+            nextBadWordTime = Time.time + Random.Range(20f, 40f);
+        }
+
         // Wait for WordSpawner to be ready before getting target word
         StartCoroutine(InitializeGame());
-
-        // Initialize bug timers
-        nextLagTime = Time.time + Random.Range(10f, 20f);
-        nextRemapTime = Time.time + Random.Range(15f, 25f);
-        nextBadWordTime = Time.time + Random.Range(20f, 40f);
     }
 
     IEnumerator InitializeGame()
@@ -479,7 +494,16 @@ public class TypingGameManager : MonoBehaviour
         // Wait a moment before transitioning
         yield return new WaitForSeconds(2f);
 
-        SceneManager.LoadScene("BossYellingScene");
+        // Load the typing game scene again rather than the boss yelling... just have players start the typing game again
+        // This can be replaced with the actual boss yelling scene if needed
+
+        //This will be the logic to just reload the TypingGame scene
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+
+
+        //SceneManager.LoadScene("BossYellingScene");
     }
 
     void ClearTypedWithError()

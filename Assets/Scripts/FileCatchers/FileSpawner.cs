@@ -3,7 +3,7 @@ using UnityEngine;
 public class FileSpawner : MonoBehaviour
 {
     [Header("File Prefabs")]
-    public GameObject filePrefab; // Use one prefab for both, set sprite via FileData
+    public GameObject filePrefab;
 
     [Header("Sprites")]
     public Sprite goodFileSprite;
@@ -11,7 +11,7 @@ public class FileSpawner : MonoBehaviour
 
     [Header("Spawn Settings")]
     public float spawnInterval = 1f;
-    [Range(0f, 1f)] public float goodFileChance = 0.2f; // 20% good files
+    [Range(0f, 1f)] public float goodFileChance = 0.2f;
 
     [Header("Movement Settings")]
     public float minFallSpeed = 2f;
@@ -22,15 +22,34 @@ public class FileSpawner : MonoBehaviour
     public float maxX = 8f;
     public float spawnY = 6f;
 
+    private float timeSinceLastGoodFile = 0f;
+
     private void Start()
     {
         InvokeRepeating(nameof(SpawnFile), 0f, spawnInterval);
     }
 
+    private void Update()
+    {
+        timeSinceLastGoodFile += Time.deltaTime;
+    }
+
     private void SpawnFile()
     {
-        // Decide if this file is good or bad
-        bool isGoodFile = Random.value < goodFileChance;
+        bool isGoodFile;
+
+        // Force a good file if none spawned in 15 seconds
+        if (timeSinceLastGoodFile >= 15f)
+        {
+            isGoodFile = true;
+            timeSinceLastGoodFile = 0f; // reset timer
+        }
+        else
+        {
+            isGoodFile = Random.value < goodFileChance;
+            if (isGoodFile)
+                timeSinceLastGoodFile = 0f;
+        }
 
         // Pick a random spawn position
         Vector3 spawnPos = new Vector3(Random.Range(minX, maxX), spawnY, 0f);
@@ -54,6 +73,13 @@ public class FileSpawner : MonoBehaviour
 
         // Assign a random fall speed
         float speed = Random.Range(minFallSpeed, maxFallSpeed);
+
+        // Increase fall speed slightly if Hard Mode is enabled
+        if (GameProgress.HardMode)
+        {
+            speed *= 1.2f;
+        }
+
         FallingFile fallingFile = file.GetComponent<FallingFile>();
         if (fallingFile != null)
         {

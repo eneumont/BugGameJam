@@ -11,6 +11,7 @@ public class CheckPoint : MonoBehaviour {
 	private void OnTriggerEnter2D(Collider2D collision) {
         collision.gameObject.GetComponent<MazeCharacter>().newControls();
         if (!exit) {
+            if (GameProgress.HardMode) return;
             if (collision.gameObject.GetComponent<MazeCharacter>()) {
                 collision.gameObject.GetComponent<MazeCharacter>().checkPoint(transform.position);
             }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Users;
 using UnityEngine.TextCore.Text;
 
 [RequireComponent(typeof(PlayerInput))]
@@ -81,6 +82,43 @@ public class TalkingController : MonoBehaviour
 	{
 		//TODO: add an intro animation
   		started = true;
+
+		bool foundOther = false;
+		List<InputDevice> stolenDevices = new List<InputDevice>();
+
+		// Find any other PlayerInputs and steal their devices
+		foreach (var pi in FindObjectsByType<PlayerInput>(FindObjectsSortMode.None))
+		{
+			if (pi != UIInput && pi.user.valid)
+			{
+				foundOther = true;
+
+				// Copy devices before unpairing
+				foreach (var device in pi.user.pairedDevices)
+				{
+					stolenDevices.Add(device);
+				}
+
+				// Unpair all devices from that PlayerInput
+				foreach (var device in pi.user.pairedDevices.ToArray())
+				{
+					pi.user.UnpairDevice(device);
+				}
+			}
+		}
+
+		// Enable our UIInput first so it has a valid user
+		UIInput.enabled = true;
+
+		// Now pair stolen devices to this one
+		if (foundOther && UIInput.user.valid)
+		{
+			foreach (var device in stolenDevices)
+			{
+				InputUser.PerformPairingWithDevice(device, UIInput.user);
+			}
+		}
+
 		UIInput.enabled = true;
 		group.alpha = 1f;
 		if(PlayerRB) PlayerRB.linearVelocity = Vector2.zero;

@@ -9,6 +9,7 @@ public class PlayerFileCatcher : MonoBehaviour
     [SerializeField] private Character2DMovement playerMovement;
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private WarningUIManager warningUI; // Drag your LifeSystem object in the Inspector
+    [SerializeField] private HardModeTimer hardModeTimer;
 
 
     private void Awake()
@@ -33,6 +34,7 @@ public class PlayerFileCatcher : MonoBehaviour
                 audioSource.PlayOneShot(dingSound);
             }
             Destroy(other.gameObject);
+            hardModeTimer.AddTime(2);
             warningUI.AddCollected();
         }
         else
