@@ -5,8 +5,12 @@ public static class GameProgress
 {
     private const string ProgressKey = "HasProgressed";
     private const string PreviousSceneKey = "PreviousScene";
-
-
+    private static bool hardMode;
+    public static bool HardMode
+    {
+        get => hardMode;
+        set => hardMode = value;
+    }
     public static int hasProgressed
     {
         get => PlayerPrefs.GetInt(ProgressKey, 0);
