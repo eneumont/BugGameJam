@@ -61,7 +61,8 @@ public class TestManager : MonoBehaviour
 		}
 
 		yield return new WaitForSeconds(5f);
-		SceneManager.LoadScene("TheTest");
+		GameProgress.SaveCurrentSceneAsPreviousByName("LunchBreak");
+		SceneManager.LoadScene("OutOfOffice");
 
 		//int currentSceneIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
 		//int loseSceneIndex = currentSceneIndex - 3;

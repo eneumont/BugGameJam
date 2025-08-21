@@ -38,8 +38,14 @@ public static class GameProgress
         PlayerPrefs.Save();
     }
 
-    // Load the stored previous scene
-    public static void LoadPreviousScene()
+	public static void SaveCurrentSceneAsPreviousByName(string SceneName)
+	{
+		PlayerPrefs.SetString(PreviousSceneKey, SceneName);
+		PlayerPrefs.Save();
+	}
+
+	// Load the stored previous scene
+	public static void LoadPreviousScene()
     {
         if (PlayerPrefs.HasKey(PreviousSceneKey))
         {
