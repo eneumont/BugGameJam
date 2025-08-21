@@ -4,6 +4,8 @@ using UnityEngine.UI;
 public class HardModeSetting : MonoBehaviour
 {
     [SerializeField] private Toggle hardModeToggle;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip[] toggleClips; // assign multiple clips in inspector
 
     private void Start()
     {
@@ -24,6 +26,17 @@ public class HardModeSetting : MonoBehaviour
     {
         // Set the hard mode value
         GameProgress.HardMode = isOn;
+
+        // Play a random audio clip
+        PlayRandomClip();
+    }
+
+    private void PlayRandomClip()
+    {
+        if (toggleClips == null || toggleClips.Length == 0 || audioSource == null) return;
+
+        int randomIndex = Random.Range(0, toggleClips.Length);
+        audioSource.PlayOneShot(toggleClips[randomIndex]);
     }
 
     private void OnDestroy()

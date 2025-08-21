@@ -61,7 +61,7 @@ public class TestManager : MonoBehaviour
 		}
 
 		yield return new WaitForSeconds(5f);
-		SceneManager.LoadScene("TheTest");
+		SceneManager.LoadScene("Lose");
 
 		//int currentSceneIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
 		//int loseSceneIndex = currentSceneIndex - 3;

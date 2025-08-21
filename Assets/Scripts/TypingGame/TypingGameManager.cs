@@ -67,13 +67,28 @@ public class TypingGameManager : MonoBehaviour
         timer = wordTime;
         typedTextDisplay.text = introMessage;
 
+        // Hard mode adjustments
+        if (GameProgress.HardMode)
+        {
+            // Less time to type words
+            wordTime *= 0.7f; // 30% less time
+            timer = wordTime;
+
+            // Bugs happen more frequently
+            nextLagTime = Time.time + Random.Range(5f, 10f);
+            nextRemapTime = Time.time + Random.Range(10f, 20f);
+            nextBadWordTime = Time.time + Random.Range(12f, 25f);
+        }
+        else
+        {
+            // Normal mode timings
+            nextLagTime = Time.time + Random.Range(10f, 20f);
+            nextRemapTime = Time.time + Random.Range(15f, 25f);
+            nextBadWordTime = Time.time + Random.Range(20f, 40f);
+        }
+
         // Wait for WordSpawner to be ready before getting target word
         StartCoroutine(InitializeGame());
-
-        // Initialize bug timers
-        nextLagTime = Time.time + Random.Range(10f, 20f);
-        nextRemapTime = Time.time + Random.Range(15f, 25f);
-        nextBadWordTime = Time.time + Random.Range(20f, 40f);
     }
 
     IEnumerator InitializeGame()
