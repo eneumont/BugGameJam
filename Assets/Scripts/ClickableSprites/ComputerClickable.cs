@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class ComputerClickable : ClickableSprite
 {
-	protected override void OnClick()
+    private void Awake()
+    {
+        if(!GameProgress.hasCompletedPaperGame) this.enabled = false;
+    }
+    protected override void OnClick()
 	{
 		Debug.Log("You found a computer");
 

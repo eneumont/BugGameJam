@@ -120,7 +120,7 @@ public class TalkingController : MonoBehaviour
 		}
 
 		UIInput.enabled = true;
-		group.alpha = 1f;
+		if (group) group.alpha = 1f;
 		if(PlayerRB) PlayerRB.linearVelocity = Vector2.zero;
 
 		if (!loopAudio && talkingSound)

@@ -28,7 +28,7 @@ public class HardModeSetting : MonoBehaviour
         GameProgress.HardMode = isOn;
 
         // Play a random audio clip
-        PlayRandomClip();
+        if(isOn) PlayRandomClip();
     }
 
     private void PlayRandomClip()
@@ -36,13 +36,12 @@ public class HardModeSetting : MonoBehaviour
         if (toggleClips == null || toggleClips.Length == 0 || audioSource == null) return;
 
         int randomIndex = Random.Range(0, toggleClips.Length);
-        audioSource.PlayOneShot(toggleClips[randomIndex]);
+        audioSource.PlayOneShot(toggleClips[randomIndex], 1.5f);
     }
 
     private void OnDestroy()
     {
         // Remove listener to avoid memory leaks
-        if (hardModeToggle != null)
-            hardModeToggle.onValueChanged.RemoveListener(OnToggleChanged);
+        if (hardModeToggle != null) hardModeToggle.onValueChanged.RemoveListener(OnToggleChanged);
     }
 }
