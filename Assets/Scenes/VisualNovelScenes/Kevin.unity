@@ -608,7 +608,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[4]'
-      value: Dam...
+      value: Crazy...
       objectReference: {fileID: 0}
     - target: {fileID: 3416988280550206484, guid: db9c6dd84d609eb4982bb642d6e02a66, type: 3}
       propertyPath: 'messages.Array.data[5]'
