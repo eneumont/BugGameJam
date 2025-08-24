@@ -10,6 +10,7 @@ TagManager:
   - Boss
   - IsGround
   - Wall
+  - Hand
   layers:
   - Default
   - TransparentFX

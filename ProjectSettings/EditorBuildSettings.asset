@@ -48,6 +48,9 @@ EditorBuildSettings:
     path: Assets/Scenes/ReverseMazeScene.unity
     guid: 5c5c7b7dadbde9144b894f9fa532000a
   - enabled: 1
+    path: Assets/Scenes/BossDoor.unity
+    guid: f342e3891664e3d478a246997b56071d
+  - enabled: 1
     path: Assets/Scenes/BossRoom.unity
     guid: b735e25466805634a92926cc60fcf6ac
   - enabled: 1

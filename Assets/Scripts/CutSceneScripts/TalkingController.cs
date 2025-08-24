@@ -177,7 +177,7 @@ public class TalkingController : MonoBehaviour
 
 	public void OnClick(InputAction.CallbackContext context)
 	{
-		if (context.started)
+        if (context.started)
 		{
 			if (!currentFullMessage.Equals(currentMessage))
 			{
