@@ -39,22 +39,14 @@ public class ScrewLogic : MonoBehaviour, IPointerClickHandler
 
         if (!isHandOver) return;
 
-        // Check sequence
-        if (!manager.IsCorrectScrew(screwID))
-        {
-            manager.PenalizeWrongClick(this);
-            return;
-        }
+        // Send screw press to manager
+        manager.RegisterScrewPress(screwID);
 
-        // Play pitched sound
+        // Play pitched sound (feedback for click, regardless of correctness)
         manager.PlayCorrectScrewSound(screwPitch);
 
-        // Advance stage (optional if stages still matter)
+        // Rotate + stage visuals
         AdvanceStage();
-
-        // Move sequence forward **every correct click**, regardless of stage
-        manager.ProgressSequence();
-
         transform.Rotate(Vector3.forward, rotationPerClick);
     }
 
@@ -64,9 +56,6 @@ public class ScrewLogic : MonoBehaviour, IPointerClickHandler
         {
             stage++;
             ApplyScale();
-
-            if (stage == 3)
-                manager.CheckDoorUnlock();
         }
     }
 
@@ -86,4 +75,12 @@ public class ScrewLogic : MonoBehaviour, IPointerClickHandler
 
     public int GetStage() => stage;
     public int GetID() => screwID;
+
+    // Reset stage (for sequence reset)
+    public void ResetStage()
+    {
+        stage = 0;
+        ApplyScale();
+        transform.rotation = Quaternion.identity;
+    }
 }

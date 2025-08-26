@@ -7,7 +7,6 @@ public class ScrewManager : MonoBehaviour
     [Header("Screws & Sequence")]
     [SerializeField] private List<ScrewLogic> screws;
     [SerializeField] private List<int> screwSequence; // order of screwIDs to click
-    private int currentIndex = 0;
 
     [Header("Door Settings")]
     [SerializeField] private Image doorImage;
@@ -22,6 +21,7 @@ public class ScrewManager : MonoBehaviour
     [SerializeField] private SceneButtonSpawner sceneButtonSpawner; // assign in Inspector
     [SerializeField] private TalkingController talkingController;
 
+    private List<int> userInput = new List<int>();
 
     private void Start()
     {
@@ -38,25 +38,38 @@ public class ScrewManager : MonoBehaviour
         }
     }
 
-    public bool IsCorrectScrew(int screwID)
+    // Called whenever a screw is clicked
+    public void RegisterScrewPress(int screwID)
     {
-        if (currentIndex >= screwSequence.Count) return false;
+        userInput.Add(screwID);
+        Debug.Log($"Click detected: {screwID}, Progress: [{string.Join(", ", userInput)}]");
 
-        bool correct = screwID == screwSequence[currentIndex];
+        // Check the current step immediately
+        int currentIndex = userInput.Count - 1;
+        if (userInput[currentIndex] != screwSequence[currentIndex])
+        {
+            Debug.Log("? Wrong input early! Resetting...");
+            ResetSequence();
+            return;
+        }
 
-        string sequenceStr = string.Join(", ", screwSequence);
-        Debug.Log($"Clicked: {screwID} | Expected: {screwSequence[currentIndex]} | Correct? {correct} | Sequence: [{sequenceStr}] | Current Index: {currentIndex}");
-
-        return correct;
+        // If full sequence entered correctly, open door
+        if (userInput.Count == screwSequence.Count)
+        {
+            Debug.Log("? Correct sequence entered! Opening door...");
+            OpenDoor();
+        }
     }
 
-    public void ProgressSequence()
+    private void ResetSequence()
     {
-        currentIndex++;
+        userInput.Clear();
 
-        // Optional: clamp to avoid out-of-range
-        if (currentIndex >= screwSequence.Count)
-            currentIndex = screwSequence.Count; // sequence finished
+        // Reset screw visuals
+        foreach (var screw in screws)
+        {
+            screw.ResetStage(); // implement in ScrewLogic
+        }
     }
 
     public void PlayCorrectScrewSound(float pitch)
@@ -68,28 +81,6 @@ public class ScrewManager : MonoBehaviour
         audioSource.pitch = 1f;
     }
 
-    public void PenalizeWrongClick(ScrewLogic wrongScrew)
-    {
-        // Downgrade a random screw other than the one clicked
-        List<ScrewLogic> others = new List<ScrewLogic>(screws);
-        others.Remove(wrongScrew);
-
-        if (others.Count > 0)
-        {
-            ScrewLogic randomScrew = others[Random.Range(0, others.Count)];
-            randomScrew.DowngradeStage();
-        }
-    }
-
-    public void CheckDoorUnlock()
-    {
-        foreach (var screw in screws)
-            if (screw.GetStage() < 3)
-                return;
-
-        OpenDoor();
-    }
-
     private void OpenDoor()
     {
         if (doorImage != null && openDoorSprite != null)
@@ -97,9 +88,7 @@ public class ScrewManager : MonoBehaviour
 
         ScrewCleanUp();
 
-        // Enable SceneButtonSpawner
         if (sceneButtonSpawner != null) sceneButtonSpawner.gameObject.SetActive(true);
-        // Boss Talking Controller
         if (talkingController != null) talkingController.StartText();
     }
 
