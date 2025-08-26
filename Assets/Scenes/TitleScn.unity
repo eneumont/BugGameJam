@@ -5317,6 +5317,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1905502719}
   - component: {fileID: 1905502718}
+  - component: {fileID: 1905502720}
   m_Layer: 0
   m_Name: Global MatManager
   m_TagString: Untagged
@@ -5360,6 +5361,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1905502720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1905502717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2533db6504f68d468bce63eee50fab3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  confirmUIPrefab: {fileID: 2264936312070053816, guid: 0cee51a92ea39054cb63ff38cf489f5d, type: 3}
 --- !u!1 &1953258888
 GameObject:
   m_ObjectHideFlags: 0
